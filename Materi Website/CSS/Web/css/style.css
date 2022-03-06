@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font: 16px/28px arial, sans-serif;
+  height: auto;
+  background-image: url(../gambar/dot-grid.png);
+}
+
+.container {
+  width: 1100px;
+  height: auto;
+  margin: auto;
+  background-color: rgba(252, 252, 252, 0.925);
+}
+
+.header {
+  padding: 30px;
+  padding-top: 0;
+  padding-bottom: 15px;
+}
+
+.header .judul {
+  margin-top: 15px;
+  font-size: 34px;
+}
+
+nav {
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+nav ul {
+  border: 0px solid black;
+}
+
+nav ul li {
+  border: 1px solid black;
+  display: inline-block;
+  width: 70px;
+  margin-right: 3px;
+  padding: 5px;
+}
+
+.header nav ul li a {
+  text-decoration: none;
+}
+
+.header nav ul li:hover {
+  background-color: rgba(221, 221, 221, 0.308);
+}
+
+.header nav ul li a:hover {
+  color: red;
+}
+
+.banner {
+  height: 300px;
+  background-image: url(../gambar/berita.jpg);
+  background-position: 0px -120px;
+  background-size: cover;
+}
+
+.content {
+  width: auto;
+  margin-top: 5px;
+  margin-bottom: 120px;
+}
+
+.main{
+  width: 650px;
+  padding: 30PX;
+  float: left;
+  border-right: 1px solid #4b4b4b42;
+  box-sizing: border-box;
+
+}
+
+.main .penulis {
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.main p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.side-main{
+  width: 450px;
+  padding: 30PX;
+  float: left;
+  box-sizing: border-box;
+}
+
+.side-main h3{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.circle{
+  border: 1px solid black;
+  width: 135px;
+  height: 135px;
+  margin: auto;
+  margin-bottom: 35px;
+  border-radius: 120px;
+  background-image: url("../gambar/boy2.jpg");
+  background-size: 96%;
+}
+
+.side-main p{
+  margin-left: 60px;
+}
+
+.clear{
+  clear: left;
+}
+
+.footer {
+  padding: 10px;
+  text-align: center;
+  background-color: bisque;
+}

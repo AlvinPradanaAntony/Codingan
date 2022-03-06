@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jenis CSS</title>
+    <link rel="stylesheet" href="css1.css" />
+    <style>
+      h3 {
+        font-family: Segoe UI;
+        font-size: 18px;
+        font-weight: normal;
+        color: red;
+        font-style: italic;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><center>Jenis CSS</center></h1>
+    <br />
+    <p>Jenis CSS ada 3 :</p>
+    <ul type="">
+      <li>Inline</li>
+      <li>Embed</li>
+      <li>Eksternal</li>
+    </ul>
+    <h2>Inline</h2>
+    <p>
+      Menyisipkan css pada struktur html seperti berikut <br />
+      <b>Contoh: </b><br />
+    </p>
+    <p
+      style="
+        font-family: monospace;
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+        font-style: italic;
+      "
+    >
+      "Dibalik kegagalan pasti ada jalan kesuksesan"
+    </p>
+    <p>
+      <b>Source Code</b>
+    </p>
+    <pre>
+        &lt;p style=" font-family: monospace;
+                   font-size: 18px;
+                   font-weight: bold;
+                   color: red;
+                   font-style: italic;"&gt;"Dibalik kegagalan pasti ada jalan kesuksesan" 
+        &lt;/p&gt;
+    </pre>
+    <hr />
+    <h2>Embed</h2>
+    <p>
+      CSS ditempatkan didalam tag head <br />
+      <b>Contoh:</b>
+    </p>
+    <h3>"Bersusah-susah dahulu bersenang-senang kemudian"</h3>
+    <p><b>Source Code</b></p>
+    <pre>
+        &lt;head&gt;
+            &lt;title&gt;Embed&lt;/title&gt;
+            &lt;style&gt;
+            h3 {
+                font-family: Segoe UI;
+                font-size: 18px;
+                font-weight: normal;
+                color: red;
+                font-style: italic;
+                text-decoration: underline;
+              }
+            &lt;/style&gt;
+        &lt;/head&gt;
+    </pre>
+    <hr />
+    <h2>Eksternal</h2>
+    <p>
+      Jenis ini menggunakan file terpisah dengan ekstensi .css. Dalam
+      menggunakan file .css ini kita bs memanggilnya didalam tag head yang
+      didalamnya terdapat tag link untuk menghubungkan css yang telah dibuat
+      sebelumnya. <br /><b>Contoh :</b>
+    </p>
+    <q>Ada udang di balik batu. ada maksud tersembunyi</q>
+    <p><b>Source Code</b></p>
+    <pre>
+        &lt;head&gt;
+            &lt;title&gt;Embed&lt;/title&gt;
+            &lt;link rel="stylesheet" href="css1.css"&gt;
+        &lt;/head&gt;
+    </pre>
+    <hr>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font: 16px/28px arial, sans-serif;
+            background: url('Wallpaper\ 38.jpg');
+            background-size: cover;
+            background-position-y: 4pc;
+            background-repeat: repeat-y;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 10px;
+            background-color: crimson;
+        }
+        div.navbar li {
+            display: inline-block;
+            margin-left: 5px;
+            color: white;
+        }
+        h1 {
+            color: white;
+            align-self: center;
+        }
+        ol {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+        .container {
+            padding: 10px;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            align-content: stretch;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+   <div class="navbar">
+        <ol>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="data-siswa.html">Data Siswa</a></li>
+            <li><a href="data-guru.html">Data Guru</a></li>
+            <li><a href="login.html">Sign Out</a></li>
+        </ol>
+   </div>
+   <div class="container">
+    <div class="row">
+        <h1>Selamat Datang di website Sekolahin Dong!</h1>
+    </div>
+   </div>
+</body>
+</html>

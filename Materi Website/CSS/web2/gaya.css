@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 2000px;
+}
+
+.container {
+  max-width: 800px;
+  height: auto;
+  margin: 20px auto;
+  border: 1px solid black;
+    /* position: relative; */
+}
+
+div{
+  margin: 0 auto;
+}
+
+.satu {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(211, 81, 81);
+  /* position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 10; */
+}
+
+.dua {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(228, 197, 59);
+    /* position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index:11; */
+}
+.tiga {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(75, 172, 104);
+    /* position: absolute;
+    top : 100px;
+    left: 100px;
+    z-index: 9; */
+}
+
+p.text1{
+  padding: 40px;
+  text-indent: 50px;
+  text-align: justify;
+}
+
+p.text2 {
+  width: 250px;
+  height: 100px;
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid black;
+  display: block;
+  overflow: auto;
+}
+
+.empat {
+  width: auto;
+  height: 50px;
+  margin: 0;
+  background-color: rgb(81, 100, 211);
+  position: sticky;
+  top: 0px;
+  box-shadow: 0 0 13px 1px #000;
+}
+
+.header{
+  max-width: 1100px;
+}
+
+h1{
+  display: inline-block;
+  padding: 5px;
+  color: white;
+
+}
+
+
+.navigasi {
+  float: right;
+  text-align: center;
+}
+
+.navigasi ul{
+  list-style: none;
+  margin: 0 10px;
+}
+
+.navigasi ul li{
+  margin: 10px 10px;
+  padding: 5px;
+  display: inline-block;
+}
+
+.navigasi ul li a{
+  margin: 5px;
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+}
