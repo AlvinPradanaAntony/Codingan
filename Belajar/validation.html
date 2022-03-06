@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="plugin/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.min.css" />
+    <!-- <link rel="stylesheet" href="css/icons.min.css" /> -->
+    <link rel="stylesheet" href="custom.css" />
+    <script src="plugin/js/bootstrap.bundle.min.js"></script>
+    <script src="jquery/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-xl-6">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Validation type</h4>
+              <p class="card-title-desc">Parsley is a javascript form validation library. It helps you provide your users with feedback on their form submission before sending it to your server.</p>
+
+              <form class="custom-validation" action="coba2.html" novalidate>
+                <div class="mb-3">
+                  <label class="form-label">Required</label>
+                  <input type="text" class="form-control" required placeholder="Type something" />
+                  <div class="invalid-feedback">Looks good!</div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Equal To</label>
+                  <div>
+                    <input type="password" id="pass2" class="form-control" required placeholder="Password"
+                    data-parsley-uppercase="1"
+                    data-parsley-lowercase="1"
+                    data-parsley-number="1"
+                    data-parsley-special="1"
+                    data-parsley-length="[8, 16]"
+                    maxlength="16"/>
+                  </div>
+                  <div class="mt-2">
+                    <input type="password" class="form-control" required data-parsley-equalto="#pass2" placeholder="Re-Type Password" 
+                    data-parsley-length="[8, 16]"/>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">E-Mail</label>
+                  <div>
+                    <input type="email" class="form-control" required data-parsley-required-message="Email kosongan!" placeholder="Enter a valid e-mail" />
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">URL</label>
+                  <div>
+                    <input parsley-type="url" type="url" class="form-control" required placeholder="URL" />
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Digits</label>
+                  <div>
+                    <input data-parsley-type="digits" type="text" class="form-control" required placeholder="Enter only digits" />
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Number</label>
+                  <div>
+                    <input data-parsley-type="number" type="text" class="form-control" required placeholder="Enter only numbers" />
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Alphanumeric</label>
+                  <div>
+                    <input data-parsley-type="alphanum" type="text" class="form-control" required placeholder="Enter alphanumeric value" />
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Textarea</label>
+                  <div>
+                    <textarea required class="form-control" rows="5"></textarea>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light me-1">Submit</button>
+                    <button type="reset" class="btn btn-secondary waves-effect">Cancel</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+
+      <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-4">
+          <label class="form-label">First name</label>
+          <input type="text" class="form-control" value="Mark" required />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Last name</label>
+          <input type="text" class="form-control" id="validationCustom02" value="Otto" required />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomUsername" class="form-label">Username</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required />
+            <div class="invalid-feedback">Please choose a username.</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">City</label>
+          <input type="text" class="form-control" id="validationCustom03" required />
+          <div class="invalid-feedback">Please provide a valid city.</div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label">State</label>
+          <select class="form-select" id="validationCustom04" required>
+            <option selected disabled value="">Choose...</option>
+            <option>...</option>
+          </select>
+          <div class="invalid-feedback">Please select a valid state.</div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">Zip</label>
+          <input type="text" class="form-control" id="validationCustom05" required />
+          <div class="invalid-feedback">Please provide a valid zip.</div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+            <label class="form-check-label" for="invalidCheck"> Agree to terms and conditions </label>
+            <div class="invalid-feedback">You must agree before submitting.</div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="form-validation.init.js"></script>
+    <script src="parsleyjs/parsley.min.js"></script>
+    <script>
+      window.Parsley.addValidator("uppercase", {
+        requirementType: "number",
+        validateString: function (value, requirement) {
+          var uppercases = value.match(/[A-Z]/g) || [];
+          return uppercases.length >= requirement;
+        },
+        messages: {
+          en: "Your password must contain at least (%s) uppercase letter.",
+        },
+      });
+
+      //has lowercase
+      window.Parsley.addValidator("lowercase", {
+        requirementType: "number",
+        validateString: function (value, requirement) {
+          var lowecases = value.match(/[a-z]/g) || [];
+          return lowecases.length >= requirement;
+        },
+        messages: {
+          en: "Your password must contain at least (%s) lowercase letter.",
+        },
+      });
+
+      //has number
+      window.Parsley.addValidator("number", {
+        requirementType: "number",
+        validateString: function (value, requirement) {
+          var numbers = value.match(/[0-9]/g) || [];
+          return numbers.length >= requirement;
+        },
+        messages: {
+          en: "Your password must contain at least (%s) number.",
+        },
+      });
+
+      //has special char
+      window.Parsley.addValidator("special", {
+        requirementType: "number",
+        validateString: function (value, requirement) {
+          var specials = value.match(/[^a-zA-Z0-9]/g) || [];
+          return specials.length >= requirement;
+        },
+        messages: {
+          en: "Your password must contain at least (%s) special characters.",
+        },
+      });
+    </script>
+  </body>
+</html>
