@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Direct Wa</title>
+  </head>
+  <body>
+    <table cellspacing="0" cellpadding="6">
+      <form>
+        <tr>
+          <div class="username">
+            <td>
+              <label for="username">Username </label>
+            </td>
+            <td>:</td>  
+            <td>
+              <input type="text" id="username" name="username" />
+            </td>
+          </div>
+        </tr>
+        <tr>
+          <div class="pass">
+            <td>
+              <label for="password">Password </label>
+            </td>
+            <td>:</td>  
+            <td>
+              <input type="text" id="password" name="pass" />
+            </td>
+          </div>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>  
+            <td>
+              <button id="login" name="login">Login</button>
+            </td>
+          </div>
+        </tr>
+      </form>
+    </table>
+    <h4 style="display: inline-block;">Username : </h4>
+    <p style="display: inline-block;"  id="txt_user"> ........... </p><br>
+    <h4 style="display: inline-block;" >Password : </h4>
+    <p style="display: inline-block;" id="txt_pass"> ........... </p>
+
+    <!-- Action Login  -->
+    <script>
+      document.getElementById("login").addEventListener("click", showValue);
+      
+      
+      function showValue() {
+          var user=document.getElementById("username").innerHTML;
+          document.getElementById("txt_user").innerHTML=user;
+          // var pass=document.getElementById("password").innerHTML;
+          // document.getElementById("txt_pass").innerHTML=pass;
+      }
+      
+    </script>
+  </body>
+</html>
