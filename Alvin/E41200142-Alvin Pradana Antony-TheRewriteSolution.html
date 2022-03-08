@@ -1,0 +1,135 @@
+<head>
+  <script language='javascript'>
+    var txt = " - Struktur Data - Linked List - Rewrite Solution - ";
+    var kecepatan = 300;
+    var segarkan = null;
+
+    function bergerak() {
+      document.title = txt;
+      txt = txt.substring(1, txt.length) + txt.charAt(0);
+      segarkan = setTimeout("bergerak()", kecepatan);
+    }
+    bergerak();
+  </script>
+
+<body>
+  <h1>
+    <center>Tugas Struktur Data</center>
+    <center style="font-size: 20; font-style: normal; font-weight: normal;"">
+          Linked List
+        <br>
+        </center>
+    </h1>
+    <h3>
+      <br>
+      Nama : Alvin Pradana Antony <br />
+      NIM : E41200142 <br />
+      Prodi : TIF <br />
+      Gol : A
+    </br>
+    </h3>
+    <hr>
+    <body>
+     <center>
+        <b style=" font-size: 20; font-style: normal">
+      Rewrite Solution
+      </b>
+    </center>
+</body></br>
+<script>
+  function Node(element) {
+    this.element = element;
+    this.next = null;
+    this.previous = null;
+  }
+
+  function LList() {
+    this.head = new Node("head");
+    this.find = find;
+    this.insert = insert;
+    this.display = display;
+    this.remove = remove;
+    this.findLast = findLast;
+    this.dispReverse = dispReverse;
+  }
+
+  function dispReverse() {
+    var currNode = this.head;
+    currNode = this.findLast();
+    while (!(currNode.previous == null)) {
+      document.write("</br>")
+      document.write(currNode.element);
+      currNode = currNode.previous;
+    }
+    document.write(`</br>`);
+  }
+
+  function findLast() {
+    var currNode = this.head;
+    while (!(currNode.next == null)) {
+      currNode = currNode.next;
+    }
+    return currNode;
+  }
+
+  function remove(item) {
+    var currNode = this.find(item);
+    if (!(currNode.next == null)) {
+      currNode.previous.next = currNode.next;
+      currNode.next.previous = currNode.previous;
+      currNode.next = null;
+      currNode.previous = null;
+    }
+  }
+
+  function display() {
+    var currNode = this.head;
+    while (!(currNode.next == null)) {
+      document.write("</br>")
+      document.write(currNode.next.element);
+      currNode = currNode.next;
+    }
+    document.write(`</br>`);
+  }
+
+  function find(item) {
+    var currNode = this.head;
+    while (currNode.element != item) {
+      currNode = currNode.next;
+    }
+    return currNode;
+  }
+
+  function insert(newElement, item) {
+    var newNode = new Node(newElement);
+    var current = this.find(item);
+    newNode.next = current.next;
+    newNode.previous = current;
+    current.next = newNode;
+  }
+
+  var cities = new LList();
+  cities.insert("Conway", "head");
+  cities.insert("Russellville", "Conway");
+  cities.insert("Carlisle", "Russellville");
+  cities.insert("Alma", "Carlisle");
+  document.write("====== Data list ====")
+  cities.display();
+  document.write("======&nbspPenghapusan Elemen Data &nbsp======")
+  cities.remove("Carlisle");
+  cities.display();
+  document.write("======&nbsp&nbspData terbalik &nbsp======")
+  cities.dispReverse();
+</script>
+</div>
+<center>
+  <div>
+    <br><br><br>
+    <b>
+      Copyright &copy; 2021
+      TIF'20 A by Alvin Pradana Antony
+    </b>
+</center>
+</div>
+</body>
+</head>

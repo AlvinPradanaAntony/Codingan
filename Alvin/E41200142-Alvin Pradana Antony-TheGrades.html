@@ -1,0 +1,104 @@
+<head>
+  <script language='javascript'>
+    var txt = " - Struktur Data - Linked List - Test Grades - ";
+    var kecepatan = 300;
+    var segarkan = null;
+
+    function bergerak() {
+      document.title = txt;
+      txt = txt.substring(1, txt.length) + txt.charAt(0);
+      segarkan = setTimeout("bergerak()", kecepatan);
+    }
+    bergerak();
+  </script>
+
+<body>
+  <h1>
+    <center>Tugas Struktur Data</center>
+    <center style="font-size: 20; font-style: normal; font-weight: normal;"">
+          Linked List
+        <br>
+        </center>
+    </h1>
+    <h3>
+      <br>
+      Nama : Alvin Pradana Antony <br />
+      NIM : E41200142 <br />
+      Prodi : TIF <br />
+      Gol : A
+    </br>
+    </h3>
+    <hr>
+    <body>
+     <center>
+        <b style=" font-size: 20; font-style: normal">
+      Case Test Grades with Linked List
+      </b>
+    </center>
+</body></br>
+<script>
+  function Node(element) {
+    this.element = element;
+    this.next = null;
+    this.previous = null;
+  }
+
+  function LinkList() {
+    this.head = new Node("head");
+    this.insert = insert;
+    this.find = find;
+    this.showOutput = showOutput;
+
+  }
+
+  function insert(newElement, item) {
+    var newNode = new Node(newElement);
+    var current = this.find(item);
+    newNode.next = current.next;
+    newNode.previous = current;
+    current.next = newNode;
+  }
+
+
+  function find(item) {
+    var currNode = this.head;
+    while (currNode.element != item) {
+      currNode = currNode.next;
+    }
+    return currNode;
+  }
+
+  function showOutput() {
+    var currNode = this.head;
+    document.write("Nilai Ujian yang didapat : </br>")
+    while (!(currNode.next == null)) {
+      document.write(currNode.next.element)
+      console.log(currNode.next.element);
+      currNode = currNode.next;
+      if (currNode.next) {
+        document.write(" , ")
+      }
+    }
+  }
+
+  var nilai = new LinkList();
+  console.log("Nilai Ujian : ");
+  nilai.insert("100", "head");
+  nilai.insert("90", "100");
+  nilai.insert("85", "90");
+  nilai.insert("70", "85");
+  nilai.insert("60", "70");
+  nilai.showOutput();//---> fungsi ini berfungsi menampilkan elemen yang ada pada data list
+</script>
+</div>
+<center>
+  <div>
+    <br><br><br>
+    <b>
+      Copyright &copy; 2021
+      TIF'20 A by Alvin Pradana Antony
+    </b>
+</center>
+</div>
+</body>
+</head>

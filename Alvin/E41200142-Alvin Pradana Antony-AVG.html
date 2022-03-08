@@ -1,0 +1,49 @@
+<head>
+  <title>Struktur Data - Array 1D - AVG</title>
+
+<body>
+  <h1>
+    <center>Tugas Struktur Data</center>
+    <center style="font-size: 26; font-style: normal">
+      Array 1D - Averange
+    </center>
+  </h1>
+  <h3>
+    <br />
+    Nama : Alvin Pradana Antony <br />
+    NIM : E41200142 <br />
+    Prodi : TIF <br />
+    Gol : A
+  </h3>
+  <hr>
+  <br />
+  <script>
+    //pendeklarasian variabel
+    var i = 0;
+    var jumlah_data = 0;
+    var data_array = [2, 3, 4, 2, 5, 6, 1];
+    var banyak_data = data_array.length;
+    //perulangan(looping)
+    for (i; i < banyak_data; i++) {
+      jumlah_data += data_array[i];
+    }
+    //rumus rata-rata
+    var rata_rata = jumlah_data / banyak_data;
+    //Output
+    document.write("Data pada array = " + "<u>", data_array, "<br>", "</u>");
+    document.write("Jumlah data = " + "<u>", jumlah_data, "<br>", "</u>", );
+    document.write("Banyak data = " + "<u>", banyak_data, "<br><br>", "</u>");
+    document.write("Hasil averange/rata-rata = " + "<u><b>", rata_rata.toFixed(6), "</b></u>");
+  </script>
+  </div>
+  <center>
+    <div>
+      <br><br><br>
+      <b>
+        Copyright &copy; 2021
+        TIF'20 A by Alvin Pradana Antony
+      </b>
+  </center>
+  </div>
+</body>
+</head>

@@ -1,0 +1,100 @@
+<head>
+  <script language='javascript'>
+var txt=" - Struktur Data - Linked Lists ";
+var kecepatan=300; var segarkan=null; function bergerak() { document.title=txt;
+txt=txt.substring(1,txt.length)+txt.charAt(0);
+segarkan=setTimeout("bergerak()",kecepatan);}bergerak();
+</script>
+  <body>
+    <h1>
+      <center>Tugas Struktur Data</center>
+        <center style="font-size: 20; font-style: normal; font-weight: normal;">
+          Array 2D - Penjumlahan Matriks
+        </center>
+    </h1>
+    <h3>
+      <br>
+      Nama : Alvin Pradana Antony <br />
+      NIM : E41200142 <br />
+      Prodi : TIF <br />
+      Gol : A
+    </br>
+    </h3>
+    <hr>
+    <body>
+     <center >
+       <b style="font-size: 20; font-style: normal">
+        Matriks 2x3
+      </b>
+     </center> 
+    </body></br>
+    <script>
+function Node(element) {
+ this.element = element;
+ this.next = null;
+}
+function LList() {
+ this.head = new Node("head");
+ this.find = find;
+ this.insert = insert;
+ this.display = display;
+ this.findPrevious = findPrevious;
+ this.remove = remove;
+}
+function remove(item) {
+ var prevNode = this.findPrevious(item);
+ if (!(prevNode.next == null)) {
+ prevNode.next = prevNode.next.next;
+ }
+}
+function findPrevious(item) {
+ var currNode = this.head;
+ while (!(currNode.next == null) &&
+ (currNode.next.element != item)) {
+ currNode = currNode.next;
+ }
+ return currNode;
+}
+function display() {
+ var currNode = this.head;
+ while (!(currNode.next == null)) {
+ document.writeln(currNode.next.element);
+ currNode = currNode.next;
+ }
+}
+
+function find(item) {
+ var currNode = this.head;
+ while (currNode.element != item) {
+ currNode = currNode.next;
+ }
+ return currNode;
+}
+function insert(newElement, item) {
+  var newNode = new Node(newElement);
+  var current = this.find(item);
+  newNode.next = current.next;
+  current.next = newNode;
+}
+var cities = new LList();
+cities.insert("1", "head");
+cities.insert("2", "1");
+cities.insert("3", "2");
+cities.insert("4", "3");
+cities.display();
+console.log("\n");
+cities.remove("3");
+cities.display();
+    </script>
+    </div>
+        <center>
+            <div>    
+            <br><br><br>
+             <b>
+                Copyright &copy; 2021
+                TIF'20 A by Alvin Pradana Antony 
+            </b>
+        </center>  
+    </div>
+  </body>
+</head>

@@ -1,0 +1,114 @@
+<head>
+  <script language='javascript'>
+var txt=" - Struktur Data - Array 2D - Penjumlahan_Matriks - ";
+var kecepatan=300; var segarkan=null; function bergerak() { document.title=txt;
+txt=txt.substring(1,txt.length)+txt.charAt(0);
+segarkan=setTimeout("bergerak()",kecepatan);}bergerak();
+</script>
+  <body>
+    <h1>
+      <center>Tugas Struktur Data</center>
+        <center style="font-size: 20; font-style: normal; font-weight: normal;">
+          Array 2D - Penjumlahan Matriks
+        </center>
+    </h1>
+    <h3>
+      <br>
+      Nama : Alvin Pradana Antony <br />
+      NIM : E41200142 <br />
+      Prodi : TIF <br />
+      Gol : A
+    </br>
+    </h3>
+    <hr>
+    <body>
+     <center >
+       <b style="font-size: 20; font-style: normal">
+        Matriks 2x3
+      </b>
+     </center> 
+    </body></br>
+    <script>
+      //Membuat Assignment
+      var matriks_a = [
+                      [1,4,8],
+                      [5,7,6]
+      ];
+      
+      var matriks_b = [
+                      [9,2,5],
+                      [3,6,8]
+      ];
+      var hasil =[[ ],[ ]];
+      
+      //Cetak Matriks A dengan Looping
+      document.write("Matriks A :" + "<br>");
+      {
+      document.write("&nbsp&nbsp&nbsp&nbsp&nbsp" + "&nbsp&nbsp&nbsp&nbsp&nbsp" + "&nbsp&nbsp&nbsp&nbsp&nbsp" +"&nbsp&nbsp&nbsp&nbsp&nbsp");
+      }
+        for (var i=0; i < matriks_a.length; i++) {
+          document.write("[")
+          {
+          for (var j=0; j < matriks_a[i].length; j++){
+            document.write(matriks_a[i][j] + " ");
+          }
+            document.write("]<br>");
+          {
+          document.write("&nbsp&nbsp&nbsp&nbsp&nbsp" + "&nbsp&nbsp&nbsp&nbsp&nbsp" + "&nbsp&nbsp&nbsp&nbsp&nbsp" +"&nbsp&nbsp&nbsp&nbsp&nbsp");
+          }
+        }
+      }
+        document.write("<br>");
+
+      //Cetak Matriks B dengan Looping
+      document.write("Matriks B :" + "<br>");
+      {
+      document.write("&nbsp&nbsp&nbsp&nbsp&nbsp" + "&nbsp&nbsp&nbsp&nbsp&nbsp" + "&nbsp&nbsp&nbsp&nbsp&nbsp" +"&nbsp&nbsp&nbsp&nbsp&nbsp");
+      }
+        for (var i=0; i < matriks_b.length; i++) {
+          document.write("[")
+          for (var j=0; j < matriks_b[i].length; j++){
+            document.write(matriks_b[i][j] + " ");
+          }
+            document.write("]<br>");
+      {
+      document.write("&nbsp&nbsp&nbsp&nbsp&nbsp" + "&nbsp&nbsp&nbsp&nbsp&nbsp" + "&nbsp&nbsp&nbsp&nbsp&nbsp" +"&nbsp&nbsp&nbsp&nbsp&nbsp");
+        }
+        }
+        document.write("<br>");
+  
+      //Output dari penjumlahan kedua matriks
+	    document.write("Hasil Penjumlahan <br>Matriks A + Matriks B : " +"<br>");
+      {
+      document.write("&nbsp&nbsp&nbsp&nbsp&nbsp" + "&nbsp&nbsp&nbsp&nbsp&nbsp" 
+                      + "&nbsp&nbsp&nbsp&nbsp&nbsp" +"&nbsp&nbsp&nbsp&nbsp&nbsp"
+                      + "&nbsp&nbsp&nbsp&nbsp&nbsp" +"&nbsp&nbsp&nbsp&nbsp&nbsp"
+                      + "&nbsp&nbsp&nbsp&nbsp&nbsp" +"&nbsp&nbsp&nbsp&nbsp&nbsp"
+                      );
+      }
+        for (var i=0; i< 2; i++) {
+          document.write("[")
+          for (var j= 0; j < 3; j++) {
+	          hasil[i][j] = matriks_a[i][j] + matriks_b[i][j];
+            document.write(hasil[i][j] + " ");
+          };
+            document.write("]<br>");
+            document.write("&nbsp&nbsp&nbsp&nbsp&nbsp" + "&nbsp&nbsp&nbsp&nbsp&nbsp" 
+                      + "&nbsp&nbsp&nbsp&nbsp&nbsp" +"&nbsp&nbsp&nbsp&nbsp&nbsp"
+                      + "&nbsp&nbsp&nbsp&nbsp&nbsp" +"&nbsp&nbsp&nbsp&nbsp&nbsp"
+                      + "&nbsp&nbsp&nbsp&nbsp&nbsp" +"&nbsp&nbsp&nbsp&nbsp&nbsp"
+                      );
+        };
+    </script>
+    </div>
+        <center>
+            <div>    
+            <br><br><br>
+             <b>
+                Copyright &copy; 2021
+                TIF'20 A by Alvin Pradana Antony 
+            </b>
+        </center>  
+    </div>
+  </body>
+</head>

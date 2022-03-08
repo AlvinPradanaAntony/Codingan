@@ -1,0 +1,185 @@
+<head>
+  <script language='javascript'>
+    var txt = " - Struktur Data - Linked List - Legend Story's - ";
+    var kecepatan = 300;
+    var segarkan = null;
+
+    function bergerak() {
+      document.title = txt;
+      txt = txt.substring(1, txt.length) + txt.charAt(0);
+      segarkan = setTimeout("bergerak()", kecepatan);
+    }
+    bergerak();
+  </script>
+
+<body>
+  <h1>
+    <center>Tugas Struktur Data</center>
+    <center style="font-size: 20; font-style: normal; font-weight: normal;"">
+          Linked List 
+        <br>
+        </center>
+    </h1>
+    <h3>
+      <br>
+      Nama : Alvin Pradana Antony <br />
+      NIM : E41200142 <br />
+      Prodi : TIF <br />
+      Gol : A
+    </br>
+    </h3>
+    <hr>
+    <body>
+     <center>
+        <b style=" font-size: 20; font-style: normal">
+      Case Legend Story's
+      </b>
+    </center>
+</body></br>
+<script>
+  function Node(element) {
+    this.element = element;
+    this.next = null;
+    this.previous = null;
+  }
+
+  function LinkList() {
+    this.head = new Node("head");
+    this.head.next = this.head;
+    this.insert = insert;
+    this.find = find;
+    this.findPrevious = findPrevious;
+    this.remove = remove;
+    this.advance = advance;
+    this.show = show;
+    this.survivor = survivor;
+    this.count = count;
+    this.showElement = showElement;
+    this.showOutput = showOutput;
+  }
+
+  function insert(newElement, item) {
+    var newNode = new Node(newElement);
+    var current = this.find(item);
+    newNode.next = current.next;
+    newNode.previous = current;
+    current.next = newNode;
+  }
+
+  function find(item) {
+    var currNode = this.head;
+    while (currNode.element !== item) {
+      currNode = currNode.next;
+    }
+    return currNode;
+  }
+
+  function findPrevious(item) {
+    var currNode = this.head;
+    while (!(currNode.next == this.head) &&
+      (currNode.next.element != item)) {
+      currNode = currNode.next;
+    }
+    return currNode;
+  }
+
+  function remove(item) {
+    var prevNode = this.findPrevious(item);
+    if (!(prevNode.next === this.head)) {
+      prevNode.next = prevNode.next.next;
+    }
+  }
+
+  function count() {
+    var currNode = this.head;
+    var count = 0;
+    while (!(currNode.next === this.head)) {
+      count++
+      currNode = currNode.next;
+    }
+    return count;
+  }
+
+  function show(n) {
+    var currNode = this.head;
+    for (var i = 0; i <= n; i++) {
+      currNode = currNode.next;
+    }
+    document.write(currNode.element);
+  }
+
+  function advance(item, n) {
+    var currNode = this.find(item);
+    for (let i = n; i > 0; i--) {
+      currNode = currNode.next;
+    }
+    return currNode;
+  }
+
+  function survivor(number, position) {
+    var survivors = new LinkList();
+    var currNode = survivors.head;
+    for (let i = 1; i <= number; i++) {
+      survivors.insert(i, currNode.element);
+      currNode = currNode.next;
+    }
+    var currItem = survivors.head.element;
+    while (survivors.count() > 2) {
+      var killNode = survivors.advance(currItem, position);
+      currItem = killNode.next.element;
+      survivors.remove(killNode.element);
+    }
+    survivors.showOutput();
+  }
+
+  function showElement() {
+    var currNode = this.head;
+    document.write("Data List :");
+    while (!(currNode.next == null) &&
+      !(currNode.next.element == "head")) {
+      document.write("</br>")
+      document.writeln(currNode.next.element);
+      console.log(currNode.next.element);
+      currNode = currNode.next;
+    }
+  }
+
+  function showOutput() {
+    var currNode = this.head;
+    document.write("<br>");
+    document.write("<br>Menggunakan  Circularly Linked List menjadi : ");
+    while (!(currNode.next == null) &&
+      !(currNode.next.element == "head")) {
+      document.write("</br>")
+      document.writeln(currNode.next.element);
+      console.log(currNode.next.element);
+      currNode = currNode.next;
+    }
+  }
+
+  var compatroits = new LinkList();
+  console.log("Data List : ")
+  compatroits.insert(10, "head");
+  compatroits.insert(12, 10);
+  compatroits.insert(20, 12);
+  compatroits.insert(22, 20);
+  compatroits.insert(30, 22);
+  compatroits.insert(35, 30);
+  compatroits.insert(40, 35);
+  compatroits.insert(45, 40);
+  compatroits.showElement();
+  console.log("\nMenjadi : ")
+  compatroits.survivor(22, 12); //---> posisi n didalam lingkaran
+</script>
+</div>
+<center>
+  <div>
+    <br><br><br>
+    <b>
+      Copyright &copy; 2021
+      TIF'20 A by Alvin Pradana Antony
+    </b>
+</center>
+</div>
+</body>
+</head>

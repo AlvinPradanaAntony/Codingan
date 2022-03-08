@@ -1,0 +1,134 @@
+<head>
+  <script language='javascript'>
+    var txt = " - Struktur Data - Queue - Palindome - ";
+    var kecepatan = 300;
+    var segarkan = null;
+
+    function bergerak() {
+      document.title = txt;
+      txt = txt.substring(1, txt.length) + txt.charAt(0);
+      segarkan = setTimeout("bergerak()", kecepatan);
+    }
+    bergerak();
+  </script>
+
+<body>
+  <h1>
+    <center>Tugas Struktur Data</center>
+    <center style="font-size: 20; font-style: normal; font-weight: normal;"">
+          Palindrome
+        <br>
+        </center>
+    </h1>
+    <h3>
+      <br>
+      Nama : Alvin Pradana Antony <br />
+      NIM : E41200142 <br />
+      Prodi : TIF <br />
+      Gol : A
+    </br>
+    </h3>
+    <hr>
+    <body>
+     <center>
+        <b style=" font-size: 20; font-style: normal">
+      Case Palindrome
+      </b>
+    </center>
+</body></br>
+     <script>
+        function Deque() {
+            this.arr = []
+            this.addFront = addFront
+            this.addBack = addBack
+            this.delFront = delFront
+            this.delBack = delBack
+            this.enqueue = enqueue
+            this.dequeue = dequeue
+            this.front = front
+            this.back = back
+            this.panjang = panjang
+            this.printArray = printArray
+            this.isEmpty = isEmpty
+        }
+
+        function addFront(element) {
+            this.arr.unshift(element)
+            document.writeln(`Menambah data dari depan : ${element} <br/>`)
+        }
+        function addBack(element) {
+            this.arr.push(element)
+            document.writeln(`Menambah data dari belakang : ${element} <br/>`)
+        }
+        
+
+        function delFront() {
+            document.writeln(`Mengapus data dari depan : ${this.arr[0]} <br/>`)
+            this.arr.shift()
+        }
+
+        function delBack() {
+            document.writeln(`Menghapus data dari belakang : ${this.arr[this.arr.length - 1]} <br/>`)
+            this.arr.pop()
+        }
+
+        function enqueue(element) {
+            return this.arr.push(element)
+        }
+
+        function dequeue() {
+            this.arr.shift()
+        }
+
+        function isEmpty() {
+            return this.arr.panjang == 0
+        }
+
+        function front() {
+            return this.arr[0]
+        }
+
+        function panjang() {
+            return this.arr.panjang
+        }
+
+        function back() {
+            return this.arr[this.arr.panjang - 1]
+        }
+
+        function printArray() {
+            document.writeln('Menampilkan data : <br>' )
+            document.writeln('-------------------------<br>');
+            let data = ''
+            for (let i = 0; i < this.arr.length; i++) {
+                const d = this.arr[i];
+                data += d + ' '
+            }
+            document.writeln(data);
+            document.writeln('<br>-------------------------<br>');
+        }
+
+        const d = new Deque()
+        console.log('Menambahkan item');
+        d.addFront('Madam')
+        d.addFront('Refer')
+        d.addBack('Madam')
+        d.addBack('Refer')
+        d.printArray()
+        d.delFront()
+        d.delBack()
+        console.log('Setelah menghapus item');
+        d.printArray()
+    </script>
+  </div>
+  <center>
+    <div>
+      <br><br><br>
+      <b>
+        Copyright &copy; 2021
+        TIF'20 A by Alvin Pradana Antony
+      </b>
+  </center>
+  </div>
+</body>
+</head>

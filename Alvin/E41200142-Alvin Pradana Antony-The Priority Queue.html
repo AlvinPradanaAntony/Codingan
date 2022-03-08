@@ -1,0 +1,135 @@
+<head>
+  <script language='javascript'>
+    var txt = " - Struktur Data - Queue - The Priority Queue - ";
+    var kecepatan = 300;
+    var segarkan = null;
+
+    function bergerak() {
+      document.title = txt;
+      txt = txt.substring(1, txt.length) + txt.charAt(0);
+      segarkan = setTimeout("bergerak()", kecepatan);
+    }
+    bergerak();
+  </script>
+
+<body>
+  <h1>
+    <center>Tugas Struktur Data</center>
+    <center style="font-size: 20; font-style: normal; font-weight: normal;"">
+          The Priority Queue
+        <br>
+        </center>
+    </h1>
+    <h3>
+      <br>
+      Nama : Alvin Pradana Antony <br />
+      NIM : E41200142 <br />
+      Prodi : TIF <br />
+      Gol : A
+    </br>
+    </h3>
+    <hr>
+    <body>
+     <center>
+        <b style=" font-size: 20; font-style: normal">
+      Case Modifiy The Priority Queue
+      </b>
+    </center>
+</body></br>
+    <script>
+        function Queue() {
+            this.arr = []
+            this.enqueue = enqueue
+            this.dequeue = dequeue
+            this.front = front
+            this.back = back
+            this.toString = toString
+            this.dequeue = dequeue
+        }
+
+        function enqueue(element) {
+            return this.arr.push(element)
+        }
+
+        function isEmpty() {
+            return this.arr.panjang == 0
+        }
+
+        function front() {
+            return this.arr[0]
+        }
+
+        function panjang() {
+            return this.arr.panjang
+        }
+
+        function back() {
+            return this.arr[this.arr.panjang - 1]
+        }
+
+        function Patient(name, code) {
+            this.name = name
+            this.code = code
+        }
+
+        function dequeue() {
+            document.writeln('Pasien dirawat : ' + this.arr[0].name + '<br>');
+            return this.arr.shift()
+        }
+
+        function toString() {
+            document.writeln('Pasien yang menunggu dirawat : <br>')
+            let data = ''
+            if(this.arr.length == 0) {
+               document.writeln('Pasien kosong <br>');
+            }
+
+            for (let i = 0; i < this.arr.length; ++i) {
+               data += this.arr[i].name + " kode : " + this.arr[i].code + "<br>"
+                
+            }
+            document.writeln(data)
+            document.writeln('-------------------------<br>')
+        }
+
+        /// membuat antrian pasien
+        
+        let p = new Patient("Karmila", 8)
+        const ed = new Queue()
+        ed.enqueue(p)
+        p = new Patient("Jones", 3)
+        ed.enqueue(p)
+        p = new Patient("Fehrenbach", 6);
+        ed.enqueue(p);
+        p = new Patient("Brown", 1);
+        ed.enqueue(p);
+        
+        // sorting kode
+
+        ed["arr"].sort(function(x, y) {
+            return y.code - x.code
+        })
+
+        // operasi pasien
+
+        let seen = ed.dequeue()
+        console.log(ed.toString());
+        seen = ed.dequeue()
+        console.log(ed.toString());
+        seen = ed.dequeue()
+        console.log(ed.toString());
+        seen = ed.dequeue()
+        console.log(ed.toString());
+    </script>
+  </div>
+  <center>
+    <div>
+      <br><br><br>
+      <b>
+        Copyright &copy; 2021
+        TIF'20 A by Alvin Pradana Antony
+      </b>
+  </center>
+  </div>
+</body>
+</head>

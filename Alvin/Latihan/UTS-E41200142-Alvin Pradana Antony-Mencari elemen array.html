@@ -1,0 +1,64 @@
+<head>
+  <title>UTS-Struktur Data-Mencari Elemen Array</title>
+  <body>
+    <h1>
+      <center>UTS Struktur Data</center>
+        <center style="font-size: 26; font-style: normal">
+          Mencari Elemen Array <br>
+        </center>
+    </h1>
+    <h3>
+      <br />
+      Nama : Alvin Pradana Antony <br />
+      NIM : E41200142 <br />
+      Prodi : TIF <br />
+      Gol : A
+    </h3>
+    <hr>
+    <br />
+    <script>
+    function Linearsearch(arr, jumlah_array, target){
+    let i;
+    for (i = 0; i < jumlah_array; i++)
+        if (arr[i] == target)
+            return i;
+    return -1;
+}
+ 
+// Inisialisasi
+ 
+    let arr = [ 2, 3, 4, 10, 40 ];
+    let target = 10;
+    let jumlah_array = arr.length;
+
+    document.write("Elemen data = ")
+
+    for (let i = 0; i < arr.length; i++) {
+    document.writeln(arr[i])
+      
+    }
+        document.write("<br>")
+        document.write("Elemen yang dicari = " + target)
+        document.write("<br>")
+ 
+    // Memanggil fungsi linearsearch
+    let result = Linearsearch(arr, jumlah_array, target);
+
+    if (result == -1){
+        document.write("Tidak ada elemen data yang dimaksud")
+    }else{
+        document.write("Elemen data berada pada index " + result);
+    }
+    </script>
+    </div>
+        <center>
+            <div id="footer" >    
+            <br><br><br><br>
+             <b>
+                Copyright &copy; 2021
+                TIF'20 A by Alvin Pradana Antony 
+            </b>
+        </center>  
+    </div>
+  </body>
+</head>

@@ -1,0 +1,49 @@
+<head>
+  <body>
+    <script>
+      //pendeklarasian variabel
+      var i = 0;
+      var data_array = [2, 3, 4, 2, 5, 6, 0];
+      for (var key in data_array) {
+        document.write(
+          "Index : " + key + "  Data : " + data_array[key],
+          "<br>"
+        );
+      }
+      document.write("<br><br><br><br><br><br><br><br><br><br>");
+      var i = 0;
+      var data_array = [2, 3, 4, 2, 5, 6, 0];
+      var banyak_data = data_array.length;
+      var index = data_array;
+      var Min = data_array[0];
+      var Max = data_array[0];
+      //perulangan(looping)
+      for (i; i < banyak_data; i++) {
+        //kondisi
+        if (data_array[i] >= Max) {
+          Max = data_array[i];
+        }
+        if (data_array[i] <= Min) {
+          Min = data_array[i];
+        }
+      }
+      for (var key in banyak_data) {
+        document.write("Index : " + key + "<br>" + "Max = " + Max[key]);
+      }
+      //Output
+      document.write(
+        "Data pada array = " + "<u>",
+        data_array,
+        "<br><br>",
+        "</u>"
+      );
+      document.write(
+        "Bilangan Minimum = " + "<u><b>",
+        Min,
+        "<br>",
+        "</b></u>" 
+      );
+      document.write("Bilangan Maximum = " + "<u><b>", Max, "<br>", "</b></u>");
+    </script>
+  </body>
+</head>

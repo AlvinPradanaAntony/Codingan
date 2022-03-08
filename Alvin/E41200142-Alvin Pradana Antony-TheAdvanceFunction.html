@@ -1,0 +1,154 @@
+<head>
+	<script language='javascript'>
+		var txt = " - Struktur Data - Linked List - Implementation The Advance Function - ";
+		var kecepatan = 300;
+		var segarkan = null;
+
+		function bergerak() {
+			document.title = txt;
+			txt = txt.substring(1, txt.length) + txt.charAt(0);
+			segarkan = setTimeout("bergerak()", kecepatan);
+		}
+		bergerak();
+	</script>
+
+<body>
+	<h1>
+		<center>Tugas Struktur Data</center>
+		<center style="font-size: 20; font-style: normal; font-weight: normal;"">
+          Linked List<br>
+        </center>
+    </h1>
+    <h3>
+      <br>
+      Nama : Alvin Pradana Antony <br />
+      NIM : E41200142 <br />
+      Prodi : TIF <br />
+      Gol : A
+    </br>
+    </h3>
+    <hr>
+    <body>
+     <center>
+        <b style=" font-size: 20; font-style: normal">
+			Implementation The Advance Function
+			</b>
+		</center>
+</body></br>
+<script>
+	function Node(element) {
+		this.element = element;
+		this.next = null;
+		this.previous = null;
+	}
+
+	function LinkList() {
+		this.head = new Node("head");
+		this.insert = insert;
+		this.find = find;
+		this.remove = remove;
+		this.advance = advance;
+		this.showElement = showElement;
+		this.showOutput = showOutput;
+	}
+
+	function insert(newElement, item) {
+		var newNode = new Node(newElement);
+		var current = this.find(item);
+		newNode.next = current.next;
+		newNode.previous = current;
+		current.next = newNode;
+	}
+
+	function find(item) {
+		var currNode = this.head;
+		while (currNode.element != item) {
+			currNode = currNode.next;
+		}
+		return currNode;
+	}
+
+	function remove(item) {
+		var currNode = this.find(item);
+		if (!(currNode.next == null)) {
+			currNode.previous.next = currNode.next;
+			currNode.next.previous = currNode.previous;
+			currNode.next = null;
+			currNode.previous = null;
+		}
+	}
+
+	function advance(n) {
+		var currNode = this.head;
+		var forward = currNode.next
+		var i = 0;
+		while ((currNode.next !== null) &&
+			(i < n + 1)) {
+			currNode = currNode.next
+			i++
+		}
+		this.insert(forward.element, currNode.element);
+		this.remove(forward.element);
+		this.showOutput();
+	}
+
+	function showElement() {
+		var currNode = this.head;
+		document.write("Data List :");
+		document.write("<br>");
+		while (!(currNode.next == null)) {
+			document.writeln(currNode.next.element);
+			console.log(currNode.next.element);
+			currNode = currNode.next;
+			if (currNode.next) {
+				document.write(" , ")
+			}
+		}
+	}
+
+	function showOutput() {
+		var currNode = this.head;
+		document.write("<br>");
+		document.write("<br>Menggunakan Advance Function menjadi : <br>");
+		document.write("");
+		while (!(currNode.next == null)) {
+			document.writeln(currNode.next.element);
+			console.log(currNode.next.element);
+			currNode = currNode.next;
+			if (currNode.next) {
+				document.write(" , ")
+			}
+		}
+	}
+
+	var angka = new LinkList();
+	console.log("Data List : ")
+	angka.insert("10", "head");
+	angka.insert("20", "10");
+	angka.insert("30", "20");
+	angka.insert("40", "30");
+	angka.insert("50", "40");
+	angka.showElement();
+	console.log("\nMenjadi : ");
+
+	angka.advance(2);
+	/*-->Karena head yang akan berpindah posisi mengikuti 
+	                       posisi yang dinginkan berdasarkan index. Jadi ketika 
+	                       memasukakan nilai parameter index dari data di dalam 
+	                       list contoh index 3 maka node sebagai head saat ini akan 
+	                       berpindah posisi ke posisi index 3 dan tail/next node nya 
+	                       akan ikut berpindah posisi maju menempati tempat yang kosong 
+	                     */
+</script>
+</div>
+<center>
+	<div>
+		<br><br><br>
+		<b>
+			Copyright &copy; 2021
+			TIF'20 A by Alvin Pradana Antony
+		</b>
+</center>
+</div>
+</body>
+</head>

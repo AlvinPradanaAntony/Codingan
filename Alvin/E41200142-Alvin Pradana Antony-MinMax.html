@@ -1,0 +1,53 @@
+<head>
+  <title>Struktur Data - Array 1D - MinMax</title>
+  <body>
+    <h1>
+      <center>Tugas Struktur Data</center>
+        <center style="font-size: 26; font-style: normal">
+          Array 1D - MinMax
+        </center>
+    </h1>
+    <h3>
+      <br />
+      Nama : Alvin Pradana Antony <br />
+      NIM : E41200142 <br />
+      Prodi : TIF <br />
+      Gol : A
+    </h3>
+    <hr>
+    <br />
+    <script>
+      //pendeklarasian variabel
+      var i = 0;
+      var data_array = [2, 3, 4, 2, 5, 6,0];
+      var banyak_data = data_array.length;
+      var Min = data_array[0];
+      var Max = data_array[0];
+      //perulangan(looping)
+      for (i; i < banyak_data; i++) {
+      //kondisi
+        if(data_array[i] <= Min){
+        Min = data_array[i]
+        }
+        if(data_array[i] >= Max ){
+        Max = data_array[i]
+        }
+      }
+      
+      //Output
+        document.write("Data pada array = " + "<u>", data_array, "<br><br>" ,"</u>");
+        document.write("Bilangan Minimum = " + "<u><b>", Min, "<br>", "</b></u>"); 
+        document.write("Bilangan Maximum = " + "<u><b>", Max,"<br>", "</b></u>");
+    </script>
+    </div>
+        <center>
+            <div id="footer" >    
+            <br><br><br><br>
+             <b>
+                Copyright &copy; 2021
+                TIF'20 A by Alvin Pradana Antony 
+            </b>
+        </center>  
+    </div>
+  </body>
+</head>

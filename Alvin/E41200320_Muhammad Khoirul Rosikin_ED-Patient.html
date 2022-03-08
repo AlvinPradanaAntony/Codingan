@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Stack-ED_Patient</h1>
+    <h3>Muhammad Khoirul Rosikin</h3>
+    <h3>E41200320</h3>
+    <h3>Teknik Informatika A</h3>
+    <script>
+        //Function Patient
+        function Patient(name, code) {
+            this.name = name;
+            this.code = code;
+        }
+        
+        //Defining the constructor function:
+        function Queue() {
+            this.dataStore = [];
+            this.enqueue = enqueue;
+            this.dequeue = dequeue;
+            this.front = front;
+            this.back = back;
+            this.toString = toString;
+            this.empty = empty;
+            this.reDequeue = reDequeue;
+            this.recString = recString;
+        }
+
+        //This function to adds an element to the end of a queue
+        function enqueue(element) {
+            this.dataStore.push(element);
+        }
+
+        //This function to removes an element from the front of a queue
+        function dequeue() {
+            var priority = this.dataStore[0].code;
+            for (var i = 1; i < this.dataStore.length; ++i) {
+                if (this.dataStore[i].code < priority) {
+                    priority = i;
+                }
+            }
+            return this.dataStore.splice(priority,1);
+        }
+
+        //Function examine the front and back elements of a queue
+        function front() {
+            return this.dataStore[0];
+        }
+        function back() {
+            return this.dataStore[this.dataStore.length - 1];
+        }
+
+        //Function to display all the elements in a queue
+        function toString() {
+            var retStr = "";
+            for (var i = 0; i < this.dataStore.length; ++i) {
+                retStr += this.dataStore[i].name + " code: " 
+                + this.dataStore[i].code + "</br>";
+            }
+            return retStr;
+        }
+
+        //Function that lets us know if a queue is empty
+        function empty() {
+            if (this.dataStore.length == 0) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        function reDequeue(){
+            var priority = this.dataStore[0].code;
+            var loop = 1;
+            while(loop < this.dataStore.length){
+                if (this.dataStore[loop].code > priority) {
+                priority = loop;
+                }
+                loop++;
+            }
+            return this.dataStore.splice(priority,1);
+        }
+
+        //Function to display reverse element
+        function recString(element) {
+            element = this.dataStore[0];
+            return element.split('').reverse().join('').toLowerCase();
+        }
+        
+        //Ouput program
+        var p = new Patient();
+        var ed = new Queue();
+        p = new Patient("Khoirul", 1);
+        ed.enqueue(p);
+        p = new Patient("Aminah", 6);
+        ed.enqueue(p);
+        p = new Patient("Rohmad", 3);
+        ed.enqueue(p);
+        p = new Patient("Rani", 4);
+        ed.enqueue(p);
+        p = new Patient("Nazwa", 2);
+        ed.enqueue(p);
+
+        
+        //Choose menu_system
+        var menu_system = prompt ("Choose from the following activities : \n" +
+        "a. Patient enters ED.\n" +
+        "b. Patient is seen by doctor.\n" +
+        "c. Display list of patients waiting to be seen.");
+        
+        if (menu_system == "a") {
+            document.write  ("a. Patient enters ED. </br>" + ed.toString());
+        }
+        var seen = ed.reDequeue();
+        if (menu_system == "b") {
+            document.write("b. Patient is seen by doctor. </br>" + `${seen[0].name}`)
+        }
+        if (menu_system == "c") {
+            document.write("c. Display list of patients waiting to be seen. </br>" + `${ed.toString()}`)
+        }
+        if (menu_system != "a" & menu_system != "b" & menu_system != "c") {
+            document.write("Option not available.")
+        }
+    </script>
+</body>
+</html>

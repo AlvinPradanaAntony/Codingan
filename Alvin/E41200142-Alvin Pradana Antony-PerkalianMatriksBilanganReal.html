@@ -1,0 +1,92 @@
+<head>
+  <script language='javascript'>
+var txt=" - Struktur Data - Array 2D - Perkalian_Matriks_Bilangan_Real - ";
+var kecepatan=300; var segarkan=null; function bergerak() { document.title=txt;
+txt=txt.substring(1,txt.length)+txt.charAt(0);
+segarkan=setTimeout("bergerak()",kecepatan);}bergerak();
+</script>
+  <body>
+    <h1>
+      <center>Tugas Struktur Data</center>
+        <center style="font-size: 20; font-style: normal; font-weight: normal;"">
+          Array 2D - Perkalian Matriks <br>
+          Dengan Bilangan real
+        </center>
+    </h1>
+    <h3>
+      <br>
+      Nama : Alvin Pradana Antony <br />
+      NIM : E41200142 <br />
+      Prodi : TIF <br />
+      Gol : A
+    </br>
+    </h3>
+    <hr>
+    <body>
+     <center>
+        <b style="font-size: 20; font-style: normal">
+        Matriks 2x3
+      </b>
+     </center> 
+    </body></br>
+    <script>
+      //Membuat Assignment
+      var matriks_a = [
+                      [3,4,5],
+                      [2,6,1]
+      ];
+      var bil_real = 2;
+      var hasil = [[],[]];
+
+      //Cetak Matriks A dengan Looping
+      document.write("Matriks A :" + "<br>");
+      {
+      document.write("&nbsp&nbsp&nbsp&nbsp&nbsp" + "&nbsp&nbsp&nbsp&nbsp&nbsp" 
+                    +"&nbsp&nbsp&nbsp&nbsp&nbsp" + "&nbsp&nbsp&nbsp&nbsp&nbsp");
+      }
+        for (var i=0; i < matriks_a.length; i++) {
+          document.write("[")       
+          for (var j=0; j < matriks_a[i].length; j++){
+            document.write(matriks_a[i][j] + " ");
+          }
+            document.write("]<br>");
+          {
+            document.write("&nbsp&nbsp&nbsp&nbsp&nbsp" + "&nbsp&nbsp&nbsp&nbsp&nbsp" 
+                          +"&nbsp&nbsp&nbsp&nbsp&nbsp" +"&nbsp&nbsp&nbsp&nbsp&nbsp");
+          }
+      }
+        document.write("<br>");
+
+      //Output dari hasil perkalian matriks dengan bilanagn real
+	    document.write("Maka 2A adalah " +"<br>");
+      {
+      document.write("<br>&nbsp&nbsp&nbsp&nbsp&nbsp" + "&nbsp&nbsp&nbsp&nbsp&nbsp" 
+                      + "&nbsp&nbsp&nbsp&nbsp&nbsp" +"&nbsp&nbsp&nbsp&nbsp&nbsp"
+                      );
+      }
+      for (var i=0; i< matriks_a.length; i++) {
+        document.write("[")
+        for (var j= 0; j < matriks_a[i].length; j++) {
+	        hasil[i][j] = matriks_a[i][j] * bil_real;
+          document.write(hasil[i][j] + " ");
+        };
+          document.write("]<br>");
+      {
+      document.write("&nbsp&nbsp&nbsp&nbsp&nbsp" + "&nbsp&nbsp&nbsp&nbsp&nbsp" 
+                      + "&nbsp&nbsp&nbsp&nbsp&nbsp" +"&nbsp&nbsp&nbsp&nbsp&nbsp"
+                      );
+      }
+      }
+    </script>
+    </div>
+        <center>
+            <div>    
+            <br><br><br>
+             <b>
+                Copyright &copy; 2021
+                TIF'20 A by Alvin Pradana Antony 
+            </b>
+        </center>  
+    </div>
+  </body>
+</head>
