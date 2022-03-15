@@ -4,6 +4,10 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+// function HelloComponent(){
+//   return <h1>Hello Component</h1>;
+// }
+
 // class StateFullComponent extends React.Component{
 //   render(){
 //     return <p>StateFullComponent</p>
