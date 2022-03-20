@@ -3,7 +3,8 @@ import React, { Component } from "react";
 // import Header from "./Header";
 // import List from "./List";
 // import HelloComponent from "./components/HelloComponent";
-import LoginComponent from "./components/LoginComponent";
+// import LoginComponent from "./components/LoginComponent";
+import Login from "./components/myLogin";
 
 class App extends Component {
   render() {
@@ -16,7 +17,8 @@ class App extends Component {
       //   <Footer judul="Halaman Footer" nama="Aufa" />
       // </div>
       <div>
-        <LoginComponent/>
+        {/* <LoginComponent/> */}
+        <Login />
       </div>
     );
   }
