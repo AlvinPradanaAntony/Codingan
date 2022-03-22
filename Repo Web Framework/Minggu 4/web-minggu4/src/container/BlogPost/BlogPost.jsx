@@ -32,12 +32,9 @@ class BlogPost extends Component {
     this.ambilDataDariServerAPI(); // ambil data dari server API lokal
   }
 
-  handleTambahArtikel = (event) => {
-    // fungsi untuk meng-hadle form tambah data actikel
-    // clonning data state insertArtikel ke dalam variabel formInsertArtikel
-    // digunakan untuk menyimpan waktu (sebagai ID artikel)
-    let formInsertArtikel = { ...this.state.insertArtikel };
-    let timestamp = new Date().getTime();
+  handleTambahArtikel = (event) => { // fungsi untuk meng-hadle form tambah data actikel
+    let formInsertArtikel = { ...this.state.insertArtikel }; // clonning data state insertArtikel ke dalam variabel formInsertArtikel
+    let timestamp = new Date().getTime();     // digunakan untuk menyimpan waktu (sebagai ID artikel)
     formInsertArtikel["id"] = timestamp;
     formInsertArtikel[event.target.name] = event.target.value; // menyimpan data onchange ke formInsertArtikel sesuai dengan target yg diisi
     this.setState({
@@ -45,7 +42,7 @@ class BlogPost extends Component {
     });
   };
 
-  handleTombolsimpan = () => {
+  handleTombolSimpan = () => {
     // fungsi untuk meng-handle tombol simpan
     fetch("http://localhost:3001/posts", {
       method: "post", // method POST untuk input/insert data
@@ -61,7 +58,7 @@ class BlogPost extends Component {
 
   handleHapusArtikel = (data) => {
     // fungsi yang meng-handle button action hapus data
-    fetch("http://localhost:3001/posts/${data}", { method: "DELETE" }) // alamat URL API yang ingin kita HAPUS datanya
+    fetch(`http://localhost:3001/posts/${data}`, { method: "DELETE" }) // alamat URL API yang ingin kita HAPUS datanya
       .then((res) => {
         // ketika proses hapus berhasil, maka ambil data dari server API lokal
         this.ambilDataDariserverAPI();
@@ -79,8 +76,11 @@ class BlogPost extends Component {
   //   );
   // }
 
+
+
   render() {
     return (
+      
       <div className="post-artikel">
         <div className="form pb-2 border-bottom">
           <div className="form-group row">
