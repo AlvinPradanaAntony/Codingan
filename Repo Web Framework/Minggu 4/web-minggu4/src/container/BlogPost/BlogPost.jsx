@@ -54,6 +54,7 @@ class BlogPost extends Component {
     }).then((Response) => {
       this.ambilDataDariserverAPI(); // reload / refresh data
     });
+    window.location.reload();
   };
 
   handleHapusArtikel = (data) => {
