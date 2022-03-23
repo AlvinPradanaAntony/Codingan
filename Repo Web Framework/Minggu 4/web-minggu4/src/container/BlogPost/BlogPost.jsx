@@ -3,6 +3,20 @@ import "./BlogPost.css";
 import Post from "../../components/BlogPost/Post";
 
 class BlogPost extends Component {
+  handleReset = () => {
+    Array.from(document.querySelectorAll("input, textarea")).forEach(
+      input => (input.value = "")
+    );
+      this.setState({
+        insertArtikel: { // variable yang digunakan untuk menampung sementara data yang akan di insert
+          userId: 1, // kolom userId, id, title, dan body sama, mengikuti kolom yang ada pada listArtikel.json
+          id: 1,
+          title: "",
+          body: "",
+        }
+      });
+  };
+
   state = { // komponen state dari React untuk statefull component
     listArtikel: [], // yariabel array yang digunakan untuk menyimpan data API
     insertArtikel: { // variable yang digunakan untuk menampung sementara data yang akan di insert
@@ -58,6 +72,7 @@ class BlogPost extends Component {
     }).then((Response) => {
       this.ambilDataDariServerAPI(); // reload / refresh data
     });
+    this.handleReset(); // reset input setelah tombol simpan di klik
   };
 
   // render() {
