@@ -19,7 +19,7 @@ const PostDataMahasiswa = (props) => {
 
   return (
       <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
-        <div className="card custom-radius r-8 color-black border-0 mb-4">
+        <div className="card custom-radius custom-card r-12 color-black border-0 mb-4">
           <div className="card-body p-0">
             <img src={props.gambar} className="bd-placeholder-img"></img>
             <div className="p-3">

@@ -7,7 +7,7 @@ import PostDataMahasiswa from "../PostDataMahasiswa";
 // buat class dataMahasiswa yang extends dari Component
 class DataMahasiswa extends Component {
   handleReset = () => {
-    Array.from(document.querySelectorAll("input, textarea")).forEach((input) => (input.value = ""));
+    Array.from(document.querySelectorAll("input, textarea, select")).forEach((input) => (input.value = ""));
     this.setState({
       insertData: {
         // variable yang digunakan untuk menampung sementara data yang akan di insert

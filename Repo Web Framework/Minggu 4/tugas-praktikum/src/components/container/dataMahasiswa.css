@@ -15,6 +15,9 @@ body {
 .custom-radius {
   border-radius: 20px;
 }
+.custom-card{
+  min-height: 500px;
+}
 .custom-bodyCard {
   background-color: #232527;
   border: none;
@@ -95,3 +98,4 @@ body {
   background-color: rgba(242,17,54,.12)!important;
   color: #e63c3c!important;
 }
+
