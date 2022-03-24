@@ -1,0 +1,60 @@
+{
+  "mahasiswa": [
+    {
+      "id": 1,
+      "nim": "D31201364",
+      "nama": "Tri Prasetyo Ramadani",
+      "alamat": "Jl. Soekarno Hatta No. 9 Malang",
+      "hp": "081802023249",
+      "angkatan": 2018,
+      "status": "Aktif"
+    },
+    {
+      "id": 2,
+      "nim": "H41201192",
+      "nama": "Chico Pangihutan",
+      "alamat": "Jl. Menur No. 9 Surabaya",
+      "hp": "081802023523",
+      "angkatan": 2014,
+      "status": "Lulus"
+    },
+    {
+      "idUser": 1,
+      "nim": "E41200142",
+      "nama": "Alvin Pradana Antony",
+      "alamat": "Jakarta",
+      "hp": "0898873812",
+      "angkatan": "2020",
+      "status": "Aktif",
+      "id": 1648104515778
+    },
+    {
+      "id": 1648104558067,
+      "nim": "E41207321",
+      "nama": "Dhani Setiawan",
+      "alamat": "Jember",
+      "hp": "08908231",
+      "angkatan": "2020",
+      "status": "Lulus"
+    },
+    {
+      "id": 1648104585531,
+      "nim": "E41200129",
+      "nama": "Coba2",
+      "alamat": "Jember",
+      "hp": "089013",
+      "angkatan": "2021",
+      "status": "Aktif"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
