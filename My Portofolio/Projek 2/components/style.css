@@ -1,5 +1,172 @@
-*{
+/* Universal */
+@import url("fonts.css");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body {
+  margin-top: 68px !important;
+  background-image: url("../assets/ico/bgSection1.png");
+  background-size: cover;
+}
+
+/* Addon */
+.s-16 {
+  font-size: 16px !important;
+}
+.s-18 {
+  font-size: 18px !important;
+}
+.s-20 {
+  font-size: 20px !important;
+}
+.s-24 {
+  font-size: 24px !important;
+}
+.s-36 {
+  font-size: 36px !important;
+}
+
+.color-greyDark {
+  color: #4d4d4d;
+}
+.rounded-6 {
+  border-radius: 6px !important;
+}
+.rounded-18 {
+  border-radius: 18px !important;
+}
+.fontNunitoSans {
+  font-family: "NunitoSans-Regular";
+  letter-spacing: 0.4px !important;
+  line-height: 36px !important;
+  color: #4d4d4d !important;
+}
+.fontNunitoSans.Bold {
+  font-family: "NunitoSans-Bold";
+}
+.fontNunitoSans.extraBold {
+  font-family: "NunitoSans-ExtraBold";
+}
+
+.fontGilroy {
+  font-family: "Gilroy-ExtraBold";
+  letter-spacing: 0.4px !important;
+  line-height: 135% !important;
+  color: #1C1D4E !important;
+}
+
+/* Customize Components */
+/* 
+----------------------------
+Navbar 
+----------------------------
+*/
+.nav-link.active.custFont {
+  font-family: "NunitoSans-Bold";
+  letter-spacing: 0.4px;
+  color: #5563ef !important;
+}
+.nav-link.custFont {
+  font-family: "NunitoSans-Regular";
+  letter-spacing: 0.4px;
+  color: #4d4d4d !important;
+}
+.nav-link.custFont:hover {
+  color: #5563ef !important;
+}
+.btn.custFont {
+  font-family: "NunitoSans-Regular";
+  letter-spacing: 0.4px;
+  font-size: 14px;
+}
+.custPaddingNav {
+  padding-top: 9px !important;
+  padding-bottom: 9px !important;
+}
+.custShadowNav {
+  box-shadow: 0px 4px 18px rgba(5, 5, 5, 0.1);
+}
+.custBtnSignin {
+  width: 110px;
+  border: 1px solid #5563ef !important;
+  color: #5563ef !important;
+}
+.custBtnSignin:hover,
+.custBtnSignUp:hover {
+  background-color: #1f2050 !important;
+  color: #fff !important;
+  border: none !important;
+  font-weight: bold;
+}
+.custBtnSignUp {
+  width: 110px;
+  background-color: #5563ef !important;
+  color: #ffffff !important;
+}
+/* ---------------------- */
+
+/* 
+----------------------------
+Section 1 (Header)
+----------------------------
+*/
+.header {
+  width: 100%;
+  height: 715px;
+}
+img.customPosition {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+}
+.titleHeader {
+  font-family: "Gilroy-ExtraBold";
+  font-size: 64px;
+  color: #1f2050;
+  margin-top: 70px;
+  line-height: 110%;
+}
+.textHeader span {
+  color: #1f2050 !important;
+}
+.custBtn1 {
+  width: 166px;
+  height: 67px;
+  color: #ffffff !important;
+  background: #5563ef !important;
+}
+.custBtn2 {
+  width: 166px;
+  height: 67px;
+  border: 2px solid #5563ef !important;
+  color: #5563ef !important;
+}
+
+
+/*  
+----------------------------
+Section 2 (Konten 1)
+----------------------------
+*/
+.blogs{
+  width: 100%;
+  height: 711px;
+}
+.underline{
+  width: 100%;
+}
+.line{
+  display: inline-block;
+  width: 408px;
+  height: 10px;
+  background: #FAD6A1;
+}
+
+/* Custom Responsive */
+@media (min-width: 992px) {
+  .ps-lg-6 {
+    padding-left: 4rem !important;
+  }
 }
