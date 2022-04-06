@@ -38,7 +38,7 @@ class DataMahasiswa extends Component {
   };
 
   ambilDataDariServerAPI = () => {
-    fetch("http://localhost:3003/mahasiswa?_sort=NIM&_order=asc") // alamat URL API yang ingin kita anbil datanya
+    fetch("http://localhost:3001/mahasiswa?_sort=NIM&_order=asc") // alamat URL API yang ingin kita anbil datanya
       .then((response) => response.json()) // ubah response data dari URL API menjadi sebuah data json
       .then((jsonHasilAmbilDariAPI) => {
         // data json hasil ambil dari API kita masukkan ke dalam listartikel pada state
@@ -55,7 +55,7 @@ class DataMahasiswa extends Component {
 
   handleHapusData = (data) => {
     // fungsi yang meng-handle button action hapus data
-    fetch(`http://localhost:3003/mahasiswa/${data}`, { method: "DELETE" }) // alamat URL API yang ingin kita HAPUS datanya
+    fetch(`http://localhost:3001/mahasiswa/${data}`, { method: "DELETE" }) // alamat URL API yang ingin kita HAPUS datanya
       .then((res) => {
         // ketika proses hapus berhasil, maka ambil data dari server API lokal
         this.ambilDataDariServerAPI();
@@ -75,7 +75,7 @@ class DataMahasiswa extends Component {
 
   handleTombolSimpan = () => {
     // fungsi untuk meng-handle tombol simpan
-    fetch("http://localhost:3003/mahasiswa", {
+    fetch("http://localhost:3001/mahasiswa", {
       method: "post", // method POST untuk input/insert data
       headers: {
         Accept: "application/json",

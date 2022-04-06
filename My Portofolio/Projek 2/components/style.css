@@ -24,6 +24,9 @@ body {
 .s-24 {
   font-size: 24px !important;
 }
+.s-26 {
+  font-size: 26px !important;
+}
 .s-36 {
   font-size: 36px !important;
 }
@@ -162,6 +165,18 @@ Section 2 (Konten 1)
   width: 408px;
   height: 10px;
   background: #FAD6A1;
+}
+.bg-placeholder{
+  width: 86px;
+  height: 90px
+}
+.blogs .card{
+  width: 288px;
+  background: transparent;
+  border: none;
+}
+.card-text.custFont{
+  line-height: 150% !important;
 }
 
 /* Custom Responsive */
