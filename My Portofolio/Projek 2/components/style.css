@@ -5,10 +5,30 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(187, 187, 187);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #527bdd;
+}
+
 body {
   margin-top: 68px !important;
   background-image: url("../assets/ico/bgSection1.png");
   background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 
 /* Addon */
@@ -57,7 +77,7 @@ body {
   font-family: "Gilroy-ExtraBold";
   letter-spacing: 0.4px !important;
   line-height: 135% !important;
-  color: #1C1D4E !important;
+  color: #1c1d4e !important;
 }
 
 /* Customize Components */
@@ -147,36 +167,62 @@ img.customPosition {
   color: #5563ef !important;
 }
 
-
 /*  
 ----------------------------
 Section 2 (Konten 1)
 ----------------------------
 */
-.blogs{
+.blogs {
   width: 100%;
   height: 711px;
 }
-.underline{
+.underline {
   width: 100%;
 }
-.line{
+.line {
   display: inline-block;
   width: 408px;
   height: 10px;
-  background: #FAD6A1;
+  background: #fad6a1;
 }
-.bg-placeholder{
+.bg-placeholder {
   width: 86px;
-  height: 90px
+  height: 90px;
 }
-.blogs .card{
+.blogs .card {
   width: 288px;
   background: transparent;
   border: none;
 }
-.card-text.custFont{
+.card-text.custFont {
   line-height: 150% !important;
+}
+.ornamen1 {
+  position: absolute;
+  top: 35px;
+  right: -15%;
+}
+.ornamen2 {
+  position: absolute;
+  top: -5%;
+  right: -2%;
+}
+.ornamen3 {
+  width: 100%;
+  height: 450px;
+  background: linear-gradient(162.31deg, rgba(31, 32, 80, 0.1) 12.09%, rgba(255, 255, 255, 0) 101.34%);
+  backdrop-filter: blur(22px);
+  border: none !important;
+  outline: none !important;
+  border-radius: 16px;
+}
+.ornamen4{
+  position: absolute;
+  top: 72%;
+  left: -8%;
+}
+.ImgBanner{
+  width: auto;
 }
 
 /* Custom Responsive */
