@@ -47,10 +47,18 @@ body {
 .s-26 {
   font-size: 26px !important;
 }
+.s-32 {
+  font-size: 32px !important;
+}
+.s-34 {
+  font-size: 34px !important;
+}
 .s-36 {
   font-size: 36px !important;
 }
-
+.bg-color{
+  background-color: red !important;
+}
 .color-greyDark {
   color: #4d4d4d;
 }
@@ -166,6 +174,42 @@ img.customPosition {
   border: 2px solid #5563ef !important;
   color: #5563ef !important;
 }
+@-webkit-keyframes move1 {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes move1 {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes move2 {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes move2 {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.header img.ornamen2.imgMove {
+  -webkit-animation: move2 4s infinite linear ease-in-out;
+  animation: move2 4s infinite linear ;
+}
+.header img.ornamen4.imgMove {
+  -webkit-animation: move1 4s infinite linear ease-in-out;
+  animation: move1 4s infinite linear ;
+}
 
 /*  
 ----------------------------
@@ -204,8 +248,8 @@ Section 2 (Konten 1)
 }
 .ornamen2 {
   position: absolute;
-  top: -5%;
-  right: -2%;
+  top: -7%;
+  right: -25%;
 }
 .ornamen3 {
   width: 100%;
@@ -226,6 +270,24 @@ Section 2 (Konten 1)
 }
 
 /* Custom Responsive */
+@media (max-width: 992px) {
+  .titleHeader{
+    font-size: 54px !important;
+  }
+  .textHeader{
+    font-size: 18px !important;
+  }
+  .header form.center{
+    justify-content: center;
+  }
+  img.customPosition {
+    position: absolute;
+    width: 98%;
+    height: 658px !important;
+    right: 0%;
+    top: 0%;
+  }
+}
 @media (min-width: 992px) {
   .ps-lg-6 {
     padding-left: 4rem !important;
