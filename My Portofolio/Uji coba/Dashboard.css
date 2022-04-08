@@ -81,6 +81,16 @@
   margin-bottom: 5px;
   transition: all 0.4s ease;
 }
+.sidebar .nav-links li.navItem.active {
+  border-radius: 8px;
+  background: linear-gradient(90deg, #535BEB 8.33%, #1488CC 100%) !important;
+}
+.sidebar .nav-links li.navItem.active > a span.link_name {
+  -webkit-text-fill-color: #FFFFFF;
+  text-fill-color: #FFFFFF;
+  color: #FFFFFF;
+  font-family: NunitoSans-Bold;
+}
 .sidebar .nav-links li.navItem:hover {
   border-radius: 8px;
   background: linear-gradient(90deg, #535BEB 8.33%, #1488CC 100%) !important;
@@ -154,6 +164,7 @@
 }
 .sidebar .nav-links li .sub-menu a:hover {
   opacity: 1;
+  cursor: context-menu;
 }
 .sidebar.close .nav-links li .sub-menu {
   position: absolute;
