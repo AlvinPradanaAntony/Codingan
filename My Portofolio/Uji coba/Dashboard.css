@@ -77,10 +77,13 @@
 .sidebar .nav-links li {
   position: relative;
   list-style: none;
+  border-radius: 8px;
+  margin-bottom: 5px;
   transition: all 0.4s ease;
 }
-.sidebar .nav-links li:hover {
-  background: #6055d6;
+.sidebar .nav-links li.navItem:hover {
+  border-radius: 8px;
+  background: linear-gradient(90deg, #535BEB 8.33%, #1488CC 100%) !important;
 }
 .sidebar .nav-links li:hover > a span.link_name {
   -webkit-text-fill-color: #FFFFFF;
@@ -134,14 +137,15 @@
 .sidebar .nav-links li .sub-menu {
   padding: 6px 6px 14px 80px;
   margin-top: -10px;
-  background: #1d1b31;
+  background: #fff;
+  box-shadow: 2px 0px 20px rgba(85, 99, 239, 0.08);
   display: none;
 }
 .sidebar .nav-links li.showMenu .sub-menu {
   display: block;
 }
 .sidebar .nav-links li .sub-menu a {
-  color: #fff;
+  color: #1F2050;
   font-size: 15px;
   padding: 5px 0;
   white-space: nowrap;
@@ -153,7 +157,7 @@
 }
 .sidebar.close .nav-links li .sub-menu {
   position: absolute;
-  left: 100%;
+  left: 116%;
   top: -10px;
   margin-top: 0;
   padding: 10px 20px;
@@ -162,6 +166,8 @@
   display: block;
   pointer-events: none;
   transition: 0s;
+  height: 35px;
+  width: 120px;
 }
 .sidebar.close .nav-links li:hover .sub-menu {
   top: 0;
@@ -173,7 +179,8 @@
   display: none;
 }
 .sidebar.close .nav-links li .sub-menu .link_name {
-  font-size: 18px;
+  font-size: 14px;
+  font-family: NunitoSans-SemiBold;
   opacity: 1;
   display: block;
 }
@@ -476,36 +483,3 @@
 }
 
 
-/*  */
-.round {
-  background: none repeat scroll 0 0 #F3F3F3;
-  border-radius: 30px 30px 30px 30px;
-  border-top: 1px solid #B2B2B2;
-  height: 50px;
-  padding-left: 20px;
-  width: 440px;
-}
-.round_text:focus {
-  background: none repeat scroll 0 0 #8b66ac;
-}
-.round_label {
-  border-right: 1px solid #D1D1D1;
-  color: #B6B6B6;
-  float: left;
-  font-size: 16px;
-  height: 40px;
-  padding-top: 10px;
-  width: 156px;
-}
-.round_text {
-  background: none repeat scroll 0 0 #F3F3F3;
-  border: medium none;
-  color: #424242;
-  float: left;
-  height: 50px;
-  width: 240px;
-}
-.bluebg{
-  background: #1F2050;
-  color: #eeee;
-}
