@@ -25,7 +25,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 260px;
+  width: 232px;
   background: #11101d;
   z-index: 100;
   transition: all 0.5s ease;
@@ -177,7 +177,7 @@
 .sidebar .profile-details {
   position: fixed;
   bottom: 0;
-  width: 260px;
+  width: 232px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -228,8 +228,8 @@
   position: relative;
   background: #F8F9FF;
   height: 100vh;
-  left: 260px;
-  width: calc(100% - 260px);
+  left: 232px;
+  width: calc(100% - 232px);
   transition: all 0.5s ease;
 }
 .sidebar.close ~ .home-section {
@@ -306,7 +306,7 @@
 .search-box {
   background: #F9FAFF;
   border-radius: 40px;
-  padding: 8px;
+  padding: 6px;
   display: flex;
   box-shadow: 0px 2px 10px -1px rgba(85, 99, 239, 0.14), 0px 6px 24px -1px rgba(85, 99, 239, 0.08);
   justify-content: space-between;
@@ -349,7 +349,8 @@
   outline: none;
   padding: 0 10px;
   color: #1F2050;
-  font-size: 16px;
+  font-family: NunitoSans-Regular;
+  font-size: 14px !important;
   transition: 0.4s;
   line-height: 28px;
   width: 180px;
@@ -362,9 +363,9 @@
 
 /* custom Item Profile */
 .nav-user {
-  padding: calc(31px / 2) 20px calc(31px / 2) 57px !important;
+  padding: calc(31px / 2)  5px calc(31px / 2) 57px !important;
   text-align: left !important;
-  width: 200px;
+  width: 160px;
   min-height: 70px;
 }
 .customProfile .nav-link {
@@ -388,6 +389,7 @@
 .account-user-name {
   display: block;
   font-family: NunitoSans-ExtraBold;
+  font-size: 14px;
   color: #1F2050;
 }
 .account-position {
@@ -418,7 +420,7 @@
   display: inline-block;
   position: absolute;
   top: 50%;
-  left: 80%;
+  left: 88%;
   margin-left: 0.255em;
   vertical-align: 0.255em;
   content: "";
@@ -429,6 +431,10 @@
 }
 .custom-item-dropdown {
   padding: 7px 20px !important;
+}
+.custom-item-dropdown span.nameItem{
+  font-family: NunitoSans-Regular !important;
+  font-size: 14px !important;
 }
 .dropdown-menu.custom-rounded{
   border-radius: 8px !important;
