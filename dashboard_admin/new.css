@@ -1,0 +1,328 @@
+.text-card1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 18px;
+
+    color: #FFFFFF;
+}
+
+.card1 {
+    height: 182px;
+    width: 523px;
+    padding-right: -2%;
+    margin-right: -2%;
+    border-radius: 15px;
+}
+
+.text2-card1 {
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+.card2 {
+    width: 223px;
+    height: 182px;
+    padding-left: -2%;
+    background-repeat: no-repeat;
+    background-image: url("img/banner\ \(1\).png");
+
+}
+
+.card3 {
+    width: 200px;
+}
+
+.marginMinus {
+    margin-top: -30%;
+}
+
+.garisVertical {
+    background-color: #5372E7;
+    width: 5px;
+    border-radius: 8px;
+}
+
+.text-card2 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+
+    /* secondar color 1 */
+
+    color: #1F2050;
+}
+
+.text2-card2 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+
+    /* secondar color 5 */
+
+    color: #B3BAC5;
+}
+
+.btn-card2 {
+    background: linear-gradient(90deg, #535BEB 8.33%, #1488CC 100%);
+    border-radius: 8px;
+    color: white;
+    width: 83px;
+    height: 31px;
+}
+
+.card3 {
+    width: 240px;
+    height: 133px;
+    background: #4CBC9A;
+    border-radius: 16px;
+}
+
+.text2-card3 {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.text2-card3 span {
+    font-size: 14px;
+}
+
+.terlihat {
+    opacity: 50%;
+}
+
+.borderActivity {
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+.rowMargin {
+    margin-top: -50%;
+}
+
+
+
+
+
+
+
+
+
+/* kalender */
+:root {
+    --teal-050: #effcf6;
+    --teal-100: #c6f7e2;
+    --teal-200: #8eedc7;
+    --teal-300: #65d6ad;
+    --teal-400: #3ebd93;
+    --teal-500: #27ab83;
+    --teal-600: #199473;
+    --teal-700: #147d64;
+    --teal-800: #0c6b58;
+    --teal-900: #014d40;
+    --blue-grey-050: #f0f4f8;
+    --blue-grey-100: #d9e2ec;
+    --blue-grey-200: #bcccdc;
+    --blue-grey-300: #9fb3c8;
+    --blue-grey-400: #829ab1;
+    --blue-grey-500: #627d98;
+    --blue-grey-600: #486581;
+    --blue-grey-700: #334e68;
+    --blue-grey-800: #243b53;
+    --blue-grey-900: #102a43;
+}
+
+html {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 125%;
+    line-height: 1.4;
+    font-weight: 400;
+    color: var(--blue-grey-900);
+}
+
+.heading p {
+    color: #1488CC;
+}
+
+.box {
+    width: 90px;
+    height: 90px;
+    background-color: gray;
+}
+
+.Course {
+    background: #FFFFFF;
+    /* Shadow 2 */
+    margin-left: 2px;
+    box-shadow: 0px 13.8677px 24.1177px rgba(0, 0, 0, 0.0456112), 0px 5.75991px 10.0172px rgba(0, 0, 0, 0.035), 0px 2.08325px 3.62304px rgba(0, 0, 0, 0.0243888);
+    border-radius: 16px;
+}
+
+.cardBiru {
+    width: 132px;
+    height: 168px;
+
+    /* gradient1 */
+
+    background: linear-gradient(180deg, #535BEB 26.7%, #1488CC 119.7%);
+    border-radius: 16px;
+}
+
+.pelajaran {
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    color: white;
+}
+
+.buttonKuning {
+
+    width: 36px;
+    height: 36px;
+    right: 10px;
+    bottom: 10px;
+    /* gradient4 */
+    border-radius: 50%;
+    background: linear-gradient(93.2deg, #FFA800 4.28%, #F7E277 111.74%);
+}
+
+.imgVideo {
+
+    width: 352.53px;
+    height: 249.71px;
+}
+
+.borderclass3 {
+    padding-left: 20px;
+    padding-right: 120px;
+    padding-top: 14px;
+    padding-bottom: 0.4px;
+    background: #FFFFFF;
+    opacity: 0.4;
+    box-shadow: 0px 16px 24px rgba(124, 117, 147, 0.16);
+    border-radius: 10px;
+}
+
+.borderclass2 {
+    padding-left: 20px;
+    padding-right: 120px;
+    padding-top: 14px;
+    padding-bottom: 0.4px;
+    background: linear-gradient(90deg, #535BEB 8.33%, #1488CC 100%);
+    box-shadow: 0px 16px 24px rgba(124, 117, 147, 0.16);
+    border-radius: 10px;
+}
+
+.btnReadMore {
+    background-color: #5563EF;
+    color: white;
+}
+
+.borderclass {
+    width: 98px;
+    height: 25px;
+    background: #F8F8F8;
+    border-radius: 8px;
+}
+
+.cardPengajar {
+
+    background: #5563EF;
+    border-radius: 10px;
+    width: 220px;
+    height: 71px;
+}
+
+.progresss {
+
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding-bottom: 25px;
+    filter: drop-shadow(0px 13.8677px 24.1177px rgba(0, 0, 0, 0.0456112)) drop-shadow(0px 5.75991px 10.0172px rgba(0, 0, 0, 0.035)) drop-shadow(0px 2.08325px 3.62304px rgba(0, 0, 0, 0.0243888));
+}
+
+.bar {
+    width: 100%;
+    height: 1px;
+    border-radius: 2px;
+    background-color: grey;
+}
+
+main {
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    margin: 1em auto 0 auto;
+    padding: 2em;
+    background-color: #fff;
+    border: 2px solid var(--blue-grey-200);
+    border-radius: 8px;
+}
+
+.month-indicator {
+    color: var(--blue-grey-700);
+    text-align: center;
+    font-weight: 500;
+}
+
+.day-of-week,
+.date-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day-of-week {
+    margin-top: 1.25em;
+}
+
+.day-of-week>* {
+    font-size: 0.7em;
+    color: var(--blue-grey-400);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    font-variant: small-caps;
+    text-align: center;
+}
+
+/* Dates */
+.date-grid {
+    margin-top: 0.5em;
+}
+
+/* Positioning the first day */
+.date-grid button:first-child {
+    grid-column: 6;
+}
+
+.date-grid button {
+    position: relative;
+    border: 0;
+    width: 4.5ch;
+    height: 4.5ch;
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--blue-grey-600);
+}
+
+.date-grid button:hover,
+.date-grid button:focus {
+    outline: none;
+    background-color: var(--blue-grey-050);
+    color: var(--blue-grey-700);
+}
+
+.date-grid button:active,
+.date-grid button.is-selected {
+    background-color: var(--teal-100);
+    color: var(--teal-900);
+}
