@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div className="card custom-radius color-black shadow mb-4">
+            <div className="card-body">
+              <h4 class="card-title text-center text-white">Data Mahasiswa</h4>
+            </div>
+          </div>
+          <div className="card custom-radius shadow border-0 color-black">
+            <div className="card-header">
+              <h4 className="d-inline-block">List</h4>
+              <a href="#" className="btn add-btn" data-bs-toggle="modal" data-bs-target="#add_mahasiswa">
+                <FontAwesomeIcon icon={faPlus} id="iconPlus" /> Add Client
+              </a>
+              <div className="modal fade custom-modal" id="add_mahasiswa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                  <div className="modal-content">
+                    <div className="modal-header">
+                      <h5 className="modal-title fw-bold">Tambah Mahasiswa</h5>
+                      <button type="button" className="close btn-danger" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+                    <div className="modal-body">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="col-form-label">
+                              NIM <span class="text-danger">*</span>
+                            </label>
+                            <input class="form-control" type="text" id="nim" name="nim" onChange={this.handleTambahData} />
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="col-form-label">Nama</label>
+                            <input class="form-control" type="text" id="nama" name="nama" onChange={this.handleTambahData}/>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="col-form-label">
+                              Alamat<span class="text-danger">*</span>
+                            </label>
+                            <input class="form-control" type="text" id="alamat" name="alamat" onChange={this.handleTambahData}/>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="col-form-label">
+                              No. Hp <span class="text-danger">*</span>
+                            </label>
+                            <input class="form-control" type="number" id="hp" name="hp" onChange={this.handleTambahData}/>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="col-form-label">Angkatan</label>
+                            <input class="form-control" type="number" id="angkatan" name="angkatan" onChange={this.handleTambahData}/>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="col-form-label">Status</label>
+                            <select class="form-select" aria-label="Default select example" id="status" name="status" onChange={this.handleTambahData}>
+                              <option selected>Pilih Status</option>
+                              <option value="Aktif">Aktif</option>
+                              <option value="Lulus">Lulus</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="modal-footer">
+                      <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
+                        Keluar
+                      </button>
+                      <button type="button" className="btn btn-primary" onClick={this.handleTombolSimpan}>
+                        Simpan
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div className="card-body custom-bodyCard">
+              <div className="row">
+                <div className="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
+                  <div className="card custom-radius custom-card r-12 color-black border-0 mb-4">
+                    <div className="card-body p-0">
+                      <img src="https://source.unsplash.com/random/200x200?sig=1" className="bd-placeholder-img"></img>
+                      <div className="p-3">
+                        <h5 className="class-title text-white">Profile</h5>
+                        <div className="row">
+                          <div className="col-6">NIM :</div>
+                          <div className="col-6">E45716251</div>
+                          <div className="col-6">Nama :</div>
+                          <div className="col-6">Alvin</div>
+                          <div className="col-6">Alamat :</div>
+                          <div className="col-6">Jakarta</div>
+                          <div className="col-6">No. Hp :</div>
+                          <div className="col-6">0830482223</div>
+                          <div className="col-6">Angkatan :</div>
+                          <div className="col-6">2010</div>
+                          <div className="col-6">Status :</div>
+                          <div className="col-6">
+
+<span class="badge bg-inverse-success">Aktif</span>
+                          </div>
+                          <div className="col-12 text-center mt-4">
+                            <botton className="btn delete-btn btn-danger" onClick={() => props.hapusData(props.idData)}>
+                              Hapus
+                            </botton>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
