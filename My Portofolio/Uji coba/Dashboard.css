@@ -292,7 +292,7 @@
   left: 84px;
   transition: all 0.5s ease;
 }
-.sidebar.close ~ .home-section .home-content .search-box{
+.sidebar.close ~ .home-section .home-navbar .search-box{
   margin-left: 20px !important;
   transition: all 0.5s ease;
 }
@@ -311,11 +311,11 @@
   box-shadow: 0 2px 12px rgb(0 0 0 / 11%);
   cursor: pointer;
 }
-.home-section .home-content .menu {
+.home-section .home-navbar .menu {
   color: #2313da;
   font-size: 22px;
 }
-.home-section .home-content .text {
+.home-section .home-navbar .text {
   font-size: 26px;
   font-weight: 600;
 }

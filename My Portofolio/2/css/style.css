@@ -1,0 +1,73 @@
+.bodyPageNotFound {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  background: #5563ef;
+  color: #1f2050;
+  margin: 0;
+
+}
+.bodyPageNotFound a {
+  color: #fff;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.bodyPageNotFound ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bodyPageNotFound img {
+  display: block;
+  width: 100%;
+}
+
+.bodyPageNotFound .pageNotFound {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 5%;
+  padding: 5%;
+  text-align: center;
+  color: #fff;
+}
+.bodyPageNotFound .pageNotFound h1 {
+  font-weight: normal;
+  font-size: 24px;
+}
+.bodyPageNotFound .pageNotFound a.btn {
+  border: 3px solid #fff;
+  border-radius: 2px;
+  padding: 10px 30px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+}
+.bodyPageNotFound .pageNotFound a.btn.search {
+  border-radius: 0px 2px 2px 0;
+}
+.bodyPageNotFound .pageNotFound a.btn:hover {
+  background-color: #fff;
+  color: #1F2050;
+}
+
+.bodyPageNotFound .pageNotFound .scene {
+  padding: 0;
+  margin: 0;
+}
+
+
+@media only screen and (max-width: 480px), only screen and (max-width: 480px) {
+  .pageNotFound a.btn {
+    padding: 10px 20px;
+  }
+
+  .pageNotFound span {
+    display: block;
+    margin: 10px 0;
+  }
+}
