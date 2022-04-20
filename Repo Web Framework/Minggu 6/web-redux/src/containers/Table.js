@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { deleteTodo, toggleTodo, setVisibilityFilter } from "../actions/actionCreator";
+import { deleteTodo, toggleTodo, setVisibilityFilter } from "../actions/actionsCreator";
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from "../actions/actionsTypes";
 import { bindActionCreators } from "redux";
 
