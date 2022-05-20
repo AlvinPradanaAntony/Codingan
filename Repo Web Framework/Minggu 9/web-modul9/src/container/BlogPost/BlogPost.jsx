@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./BlogPost.css";
 import Post from "../../components/BlogPost/Post";
+import API from "../../services/index";
 
 class BlogPost extends Component {
   handleReset = () => {
@@ -28,16 +29,11 @@ class BlogPost extends Component {
   };
 
   ambilDataDariServerAPI = () => {
-    // fetch("http://localhost:3001/posts") // alamat URL API yang ingin kita anbil datanya
-    // fetch("https://jsonplaceholder.typicode.com/posts") // alamat URL API yang ingin kita anbil datanya
-    fetch("http://localhost:3001/posts?_sort=title&_order=asc") // alamat URL API yang ingin kita anbil datanya
-      .then((response) => response.json()) // ubah response data dari URL API menjadi sebuah data json
-      .then((jsonHasilAmbilDariAPI) => {
-        // data json hasil ambil dari API kita masukkan ke dalam listartikel pada state
-        this.setState({
-          listArtikel: jsonHasilAmbilDariAPI,
-        });
+    API.getNewsBlog().then(result => {
+      this.setState({
+        listArtikel: result
       });
+    })
   };
 
   componentDidMount() { // komponen untuk mengecek ketika compnent telah di-mount-ing, maka panggil API

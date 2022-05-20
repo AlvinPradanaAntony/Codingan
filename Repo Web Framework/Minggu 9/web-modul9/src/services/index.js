@@ -1,4 +1,4 @@
-const domainPath = "http://localhost:3001/";
+const domainPath = "http://localhost:3001";
 const GetAPI = (path) => {
   const promise = new Promise((resolve, reject) => {
     fetch(`${domainPath}/${path}`) // alamat URL API yang ingin kita anbil datanya
