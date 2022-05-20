@@ -5,22 +5,23 @@ import API from "../../services/index";
 
 class BlogPost extends Component {
   handleReset = () => {
-    Array.from(document.querySelectorAll("input, textarea")).forEach(
-      input => (input.value = "")
-    );
-      this.setState({
-        insertArtikel: { // variable yang digunakan untuk menampung sementara data yang akan di insert
-          userId: 1, // kolom userId, id, title, dan body sama, mengikuti kolom yang ada pada listArtikel.json
-          id: 1,
-          title: "",
-          body: "",
-        }
-      });
+    Array.from(document.querySelectorAll("input, textarea")).forEach((input) => (input.value = ""));
+    this.setState({
+      insertArtikel: {
+        // variable yang digunakan untuk menampung sementara data yang akan di insert
+        userId: 1, // kolom userId, id, title, dan body sama, mengikuti kolom yang ada pada listArtikel.json
+        id: 1,
+        title: "",
+        body: "",
+      },
+    });
   };
 
-  state = { // komponen state dari React untuk statefull component
+  state = {
+    // komponen state dari React untuk statefull component
     listArtikel: [], // yariabel array yang digunakan untuk menyimpan data API
-    insertArtikel: { // variable yang digunakan untuk menampung sementara data yang akan di insert
+    insertArtikel: {
+      // variable yang digunakan untuk menampung sementara data yang akan di insert
       userId: 1, // kolom userId, id, title, dan body sama, mengikuti kolom yang ada pada listArtikel.json
       id: 1,
       title: "",
@@ -28,26 +29,13 @@ class BlogPost extends Component {
     },
   };
 
-  ambilDataDariServerAPI = () => {
-    API.getNewsBlog().then(result => {
-      this.setState({
-        listArtikel: result
-      });
-    })
-  };
-
-  componentDidMount() { // komponen untuk mengecek ketika compnent telah di-mount-ing, maka panggil API
+  componentDidMount() {
+    // komponen untuk mengecek ketika compnent telah di-mount-ing, maka panggil API
     this.ambilDataDariServerAPI(); // ambil data dari server API lokal
   }
 
-  handleHapusArtikel = (data) => { // fungsi yang meng-handle button action hapus data
-    fetch(`http://localhost:3001/posts/${data}`, { method: "DELETE" }) // alamat URL API yang ingin kita HAPUS datanya
-      .then((res) => { // ketika proses hapus berhasil, maka ambil data dari server API lokal
-        this.ambilDataDariServerAPI();
-      });
-  };
-
-  handleTambahArtikel = (event) => { // fungsi untuk meng-hadle form tambah data actikel
+  handleTambahArtikel = (event) => {
+    // fungsi untuk meng-hadle form tambah data actikel
     let formInsertArtikel = { ...this.state.insertArtikel }; // clonning data state insertArtikel ke dalam variabel formInsertArtikel
     let timestamp = new Date().getTime(); // digunakan untuk menyimpan waktu (sebagai ID artikel)
     formInsertArtikel["id"] = timestamp;
@@ -57,30 +45,28 @@ class BlogPost extends Component {
     });
   };
 
-  handleTombolSimpan = () => { // fungsi untuk meng-handle tombol simpan
-    fetch("http://localhost:3001/posts", {
-      method: "post", // method POST untuk input/insert data
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(this.state.insertArtikel), // kicimkan ke body request untuk data artikel yang akan ditambahkan (insert)
-    }).then((Response) => {
-      this.ambilDataDariServerAPI(); // reload / refresh data
+  ambilDataDariServerAPI = () => {
+    API.getNewsBlog().then((result) => {
+      this.setState({
+        listArtikel: result,
+      });
+    });
+  };
+
+  handleTombolSimpan = () => {
+    // fungsi untuk meng-handle tombol simpan
+    API.postNewsBlog(this.state.insertArtikel).then((response) => {
+      this.ambilDataDariServerAPI();
     });
     this.handleReset(); // reset input setelah tombol simpan di klik
   };
 
-  // render() {
-  //   return (
-  //     <div className="post-artikel">
-  //       <h2>Daftar Artikel</h2>
-  //       {this.state.listArtikel.map((artikel) => { // looping dan masukkan untuk setiap data yang ada di listartikel ke variabel artikel
-  //         return <Post key={artikel.id} judul={artikel.title} isi={artikel.body} idArtikel={artikel.id} hapusArtikel={this.handleHapusArtikel}/> // mappingkan data json dari API sesuai dengan kategorinya
-  //       })}
-  //     </div>
-  //   );
-  // }
+  handleHapusArtikel = (data) => {
+    // fungsi yang meng-handle button action hapus data
+    API.deleteNewsBlog(data).then((response) => {
+      this.ambilDataDariServerAPI();
+    });
+  };
 
   render() {
     return (
@@ -107,7 +93,8 @@ class BlogPost extends Component {
           </button>
         </div>
         <h2>Daftar Artikel</h2>
-        {this.state.listArtikel.map((artikel) => { // looping dan masukkan untuk setiap data yang ada di listartikel ke variabel artikel
+        {this.state.listArtikel.map((artikel) => {
+          // looping dan masukkan untuk setiap data yang ada di listartikel ke variabel artikel
           return <Post key={artikel.id} judul={artikel.title} isi={artikel.body} idArtikel={artikel.id} hapusArtikel={this.handleHapusArtikel} />; // mappingkan data json dari API sesuai dengan kategorinya
         })}
       </div>
