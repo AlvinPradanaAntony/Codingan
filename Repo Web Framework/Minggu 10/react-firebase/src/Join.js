@@ -20,11 +20,9 @@ const Join = () => {
       .catch((e) => {
         setError(e.message);
       });
-    // console.log(Auth);
-    // Auth.setLoggedIn(true);
   };
 
-  const SignInGoogle = () => {
+  const googleJoin = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase
       .auth()
@@ -41,7 +39,7 @@ const Join = () => {
       <form onSubmit={(e) => handleForm(e)}>
         <input className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} name="email" type="email" placeholder="Email" />
         <input className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} name="password" type="password" placeholder="Password" />
-        <button className="googleBtn" type="button" onClick={SignInGoogle}>
+        <button className="googleBtn" type="button" onClick={googleJoin}>
           <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="logo" />
           Join With Google
         </button>
