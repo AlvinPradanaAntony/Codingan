@@ -9,6 +9,10 @@ h1 {
   margin: 0 0 25px 0;
   text-align: left;
 }
+h1 span{
+  font-size: 14px;
+  font-weight: normal;
+}
 
 form {
   display: flex;
@@ -32,16 +36,6 @@ button {
   padding: 7px;
   text-align: center;
   cursor: pointer;
-}
-
-button[type="submit"] {
-  background-color: #4c566a;
-  color: white;
-  font-size: 14px;
-  font-weight: 900;
-  border-radius: 5px;
-  text-transform: uppercase;
-  padding: 15px;
 }
 
 .googleBtn {
