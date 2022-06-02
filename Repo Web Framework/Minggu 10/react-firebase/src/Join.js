@@ -37,8 +37,22 @@ const Join = () => {
     <div>
       <h1>Join</h1>
       <form onSubmit={(e) => handleForm(e)}>
-        <input className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} name="email" type="email" placeholder="Email" />
-        <input className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} name="password" type="password" placeholder="Password" />
+        <input
+          className="form-control"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          name="email"
+          type="email"
+          placeholder="Email"
+        />
+        <input
+          className="form-control"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          name="password"
+          type="password"
+          placeholder="Password"
+        />
         <button className="googleBtn" type="button" onClick={googleJoin}>
           <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="logo" />
           Join With Google

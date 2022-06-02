@@ -36,8 +36,22 @@ const Login = () => {
       return (
         <div>
           <form onSubmit={(e) => handleForm(e)}>
-            <input className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} name="email" type="email" placeholder="Email" />
-            <input className="form-control" onChange={(e) => setPassword(e.target.value)} name="password" value={password} type="password" placeholder="Password" />
+            <input
+              className="form-control"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              type="email"
+              placeholder="Email"
+            />
+            <input
+              className="form-control"
+              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={password}
+              type="password"
+              placeholder="Password"
+            />
             <br />
             <button type="submit" className="btn btn-primary">
               Login
@@ -48,12 +62,26 @@ const Login = () => {
         </div>
       );
     } else {
-      return(
+      return (
         <div>
           <span>Sebagai: {user?.email}</span>
           <form onSubmit={(e) => logout(e)}>
-            <input className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} name="email" type="email" placeholder="Email" />
-            <input className="form-control" onChange={(e) => setPassword(e.target.value)} name="password" value={password} type="password" placeholder="Password" />
+            <input
+              className="form-control"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              type="email"
+              placeholder="Email"
+            />
+            <input
+              className="form-control"
+              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              value={password}
+              type="password"
+              placeholder="Password"
+            />
             <br />
             <button type="submit" className="btn btn-danger">
               Logout
