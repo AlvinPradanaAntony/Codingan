@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Filson Black';
+  src: url('../font/FilsonProBlack-Black.otf');
+}
+@font-face {
+  font-family: 'Filson Bold';
+  src: url('../font/FilsonProBold-Bold.otf');
+}
+@font-face {
+  font-family: 'Filson SemiBold';
+  src: url('../font/FilsonProMedium-Medium.otf');
+}
+@font-face {
+  font-family: 'Filson Book';
+  src: url('../font/FilsonProBook-Book.otf');
+}
+@font-face {
+  font-family: 'Filson Medium';
+  src: url('../font/FilsonProMedium-Medium.otf');
+}
+@font-face {
+  font-family: 'Filson Light';
+  src: url('../font/FilsonProLight-Light.otf');
+}
+@font-face {
+  font-family: 'Filson Thin';
+  src: url('../font/FilsonProThin-Thin.otf');
+}
+@font-face {
+  font-family: 'Filson Regular';
+  src: url('../font/FilsonProRegular-Regular.otf');
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  src: url('../font/NunitoSans-Regular.ttf');
+}
+@font-face {
+  font-family: 'NunitoSans-ExtraBold';
+  src: url('../font/NunitoSans-ExtraBold.ttf');
+}
+@font-face {
+  font-family: 'NunitoSans-Bold';
+  src: url('../font/NunitoSans-Bold.ttf');
+}
+@font-face {
+  font-family: 'NunitoSans-SemiBold';
+  src: url('../font/NunitoSans-SemiBold.ttf');
+}
