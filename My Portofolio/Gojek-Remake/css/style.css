@@ -14,6 +14,7 @@ body{
   font-family: 'Filson Regular';
   font-size: 16px;
   background: #FBFFFF;
+  overflow-x: hidden;
 }
 
 /* Customize Components */
@@ -95,4 +96,41 @@ Navbar
 .section-text h2{
   font-family: NunitoSans-ExtraBold;
   font-size: 35px;
+}
+
+.img-cust{
+  width: 258px;
+  margin-top: -40%;
+}
+.card.item-1{
+  background-color: #E1B9DB
+  ;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 18px rgba(5, 5, 5, 0.1);
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.section-service{
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+.section-service h2{
+  font-family: NunitoSans-ExtraBold !important;
+  font-size: 35px !important;
+}
+
+.section-skala{
+  width: 100% !important;
+  min-height: 215px !important;
+  background-color: #4ac9e32f !important;
+}
+
+.badge-cust{
+  background-color: #00880e33 !important;
+  width: 130px;
+  height: 30px;
+  border-radius: 14px;
+  color: #00880D !important;
+  font-family: NunitoSans-ExtraBold !important;
 }
