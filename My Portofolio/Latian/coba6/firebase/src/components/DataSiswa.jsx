@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../config/firebase-config";
-import { collection, addDoc, getDocs, deleteDoc, doc, onSnapshot } from "firebase/firestore";
+import { collection, addDoc, getDocs, deleteDoc, doc, onSnapshot, updateDoc } from "firebase/firestore";
 import ActionsFirebaseStudents from "../services/actionsCRUD";
 
 const DataSiswa = () => {
@@ -12,6 +12,7 @@ const DataSiswa = () => {
   const [gender, setGender] = useState("");
   const [status, setStatus] = useState("");
   const [password, setPassword] = useState("");
+  const [id, setId] = useState("");
 
   const field = {
     email,
@@ -23,18 +24,34 @@ const DataSiswa = () => {
     password,
   };
 
-  const addData = async (e) => {
+  const addData = (e) => {
     e.preventDefault();
-    if (email === "" || password === "" || name === "" || kelas === "" || date === "") {
-      alert("Kolom tidak boleh kosong");
-      return;
-    }
+    // if (email === "" || password === "" || name === "" || kelas === "" || date === "") {
+    //   alert("Kolom tidak boleh kosong");
+    //   return;
+    // }
     try {
       ActionsFirebaseStudents.addStudents(field);
     } catch (error) {
       console.log(error);
     }
     alert("Berhasil menambahkan data");
+  };
+
+  const editData = () => {
+    const studentsCollectionRef = doc(db, "students", id);
+    updateDoc(studentsCollectionRef)
+      .then(() => {
+        alert("Data berhasil diubah");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
+  const handleEdit = (e) => {
+    e.preventDefault();
+    
   };
 
   const deleteData = async (id, name) => {
@@ -99,7 +116,9 @@ const DataSiswa = () => {
                     <td>{student.password}</td>
                     <td>
                       <button className="btn btn-primary me-2">Edit</button>
-                      <button className="btn btn-danger" onClick={() => deleteData(student.id, student.name)}>Hapus</button>
+                      <button className="btn btn-danger" onClick={() => deleteData(student.id, student.name)}>
+                        Hapus
+                      </button>
                     </td>
                   </tr>
                 );

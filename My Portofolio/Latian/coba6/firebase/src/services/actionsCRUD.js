@@ -4,9 +4,9 @@ import { collection, getDocs, getDoc, addDoc, updateDoc, deleteDoc, doc } from "
 
 const studentsCollectionRef = collection(db, "students");
 
-export default new class ActionsFirebaseStudents {
-  addStudents = (field) => {
-    addDoc(studentsCollectionRef, field)
+export default new (class ActionsFirebaseStudents {
+  addStudents = async (field) => {
+    await addDoc(studentsCollectionRef, field)
       .then((res) => {
         console.log(res);
         console.log("Document successfully written!");
@@ -16,9 +16,9 @@ export default new class ActionsFirebaseStudents {
       });
   };
 
-  updateBook = (id, updatedBook) => {
+  updateStudents = async (id, updatedBook) => {
     const bookDoc = doc(db, "books", id);
-    return updateDoc(bookDoc, updatedBook);
+    await updateDoc(bookDoc, updatedBook);
   };
 
   deleteBook = (id) => {
@@ -34,4 +34,4 @@ export default new class ActionsFirebaseStudents {
     const bookDoc = doc(db, "books", id);
     return getDoc(bookDoc);
   };
-};
+})();
