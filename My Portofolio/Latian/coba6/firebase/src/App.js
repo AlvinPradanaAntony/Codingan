@@ -9,19 +9,19 @@ function App() {
       </header>
       <main>
         <div className="container pt-2">
-          <div class="list-group">
+          <div className="list-group">
             <Link to="/class" className="text-decoration-none">
               <button type="button" className="list-group-item list-group-item-action" aria-current="true">
                 Data Class
               </button>
             </Link>
             <Link to="/siswa" className="text-decoration-none">
-              <button type="button" class="list-group-item list-group-item-action">
+              <button type="button" className="list-group-item list-group-item-action">
                 Data Siswa
               </button>
             </Link>
             <Link to="/guru" className="text-decoration-none">
-              <button type="button" class="list-group-item list-group-item-action">
+              <button type="button" className="list-group-item list-group-item-action">
                 Data Guru
               </button>
             </Link>
