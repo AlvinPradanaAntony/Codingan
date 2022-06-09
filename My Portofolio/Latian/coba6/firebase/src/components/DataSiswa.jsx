@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../config/firebase-config";
 import { collection, addDoc, getDocs, deleteDoc, doc, onSnapshot } from "firebase/firestore";
+import ActionsFirebaseStudents from "../services/actionsCRUD";
 
 const DataSiswa = () => {
   const [students, setStudents] = useState([]);
@@ -12,22 +13,38 @@ const DataSiswa = () => {
   const [status, setStatus] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async (e) => {
-    const studentsCollectionRef = collection(db, "students");
+  const field = {
+    email,
+    name,
+    class: kelas,
+    date,
+    gender,
+    status,
+    password,
+  };
+
+  const addData = async (e) => {
     e.preventDefault();
     if (email === "" || password === "" || name === "" || kelas === "" || date === "") {
-      alert("Kolom tidak boleh kosong")
+      alert("Kolom tidak boleh kosong");
       return;
     }
-    // const movieCollectionRef = collection(db, "movies");
-    addDoc(studentsCollectionRef, { email, name, kelas, date, gender, status, password })
-      .then((res) => {
-        console.log(res.id);
+    try {
+      ActionsFirebaseStudents.addStudents(field);
+    } catch (error) {
+      console.log(error);
+    }
+    alert("Berhasil menambahkan data");
+  };
+
+  const deleteData = async (id, name) => {
+    const studentsCollectionRef = doc(db, "students", id);
+    await deleteDoc(studentsCollectionRef)
+      .then(() => {
+        console.log("Document Deleted");
+        alert(`Berhasil menghapus user ${name}`);
       })
-      .catch((err) => {
-        console.log(err.message);
-      });
-    alert(name);
+      .catch((error) => console.log(error.message));
   };
 
   useEffect(() => {
@@ -61,7 +78,7 @@ const DataSiswa = () => {
               <tr>
                 <th>Email</th>
                 <th>Name</th>
-                <th>className</th>
+                <th>class</th>
                 <th>Date 0f Birth</th>
                 <th>Gender</th>
                 <th>Status</th>
@@ -75,14 +92,14 @@ const DataSiswa = () => {
                   <tr key={student.id}>
                     <td>{student.email}</td>
                     <td>{student.name}</td>
-                    <td>{student.className}</td>
+                    <td>{student.class}</td>
                     <td>{student.date}</td>
                     <td>{student.gender}</td>
                     <td>{student.status}</td>
                     <td>{student.password}</td>
                     <td>
                       <button className="btn btn-primary me-2">Edit</button>
-                      <button className="btn btn-danger">Hapus</button>
+                      <button className="btn btn-danger" onClick={() => deleteData(student.id, student.name)}>Hapus</button>
                     </td>
                   </tr>
                 );
@@ -100,7 +117,7 @@ const DataSiswa = () => {
                 </h5>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={addData}>
                 <div className="modal-body row g-3">
                   <div className="col-md-12">
                     <label htmlFor="email" className="form-label">
@@ -121,10 +138,17 @@ const DataSiswa = () => {
                     <input type="text" className="form-control" id="name" onChange={(e) => setName(e.target.value)} required />
                   </div>
                   <div className="col-md-6">
-                    <label htmlFor="className" className="form-label">
-                      className
+                    <label htmlFor="class" className="form-label">
+                      class
                     </label>
-                    <input type="text" className="form-control" id="className" onChange={(e) => setClass(e.target.value)} required />
+                    <select defaultValue="" className="form-select" id="class" onChange={(e) => setClass(e.target.value)} required>
+                      <option value="" disabled>
+                        Choose class
+                      </option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
                   </div>
                   <div className="col-md-6">
                     <label htmlFor="date" className="form-label">

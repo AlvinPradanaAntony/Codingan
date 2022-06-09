@@ -2,11 +2,18 @@ import { db } from "../config/firebase-config";
 
 import { collection, getDocs, getDoc, addDoc, updateDoc, deleteDoc, doc } from "firebase/firestore";
 
-const bookCollectionRef = collection(db, "books");
+const studentsCollectionRef = collection(db, "students");
 
-export default class ActionsFirebaseTeachers {
-  addBooks = (newBook) => {
-    return addDoc(bookCollectionRef, newBook);
+export default new class ActionsFirebaseStudents {
+  addStudents = (field) => {
+    addDoc(studentsCollectionRef, field)
+      .then((res) => {
+        console.log(res);
+        console.log("Document successfully written!");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   };
 
   updateBook = (id, updatedBook) => {
@@ -20,12 +27,11 @@ export default class ActionsFirebaseTeachers {
   };
 
   getAllBooks = () => {
-    return getDocs(bookCollectionRef);
+    return getDocs(studentsCollectionRef);
   };
 
   getBook = (id) => {
     const bookDoc = doc(db, "books", id);
     return getDoc(bookDoc);
   };
-}
-
+};
