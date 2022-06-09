@@ -38,20 +38,24 @@ const DataSiswa = () => {
     alert("Berhasil menambahkan data");
   };
 
-  const editData = () => {
-    const studentsCollectionRef = doc(db, "students", id);
-    updateDoc(studentsCollectionRef)
-      .then(() => {
-        alert("Data berhasil diubah");
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
+  const updateUser = async (id, email, name, kelas, date, gender, status, password) => {
+    setId(id);
+    setEmail(email);
+    setName(name);
+    setClass(kelas);
+    setDate(date);
+    setGender(gender);
+    setStatus(status);
+    setPassword(password);
   };
 
-  const handleEdit = (e) => {
-    e.preventDefault();
-    
+  const editUser = async () => {
+    const studentsCollectionRef = doc(db, "students", id);
+    updateDoc(studentsCollectionRef, { name, email, class: kelas, date, status, password })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => console.log(error.message));
   };
 
   const deleteData = async (id, name) => {
@@ -86,7 +90,7 @@ const DataSiswa = () => {
       <main>
         <div className="card-body">
           <div className="d-flex justify-content-end mt-1">
-            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
               Add Data
             </button>
           </div>
@@ -115,7 +119,9 @@ const DataSiswa = () => {
                     <td>{student.status}</td>
                     <td>{student.password}</td>
                     <td>
-                      <button className="btn btn-primary me-2">Edit</button>
+                      <button className="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#editModal" onClick={() => updateUser(student.id, student.email, student.name, student.class, student.date, student.gender, student.status, student.password)}>
+                        Edit
+                      </button>
                       <button className="btn btn-danger" onClick={() => deleteData(student.id, student.name)}>
                         Hapus
                       </button>
@@ -127,7 +133,7 @@ const DataSiswa = () => {
           </table>
         </div>
 
-        <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal fade" id="addModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
@@ -192,6 +198,93 @@ const DataSiswa = () => {
                       Status
                     </label>
                     <select defaultValue="" className="form-select" id="status" onChange={(e) => setStatus(e.target.value)} required>
+                      <option value="" disabled>
+                        Choose Plan
+                      </option>
+                      <option value="Free Plan">Free Plan</option>
+                      <option value="Personal Plan">Personal Plan</option>
+                      <option value="Pro PLan">Pro Plan</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                  <button type="submit" className="btn btn-primary">
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div className="modal fade" id="editModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel">
+                  Edit Data
+                </h5>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <form onSubmit={addData}>
+                <div className="modal-body row g-3">
+                  <div className="col-md-12">
+                    <label htmlFor="email" className="form-label">
+                      Email
+                    </label>
+                    <input type="text" value={email} className="form-control" id="email" onChange={(e) => setEmail(e.target.value)} required />
+                  </div>
+                  <div className="col-md-12">
+                    <label htmlFor="password" className="form-label">
+                      Password
+                    </label>
+                    <input type="password" value={password} className="form-control" id="password" onChange={(e) => setPassword(e.target.value)} required />
+                  </div>
+                  <div className="col-md-6">
+                    <label htmlFor="name" className="form-label">
+                      Name
+                    </label>
+                    <input type="text" value={name} className="form-control" id="name" onChange={(e) => setName(e.target.value)} required />
+                  </div>
+                  <div className="col-md-6">
+                    <label htmlFor="class" className="form-label">
+                      class
+                    </label>
+                    <select defaultValue="" value={kelas} className="form-select" id="class" onChange={(e) => setClass(e.target.value)} required>
+                      <option value="" disabled>
+                        Choose class
+                      </option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                  </div>
+                  <div className="col-md-6">
+                    <label htmlFor="date" className="form-label">
+                      Date of Birth
+                    </label>
+                    <input type="date" value={date} className="form-control" id="date" onChange={(e) => setDate(e.target.value)} required />
+                  </div>
+                  <div className="col-md-6">
+                    <label htmlFor="gender" className="form-label">
+                      Gender
+                    </label>
+                    <select defaultValue="" value={gender} className="form-select" id="gender" onChange={(e) => setGender(e.target.value)} required>
+                      <option value="" disabled>
+                        Choose Gender
+                      </option>
+                      <option value="Laki-laki">Laki-laki</option>
+                      <option value="Perempuan">Perempuan</option>
+                    </select>
+                  </div>
+                  <div className="col-md-12">
+                    <label htmlFor="status" className="form-label">
+                      Status
+                    </label>
+                    <select defaultValue="" value={status} className="form-select" id="status" onChange={(e) => setStatus(e.target.value)} required>
                       <option value="" disabled>
                         Choose Plan
                       </option>
