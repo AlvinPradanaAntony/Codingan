@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../config/firebase-config";
-import { collection, getDocs, deleteDoc, doc, onSnapshot } from "firebase/firestore";
+import { collection, addDoc, getDocs, deleteDoc, doc, onSnapshot } from "firebase/firestore";
 
 const DataSiswa = () => {
   const [students, setStudents] = useState([]);
@@ -10,44 +10,31 @@ const DataSiswa = () => {
   const [date, setDate] = useState("");
   const [gender, setGender] = useState("");
   const [status, setStatus] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
+    const studentsCollectionRef = collection(db, "students");
     e.preventDefault();
-    setMessage("");
-    if (title === "" || author === "") {
-      setMessage({ error: true, msg: "All fields are mandatory!" });
+    if (email === "" || password === "" || name === "" || kelas === "" || date === "") {
+      alert("Kolom tidak boleh kosong")
       return;
     }
-    const newBook = {
-      title,
-      author,
-      status,
-    };
-    console.log(newBook);
-
-    try {
-      if (id !== undefined && id !== "") {
-        await BookDataService.updateBook(id, newBook);
-        setBookId("");
-        setMessage({ error: false, msg: "Updated successfully!" });
-      } else {
-        await BookDataService.addBooks(newBook);
-        setMessage({ error: false, msg: "New Book added successfully!" });
-      }
-    } catch (err) {
-      setMessage({ error: true, msg: err.message });
-    }
-
-    setTitle("");
-    setAuthor("");
+    // const movieCollectionRef = collection(db, "movies");
+    addDoc(studentsCollectionRef, { email, name, kelas, date, gender, status, password })
+      .then((res) => {
+        console.log(res.id);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+    alert(name);
   };
 
-  
   useEffect(() => {
     showData();
   }, []);
 
-  const showData = () =>{
+  const showData = () => {
     const studentsCollectionRef = collection(db, "students");
     const unsubscribe = onSnapshot(studentsCollectionRef, (snapshot) => {
       setStudents(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
@@ -55,7 +42,7 @@ const DataSiswa = () => {
     return () => {
       unsubscribe();
     };
-  }
+  };
 
   return (
     <div className="App">
@@ -65,7 +52,7 @@ const DataSiswa = () => {
       <main>
         <div className="card-body">
           <div className="d-flex justify-content-end mt-1">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
               Add Data
             </button>
           </div>
@@ -74,7 +61,7 @@ const DataSiswa = () => {
               <tr>
                 <th>Email</th>
                 <th>Name</th>
-                <th>Class</th>
+                <th>className</th>
                 <th>Date 0f Birth</th>
                 <th>Gender</th>
                 <th>Status</th>
@@ -88,7 +75,7 @@ const DataSiswa = () => {
                   <tr key={student.id}>
                     <td>{student.email}</td>
                     <td>{student.name}</td>
-                    <td>{student.class}</td>
+                    <td>{student.className}</td>
                     <td>{student.date}</td>
                     <td>{student.gender}</td>
                     <td>{student.status}</td>
@@ -104,65 +91,65 @@ const DataSiswa = () => {
           </table>
         </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">
+        <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel">
                   Tambah Data
                 </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <form>
-                <div class="modal-body row g-3">
-                  <div class="col-md-12">
-                    <label for="email" class="form-label">
+              <form onSubmit={handleSubmit}>
+                <div className="modal-body row g-3">
+                  <div className="col-md-12">
+                    <label htmlFor="email" className="form-label">
                       Email
                     </label>
-                    <input type="text" class="form-control" id="email" required />
+                    <input type="text" className="form-control" id="email" onChange={(e) => setEmail(e.target.value)} required />
                   </div>
-                  <div class="col-md-12">
-                    <label for="password" class="form-label">
+                  <div className="col-md-12">
+                    <label htmlFor="password" className="form-label">
                       Password
                     </label>
-                    <input type="password" class="form-control" id="password" required />
+                    <input type="password" className="form-control" id="password" onChange={(e) => setPassword(e.target.value)} required />
                   </div>
-                  <div class="col-md-6">
-                    <label for="name" class="form-label">
+                  <div className="col-md-6">
+                    <label htmlFor="name" className="form-label">
                       Name
                     </label>
-                    <input type="text" class="form-control" id="name" required />
+                    <input type="text" className="form-control" id="name" onChange={(e) => setName(e.target.value)} required />
                   </div>
-                  <div class="col-md-6">
-                    <label for="class" class="form-label">
-                      Class
+                  <div className="col-md-6">
+                    <label htmlFor="className" className="form-label">
+                      className
                     </label>
-                    <input type="text" class="form-control" id="class" required />
+                    <input type="text" className="form-control" id="className" onChange={(e) => setClass(e.target.value)} required />
                   </div>
-                  <div class="col-md-6">
-                    <label for="date" class="form-label">
+                  <div className="col-md-6">
+                    <label htmlFor="date" className="form-label">
                       Date of Birth
                     </label>
-                    <input type="date" class="form-control" id="date" required />
+                    <input type="date" className="form-control" id="date" onChange={(e) => setDate(e.target.value)} required />
                   </div>
-                  <div class="col-md-6">
-                    <label for="gender" class="form-label">
+                  <div className="col-md-6">
+                    <label htmlFor="gender" className="form-label">
                       Gender
                     </label>
-                    <select class="form-select" id="gender" required>
-                      <option selected disabled>
+                    <select defaultValue="" className="form-select" id="gender" onChange={(e) => setGender(e.target.value)} required>
+                      <option value="" disabled>
                         Choose Gender
                       </option>
                       <option value="Laki-laki">Laki-laki</option>
                       <option value="Perempuan">Perempuan</option>
                     </select>
                   </div>
-                  <div class="col-md-12">
-                    <label for="status" class="form-label">
-                      Gender
+                  <div className="col-md-12">
+                    <label htmlFor="status" className="form-label">
+                      Status
                     </label>
-                    <select class="form-select" id="status" required>
-                      <option selected disabled>
+                    <select defaultValue="" className="form-select" id="status" onChange={(e) => setStatus(e.target.value)} required>
+                      <option value="" disabled>
                         Choose Plan
                       </option>
                       <option value="Free Plan">Free Plan</option>
@@ -171,11 +158,11 @@ const DataSiswa = () => {
                     </select>
                   </div>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                <div className="modal-footer">
+                  <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
                     Close
                   </button>
-                  <button type="submit" class="btn btn-primary">
+                  <button type="submit" className="btn btn-primary">
                     Submit
                   </button>
                 </div>
