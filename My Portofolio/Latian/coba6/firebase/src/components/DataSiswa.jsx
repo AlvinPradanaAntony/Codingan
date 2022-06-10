@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../config/firebase-config";
-import { collection, addDoc, deleteDoc, doc, onSnapshot, updateDoc } from "firebase/firestore";
+import { collection, addDoc, deleteDoc, doc, onSnapshot, updateDoc, getDoc, getDocs } from "firebase/firestore";
+import { async } from "@firebase/util";
 
 const studentsCollectionRef = collection(db, "students");
 
@@ -26,6 +27,16 @@ const DataSiswa = () => {
       unsubscribe();
     };
   }, []);
+
+  useEffect(() => {
+    showData();
+  }, []);
+
+  const showData = async () => {
+    const show = await getDocs(studentsCollectionRef);
+    console.log(show);
+    setStudents(show.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  };
 
   function addData(e) {
     e.preventDefault();
@@ -63,7 +74,13 @@ const DataSiswa = () => {
       })
       .catch((error) => console.log(error.message));
     alert("Berhasil di update");
-    
+    setEmail("");
+    setName("");
+    setClass("");
+    setDate("");
+    setGender("");
+    setStatus("");
+    setPassword("");
   }
 
   function deleteData(id, name) {
