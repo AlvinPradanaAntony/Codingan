@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../config/firebase-config";
-import { collection, addDoc, getDocs, deleteDoc, doc, onSnapshot, updateDoc } from "firebase/firestore";
-import ActionsFirebaseStudents from "../services/actionsCRUD";
+import { collection, addDoc, deleteDoc, doc, onSnapshot, updateDoc } from "firebase/firestore";
+
+const studentsCollectionRef = collection(db, "students");
 
 const DataSiswa = () => {
   const [students, setStudents] = useState([]);
@@ -14,31 +15,32 @@ const DataSiswa = () => {
   const [password, setPassword] = useState("");
   const [id, setId] = useState("");
 
-  const field = {
-    email,
-    name,
-    class: kelas,
-    date,
-    gender,
-    status,
-    password,
-  };
+  const studentsCollectionRef = collection(db, "students");
 
-  const addData = (e) => {
+
+  useEffect(() => {
+    const unsubscribe = onSnapshot(studentsCollectionRef, (snapshot) => {
+      setStudents(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  function addData(e) {
     e.preventDefault();
-    // if (email === "" || password === "" || name === "" || kelas === "" || date === "") {
-    //   alert("Kolom tidak boleh kosong");
-    //   return;
-    // }
-    try {
-      ActionsFirebaseStudents.addStudents(field);
-    } catch (error) {
-      console.log(error);
-    }
-    alert("Berhasil menambahkan data");
-  };
+    // const movieCollectionRef = collection(db, "movies");
+    addDoc(studentsCollectionRef, { email, name, kelas, date, gender, status, password })
+      .then((res) => {
+        console.log(res.id);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+    alert(name);
+  }
 
-  const updateUser = async (id, email, name, kelas, date, gender, status, password) => {
+  function handlerEdit (id, email, name, kelas, date, gender, status, password) {
     setId(id);
     setEmail(email);
     setName(name);
@@ -47,40 +49,32 @@ const DataSiswa = () => {
     setGender(gender);
     setStatus(status);
     setPassword(password);
-  };
+  }
 
-  const editUser = async () => {
-    const studentsCollectionRef = doc(db, "students", id);
-    updateDoc(studentsCollectionRef, { name, email, class: kelas, date, status, password })
+  function editData(e) {
+    e.preventDefault();
+    if (email === "" || id === "") {
+      return;
+    }
+    const docRef = doc(db, "students", id);
+    updateDoc(docRef, { email: email, name: name, class: kelas, date: date, gender: gender, status: status, password: password })
       .then((response) => {
-        console.log(response);
+        console.log("Berhasil Di Update");
       })
       .catch((error) => console.log(error.message));
-  };
+    alert("Berhasil di update");
+    
+  }
 
-  const deleteData = async (id, name) => {
-    const studentsCollectionRef = doc(db, "students", id);
-    await deleteDoc(studentsCollectionRef)
-      .then(() => {
-        console.log("Document Deleted");
-        alert(`Berhasil menghapus user ${name}`);
-      })
-      .catch((error) => console.log(error.message));
-  };
-
-  useEffect(() => {
-    showData();
-  }, []);
-
-  const showData = () => {
-    const studentsCollectionRef = collection(db, "students");
-    const unsubscribe = onSnapshot(studentsCollectionRef, (snapshot) => {
-      setStudents(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-    });
-    return () => {
-      unsubscribe();
-    };
-  };
+  function deleteData(id, name) {
+    const docRef = doc(db, "students", id);
+    deleteDoc(docRef)
+    .then(() => {
+      console.log("Document Deleted");
+      alert(name);
+    })
+    .catch((error) => console.log(error.message))
+  }
 
   return (
     <div className="App">
@@ -119,7 +113,7 @@ const DataSiswa = () => {
                     <td>{student.status}</td>
                     <td>{student.password}</td>
                     <td>
-                      <button className="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#editModal" onClick={() => updateUser(student.id, student.email, student.name, student.class, student.date, student.gender, student.status, student.password)}>
+                      <button className="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#editModal" onClick={() => handlerEdit(student.id, student.email, student.name, student.class, student.date, student.gender, student.status, student.password)}>
                         Edit
                       </button>
                       <button className="btn btn-danger" onClick={() => deleteData(student.id, student.name)}>
@@ -229,7 +223,7 @@ const DataSiswa = () => {
                 </h5>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <form onSubmit={addData}>
+              <form onSubmit={editData}>
                 <div className="modal-body row g-3">
                   <div className="col-md-12">
                     <label htmlFor="email" className="form-label">
@@ -253,7 +247,7 @@ const DataSiswa = () => {
                     <label htmlFor="class" className="form-label">
                       class
                     </label>
-                    <select defaultValue="" value={kelas} className="form-select" id="class" onChange={(e) => setClass(e.target.value)} required>
+                    <select value={kelas} className="form-select" id="class" onChange={(e) => setClass(e.target.value)} required>
                       <option value="" disabled>
                         Choose class
                       </option>
@@ -272,7 +266,7 @@ const DataSiswa = () => {
                     <label htmlFor="gender" className="form-label">
                       Gender
                     </label>
-                    <select defaultValue="" value={gender} className="form-select" id="gender" onChange={(e) => setGender(e.target.value)} required>
+                    <select value={gender} className="form-select" id="gender" onChange={(e) => setGender(e.target.value)} required>
                       <option value="" disabled>
                         Choose Gender
                       </option>
@@ -284,7 +278,7 @@ const DataSiswa = () => {
                     <label htmlFor="status" className="form-label">
                       Status
                     </label>
-                    <select defaultValue="" value={status} className="form-select" id="status" onChange={(e) => setStatus(e.target.value)} required>
+                    <select value={status} className="form-select" id="status" onChange={(e) => setStatus(e.target.value)} required>
                       <option value="" disabled>
                         Choose Plan
                       </option>
