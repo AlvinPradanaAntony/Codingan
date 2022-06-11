@@ -17,8 +17,15 @@ const DataSiswa = () => {
   const [id, setId] = useState("");
 
   const studentsCollectionRef = collection(db, "students");
-
-
+  const clearData = () => {
+    setEmail("");
+    setName("");
+    setClass("");
+    setDate("");
+    setGender("");
+    setStatus("");
+    setPassword("");
+  };
   useEffect(() => {
     const unsubscribe = onSnapshot(studentsCollectionRef, (snapshot) => {
       setStudents(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
@@ -34,16 +41,15 @@ const DataSiswa = () => {
 
   const showData = async () => {
     const show = await getDocs(studentsCollectionRef);
-    console.log(show);
     setStudents(show.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
   };
 
   function addData(e) {
     e.preventDefault();
     // const movieCollectionRef = collection(db, "movies");
-    addDoc(studentsCollectionRef, { email, name, kelas, date, gender, status, password })
+    addDoc(studentsCollectionRef, { email, name, class: kelas, date, gender, status, password })
       .then((res) => {
-        console.log(res.id);
+        console.log("Add data success " + res);
       })
       .catch((err) => {
         console.log(err.message);
@@ -51,7 +57,7 @@ const DataSiswa = () => {
     alert(name);
   }
 
-  function handlerEdit (id, email, name, kelas, date, gender, status, password) {
+  function handleModal(id, email, name, kelas, date, gender, status, password) {
     setId(id);
     setEmail(email);
     setName(name);
@@ -74,23 +80,17 @@ const DataSiswa = () => {
       })
       .catch((error) => console.log(error.message));
     alert("Berhasil di update");
-    setEmail("");
-    setName("");
-    setClass("");
-    setDate("");
-    setGender("");
-    setStatus("");
-    setPassword("");
+    clearData();
   }
 
   function deleteData(id, name) {
     const docRef = doc(db, "students", id);
     deleteDoc(docRef)
-    .then(() => {
-      console.log("Document Deleted");
-      alert(name);
-    })
-    .catch((error) => console.log(error.message))
+      .then(() => {
+        console.log("Document Deleted");
+        alert(name);
+      })
+      .catch((error) => console.log(error.message));
   }
 
   return (
@@ -130,7 +130,7 @@ const DataSiswa = () => {
                     <td>{student.status}</td>
                     <td>{student.password}</td>
                     <td>
-                      <button className="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#editModal" onClick={() => handlerEdit(student.id, student.email, student.name, student.class, student.date, student.gender, student.status, student.password)}>
+                      <button className="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#editModal" onClick={() => handleModal(student.id, student.email, student.name, student.class, student.date, student.gender, student.status, student.password)}>
                         Edit
                       </button>
                       <button className="btn btn-danger" onClick={() => deleteData(student.id, student.name)}>
