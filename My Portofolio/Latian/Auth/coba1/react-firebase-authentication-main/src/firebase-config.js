@@ -2,13 +2,14 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAXFme_oTPlrFmWIm707ac6Z2qawoTvf2k",
-  authDomain: "authentication-tutorial-ec556.firebaseapp.com",
-  projectId: "authentication-tutorial-ec556",
-  storageBucket: "authentication-tutorial-ec556.appspot.com",
-  messagingSenderId: "945663559539",
-  appId: "1:945663559539:web:51b9786fd75d399bf86706",
-  measurementId: "G-22FP5PHT1F",
+  apiKey: "AIzaSyC5TGVgdM5goEa3lbPVWZuhblObTe_iN0Q",
+  authDomain: "latiancrud-25e2c.firebaseapp.com",
+  databaseURL: "https://latiancrud-25e2c-default-rtdb.firebaseio.com",
+  projectId: "latiancrud-25e2c",
+  storageBucket: "latiancrud-25e2c.appspot.com",
+  messagingSenderId: "514987945998",
+  appId: "1:514987945998:web:b509931bb75eabdc744c5f",
+  measurementId: "G-9GWKE9QSQC"
 };
 
 const app = initializeApp(firebaseConfig);
