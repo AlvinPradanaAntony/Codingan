@@ -52,7 +52,6 @@ export default function App() {
       <button disabled={ loading || currentUser } onClick={handleSignup}>Sign Up</button>
       <button disabled={ loading || currentUser } onClick={handleLogin}>Log In</button>
       <button disabled={ loading || !currentUser } onClick={handleLogout}>Log Out</button>
-
     </div>
   );
 }

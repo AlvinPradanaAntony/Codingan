@@ -1,26 +1,33 @@
-import React from 'react';
-import Signin from './components/Signin';
-import Signup from './components/Signup';
-import Account from './components/Account';
-import { Route, Routes } from 'react-router-dom';
-import { AuthContextProvider } from './context/AuthContext';
-import ProtectedRoute from './components/ProtectedRoute';
+import React from "react";
+import Signin from "./components/Signin";
+import Signup from "./components/Signup";
+import Account from "./components/Account";
+import { Route, Routes } from "react-router-dom";
+import { AuthContextProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+import DataClass from "./components/DataClass";
 
 function App() {
   return (
     <div>
-      <h1 className='text-center text-3xl font-bold'>
-        Firebase Auth & Context
-      </h1>
+      <h1 className="text-center text-3xl font-bold">Firebase Auth & Context</h1>
       <AuthContextProvider>
         <Routes>
-          <Route path='/' element={<Signin />} />
-          <Route path='/signup' element={<Signup />} />
+          <Route path="/" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
           <Route
-            path='/account'
+            path="/account"
             element={
               <ProtectedRoute>
                 <Account />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/class"
+            element={
+              <ProtectedRoute>
+                <DataClass />
               </ProtectedRoute>
             }
           />

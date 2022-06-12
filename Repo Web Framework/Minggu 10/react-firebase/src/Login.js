@@ -33,6 +33,7 @@ const Login = () => {
   };
   function condition() {
     if (user?.email == null) {
+      Auth.setLoggedIn(false);
       return (
         <div>
           <form onSubmit={(e) => handleForm(e)}>
@@ -62,6 +63,7 @@ const Login = () => {
         </div>
       );
     } else {
+      Auth.setLoggedIn(true);
       return (
         <div>
           <span>Sebagai: {user?.email}</span>
