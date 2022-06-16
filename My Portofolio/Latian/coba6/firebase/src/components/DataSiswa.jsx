@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { db } from "../config/firebase-config";
 import { collection, addDoc, deleteDoc, doc, onSnapshot, updateDoc, getDoc, getDocs } from "firebase/firestore";
 import { async } from "@firebase/util";
+import { Link } from "react-router-dom";
 
 const studentsCollectionRef = collection(db, "students");
 
@@ -34,15 +35,6 @@ const DataSiswa = () => {
       unsubscribe();
     };
   }, []);
-
-  useEffect(() => {
-    showData();
-  }, []);
-
-  const showData = async () => {
-    const show = await getDocs(studentsCollectionRef);
-    setStudents(show.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  };
 
   function addData(e) {
     e.preventDefault();
@@ -92,6 +84,7 @@ const DataSiswa = () => {
       })
       .catch((error) => console.log(error.message));
   }
+  console.log(students);
 
   return (
     <div className="App">
@@ -130,9 +123,12 @@ const DataSiswa = () => {
                     <td>{student.status}</td>
                     <td>{student.password}</td>
                     <td>
-                      <button className="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#editModal" onClick={() => handleModal(student.id, student.email, student.name, student.class, student.date, student.gender, student.status, student.password)}>
+                      {/* <button className="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#editModal" onClick={() => handleModal(student.id, student.email, student.name, student.class, student.date, student.gender, student.status, student.password)}>
                         Edit
-                      </button>
+                      </button> */}
+                      <Link to={`/show/${student.id}`} class="btn btn-success">
+                        Edit
+                      </Link>
                       <button className="btn btn-danger" onClick={() => deleteData(student.id, student.name)}>
                         Hapus
                       </button>
