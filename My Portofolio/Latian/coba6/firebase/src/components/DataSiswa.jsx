@@ -113,6 +113,7 @@ const DataSiswa = () => {
             </thead>
             <tbody>
               {students.map((student) => {
+                console.log(student);
                 return (
                   <tr key={student.id}>
                     <td>{student.email}</td>

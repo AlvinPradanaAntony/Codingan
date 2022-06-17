@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Profile from './pages/Profile'
 import AuthProvider from "./context/auth";
 import PrivateRoute from "./components/PrivateRoute";
+import Chat from "./pages/chat";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <PrivateRoute exact path="/profile" component={Profile} />
           <PrivateRoute exact path="/" component={Home} />
+          <PrivateRoute exact path="/chat/:id" component={Chat} />
         </Switch>
       </BrowserRouter>
     </AuthProvider>

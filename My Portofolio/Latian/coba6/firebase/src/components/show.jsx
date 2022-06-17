@@ -32,7 +32,7 @@ const Show = () => {
       }
     });
   }, []);
-
+  console.log("State students: ",students);
   function editData(e) {
     e.preventDefault();
 

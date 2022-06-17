@@ -3,7 +3,7 @@ import Img from "../image1.jpg";
 import { onSnapshot, doc } from "firebase/firestore";
 import { db } from "../firebase";
 
-const User = ({ user1, user, selectUser, chat }) => {
+const User = ({ user1, user}) => {
   const user2 = user?.uid;
   const [data, setData] = useState("");
 
@@ -18,8 +18,7 @@ const User = ({ user1, user, selectUser, chat }) => {
   return (
     <>
       <div
-        className={`user_wrapper ${chat.name === user.name && "selected_user"}`}
-        onClick={() => selectUser(user)}
+        className={`user_wrapper}`}
       >
         <div className="user_info">
           <div className="user_detail">
@@ -42,7 +41,7 @@ const User = ({ user1, user, selectUser, chat }) => {
       </div>
       <div
         onClick={() => selectUser(user)}
-        className={`sm_container ${chat.name === user.name && "selected_user"}`}
+        className={`sm_container`}
       >
         <img
           src={user.avatar || Img}
