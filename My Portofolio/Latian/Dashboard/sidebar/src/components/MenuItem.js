@@ -12,7 +12,7 @@ const MenuItem = (props) => {
 
   return (
     <li onClick={props.onClick}>
-      <Link
+      <NavLink
         exact
         to={to}
         // onClick={() => {
@@ -24,7 +24,7 @@ const MenuItem = (props) => {
           <i class={iconClassName}></i>
         </div>
         <span>{name}</span>
-      </Link>
+      </NavLink>
       {subMenus && subMenus.length > 0 ? (
         <ul className={`sub-menu`}>
           {subMenus.map((menu, index) => (

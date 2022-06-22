@@ -45,7 +45,6 @@ export const menuItems = [
 
 const SideMenu = (props) => {
   const [inactive, setInactive] = useState(false);
-  const [active, setActive] = useState("")
 
   useEffect(() => {
     if (inactive) {
@@ -73,10 +72,10 @@ const SideMenu = (props) => {
         removeActiveClassFromSubMenu();
         menuItems.forEach((el) => el.classList.remove("active"));
         el.classList.toggle("active");
-        console.log("State", next);
-        // if (next !== null) {
-        //   next.classList.toggle("active");
-        // }
+        console.log(next);
+        if (next !== null) {
+          next.classList.toggle("active");
+        }
       });
     });
   }, []);
@@ -116,11 +115,11 @@ const SideMenu = (props) => {
               to={menuItem.to}
               subMenus={menuItem.subMenus || []}
               iconClassName={menuItem.iconClassName}
-              // onClick={(e) => {
-              //   if (inactive) {
-              //     setInactive(false);
-              //   }
-              // }}
+              onClick={(e) => {
+                if (inactive) {
+                  setInactive(false);
+                }
+              }}
             />
           ))}
 

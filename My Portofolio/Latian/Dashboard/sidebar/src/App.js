@@ -3,8 +3,14 @@ import SideMenu, { menuItems } from "./components/SideMenu";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState } from "react";
+import { Design2 } from "./components/Design2";
 
-const Dashboard = () => <h1>Dashboard</h1>;
+const Dashboard = () => {
+const [active, setActive] = useState(true);
+return(
+<h1>Dashboard</h1>
+);
+}
 const Content = () => <h1>Content</h1>;
 const Courses = () => <h1>Content/Courses</h1>;
 const Videos = () => <h1>Content/Videos</h1>;
@@ -12,7 +18,7 @@ const Design = () => <h1>Design</h1>;
 const Content2 = () => <h1>Content2</h1>;
 const Courses2 = () => <h1>Content/Courses 2</h1>;
 const Videos2 = () => <h1>Content/Videos 2</h1>;
-const Design2 = () => <h1>Design 2</h1>;
+
 const Design3 = () => <h1>Design 3</h1>;
 const Design4 = () => <h1>Design 4</h1>;
 
