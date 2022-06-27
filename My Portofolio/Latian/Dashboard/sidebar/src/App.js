@@ -36,7 +36,7 @@ function App() {
           }}
         />
 
-        <div className={`container ${inactive ? "inactive" : ""}`}>
+        {/* <div className={`container ${inactive ? "inactive" : ""}`}> */}
           {/* improvememt, not recorded in video, its just looping through menuItems
           instead of hard coding all the routes */}
           {/* {menuItems.map((menu, index) => (
@@ -54,7 +54,7 @@ function App() {
             </>
           ))} */}
 
-          <Switch>
+          {/* <Switch>
             <Route exact path={"/"}>
               <Dashboard />
             </Route>
@@ -89,7 +89,7 @@ function App() {
               <Design4 />
             </Route>
           </Switch>
-        </div>
+        </div> */}
       </Router> 
     </div>
   );
