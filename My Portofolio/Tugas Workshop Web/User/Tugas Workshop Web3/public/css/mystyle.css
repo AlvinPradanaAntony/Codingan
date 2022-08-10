@@ -1,0 +1,33 @@
+/* Button property */
+.btn {
+    padding: 12px 40px !important;
+}
+
+/* Button color */
+.btn-primary {
+    background-color: #6E5DE7;
+    color: white;
+}
+
+body {
+    font-family: 'Poppins',
+        sans-serif;
+}
+
+.my-nav {
+    background-color: transparent !important;
+}
+
+.my-nav .navbar-nav li {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #2a2a2a;
+}
+
+.navbar-nav .active {
+    color: #6E5DE7 !important;
+    border-bottom: 3px solid #6E5DE7;
+}
