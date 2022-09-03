@@ -1,0 +1,144 @@
+* {
+  margin: 0px;
+}
+
+.header {
+  padding: 35px;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  background: #1abc9c;
+}
+
+body {
+  background-image: url();
+  background-size: cover;
+  background-position: center;
+}
+
+.menu-bar {
+  background: #136ef7;
+  text-align: center;
+}
+
+.menu-bar ul {
+  display: inline-flex;
+  list-style: none;
+  color: #fff;
+}
+
+.menu-bar ul li {
+  width: 120px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.menu-bar ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.active,
+.menu-bar ul li:hover {
+  cursor: pointer;
+  background: #5092f4;
+  border-radius: 3px;
+}
+
+.sub-menu-1 {
+  display: none;
+}
+
+.action,
+.menu-bar ul li:hover .sub-menu-1 {
+  display: block;
+  position: absolute;
+  background: #126ef7;
+  margin-top: 10px;
+  margin-left: -5px;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul {
+  display: block;
+  margin: 10px;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li {
+  width: 150px;
+  padding: 5px;
+  border-bottom: 1px dotted #fff;
+  background: transparent;
+  border-radius: 0px;
+  text-align: left;
+}
+
+
+.menu-bar ul li:hover .sub-menu-1 ul li:last-child {
+  border-bottom: none;
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li a:hover {
+  color: #64d8f9;
+}
+
+label{
+  font-family: "Raleway", sans-serif;
+  font-size: 11pt;
+}
+
+#card {
+  background: #fbfbfb;
+  border-radius: 8px;
+  box-shadow: 1px 2px 8px rgba(0,0,0,0.65);
+  height: 410px;
+  margin: 2rem auto 4.1rem auto;
+  width: 329px;
+}
+
+#card-content {
+  padding: 12px 44px;
+}
+
+#card-title {
+  font-family: "Lato";
+  letter-spacing: 4px;
+  padding-bottom: 23px;
+  padding-top: 23px;
+  text-align: center;
+}
+
+.form{
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-border{
+  background: -webkit-linear-gradient(right,#AEF58F, #2ec06f);
+  height: 1px;
+  width: 100%;
+}
+
+.form-content{
+  background: #fbfbfb;
+  border: none;
+  outline: none;
+  padding-top: 14px;
+}
+
+.underline-title{
+  background: -webkit-linear-gradient(right, #AEF58F, #2ec06f);
+  height: 2px;
+  margin: -1.1rem auto 0 auto;
+  width: 89px;
+}
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #126ef7;
+  color: wheat;
+  text-align: center;
+}

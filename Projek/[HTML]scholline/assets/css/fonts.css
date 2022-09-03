@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Gilroy-Black';
+  src: url('../fonts/Gilroy-Black.ttf');
+}
+@font-face {
+  font-family: 'Gilroy-Bold';
+  src: url('../fonts/Gilroy-Bold.ttf');
+}
+@font-face {
+  font-family: 'Gilroy-ExtraBold';
+  src: url('../fonts/Gilroy-ExtraBold.otf');
+}
+@font-face {
+  font-family: 'Gilroy-Light';
+  src: url('../fonts/Gilroy-Light.otf');
+}
+@font-face {
+  font-family: 'Gilroy-Medium';
+  src: url('../fonts/Gilroy-Medium.ttf');
+}
+@font-face {
+  font-family: 'Gilroy-SemiBold';
+  src: url('../fonts/Gilroy-SemiBold.ttf');
+}
+@font-face {
+  font-family: 'Gilroy-Regular';
+  src: url('../fonts/Gilroy-Regular.ttf');
+}
+@font-face {
+  font-family: 'NunitoSans-Black';
+  src: url('../fonts/NunitoSans-Black.ttf');
+}
+@font-face {
+  font-family: 'NunitoSans-Bold';
+  src: url('../fonts/NunitoSans-Bold.ttf');
+}
+@font-face {
+  font-family: 'NunitoSans-ExtraBold';
+  src: url('../fonts/NunitoSans-ExtraBold.ttf');
+}
+@font-face {
+  font-family: 'NunitoSans-SemiBold';
+  src: url('../fonts/NunitoSans-SemiBold.ttf');
+}
+@font-face {
+  font-family: 'NunitoSans-Regular';
+  src: url('../fonts/NunitoSans-Regular.ttf');
+}
+@font-face {
+  font-family: 'UniformRounded-Black';
+  src: url('../fonts/UniformRounded-Black.otf');
+}
+@font-face {
+  font-family: 'UniformRounded-Bold';
+  src: url('../fonts/UniformRounded-Bold.otf');
+}
+@font-face {
+  font-family: 'UniformRounded-Medium';
+  src: url('../fonts/UniformRounded-Medium.otf');
+}
+@font-face {
+  font-family: 'UniformRounded-Black';
+  src: url('../fonts/UniformRounded-Regular.otf');
+}

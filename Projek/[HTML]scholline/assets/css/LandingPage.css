@@ -1,0 +1,375 @@
+/* Universal */
+@import url("../css/fonts.css");
+
+/*==================== VARIABLES CSS ====================*/
+:root {
+  --header-height: 3rem;
+
+  /*========== Colors ==========*/
+  /* Change favorite color */
+  --hue-color: 235; /*Blue 235 - DeepBlue 239 */
+
+  /* HSL color mode */
+  --first-color: hsl(var(--hue-color), 83%, 64%);
+  --first-color-second: hsl(var(--hue-color), 83%, 64%);
+  --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+  --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+  --title-color: hsl(var(--hue-color), 46%, 21%);
+  --text-color: hsl(var(--hue-color), 8%, 45%);
+  --text-color-light: hsl(var(--hue-color), 8%, 65%);
+  --input-color: hsl(var(--hue-color), 70%, 96%);
+  --body-color: hsl(var(--hue-color), 60%, 99%);
+  --container-color: #fff;
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+  --scroll-thumb-hover-color: hsl(var(--hue-color), 8%, 65%);
+
+  /*========== Font and typography ==========*/
+  --header-font: "Gilroy-Regular";
+  --body-font: "NunitoSans-Regular"; /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+  --big-font-size: 4.5rem; /* 72px */
+  --h1-font-size: 3.25rem; /* 52px */
+  --h2-font-size: 2.125rem; /* 34px */
+  --h3-font-size: 1.375rem; /* 22px */
+  --normal-font-size: 0.938rem; /* 15px */
+  --small-font-size: 0.813rem; /* 14px */
+  --smaller-font-size: 0.75rem; /* 13px */
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-bold: 600;
+  --font-extra-bold: 800;
+
+  /*========== Margenes Bottom ==========*/
+  /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+  --m-0-25: 0.25rem;
+  --m-0-5: 0.5rem;
+  --m-0-75: 0.75rem;
+  --m-1: 1rem;
+  --m-1-5: 1.5rem;
+  --m-2: 2rem;
+  --m-2-5: 2.5rem;
+  --m-3: 3rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/*==================== BASE ====================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+  margin: 0 0 var(--header-height) 0;
+  background-image: url("../ico/bgSection1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: var(--body-font) !important;
+  color: var(--text-color);
+  font-size: var(--normal-font-size);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--header-font);
+  color: var(--title-color);
+  font-weight: var(--font-extra-bold);
+}
+
+/* Font size for large devices */
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 4.5rem; /* 72px */
+    --h1-font-size: 4rem; /* 64px */
+    --h2-font-size: 2.25rem; /* 36px */
+    --h3-font-size: 1.5rem; /* 24px */
+    --normal-font-size: 1rem; /* 16px */
+    --small-font-size: 0.813rem; /* 14px */
+    --smaller-font-size: 0.75rem; /* 13px */
+  }
+}
+
+/*========== Variables Dark theme ==========*/
+body.dark-theme {
+  /* HSL color mode */
+  --first-color-second: hsl(var(--hue-color), 30%, 8%);
+  --title-color: hsl(var(--hue-color), 8%, 95%);
+  --text-color: hsl(var(--hue-color), 8%, 75%);
+  --input-color: hsl(var(--hue-color), 29%, 16%);
+  --body-color: hsl(var(--hue-color), 28%, 12%);
+  --container-color: hsl(var(--hue-color), 29%, 16%);
+  --scroll-bar-color: hsl(var(--hue-color), 28%, 20%);
+  --scroll-thumb-color: hsl(var(--hue-color), 28%, 60%);
+  --scroll-thumb-hover-color: hsl(var(--hue-color), 69%, 61%);
+}
+
+/*========== Button Dark/Light ==========*/
+.change-theme {
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+}
+.change-theme:hover {
+  color: var(--first-color);
+}
+
+/*==================== Custom respnsive ====================*/
+/* @media (max-width: 992px) {
+  .titleHeader {
+    font-size: 54px !important;
+  }
+  .textHeader {
+    font-size: 18px !important;
+  }
+  .header form.center {
+    justify-content: center;
+  }
+  img.customPosition {
+    position: absolute;
+    width: 98%;
+    height: 658px !important;
+    right: 0%;
+    top: 0%;
+  }
+} */
+@media (min-width: 992px) {
+  .ps-lg-6 {
+    padding-left: 4rem !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+}
+@media screen and (min-width: 576px) {
+}
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 992px) {
+}
+
+@media screen and (min-width: 1400px) {
+}
+
+/*==================== NAV ====================*/
+@media screen and (max-width: 768px) {
+  .navbar-brand {
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+  }
+  .navbar__btns {
+    padding: 0 0.8rem;
+    margin-top: 1rem;
+  }
+  .navbar__btns .navbar__btn {
+    padding: 0 !important;
+    width: 100% !important;
+    height: 42px !important;
+  }
+  .offcanvas__container {
+    border: 0 !important;
+    max-width: 300px !important;
+  }
+  .offcanvas__header {
+    padding: 1rem 1.75rem !important;
+  }
+  .nav__link {
+    padding: 0.8rem !important;
+  }
+  .nav__theme {
+    display: none;
+  }
+  .nav__link:hover {
+    color: var(--first-color) !important;
+    font-weight: var(--font-bold) !important;
+  }
+  .nav__toggler {
+    display: inline-block !important;
+    border: 0 !important;
+    padding: 0.5rem;
+    vertical-align: middle;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+  }
+  .nav__toggler__icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  .nav__toggler__icon:hover {
+    color: var(--first-color);
+  }
+}
+
+.custShadowNav {
+  box-shadow: 0px 4px 18px rgba(5, 5, 5, 0.1);
+}
+.navbar__btn {
+  height: 32px !important;
+  padding: 0 2rem !important;
+  background-color: var(--first-color) !important;
+  color: #fff !important;
+  border: none !important;
+  outline: none !important;
+  font-size: var(--normal-font-size) !important;
+  border-radius: 1.25rem !important;
+}
+.navbar__btn:hover {
+  background-color: var(--first-color-alt) !important;
+}
+.nav-link {
+  font-size: var(--normal-font-size) !important;
+  align-items: center !important;
+  font-weight: var(--font-medium) !important;
+  color: var(--title-color) !important;
+}
+.nav__icon {
+  font-size: 1.25rem;
+}
+.nav__close {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.nav__close:hover {
+  color: var(--first-color);
+}
+.nav__toggler {
+  display: none;
+}
+
+/* Active Link */
+.nav__link.active {
+  color: var(--first-color) !important;
+  font-weight: var(--font-bold) !important;
+}
+
+.nav__link:hover {
+  color: var(--first-color) !important;
+}
+
+/*==================== REUSABLE CSS CLASSES ====================*/
+.section {
+  padding: 2rem 0 4rem;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-3);
+}
+
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
+
+/*==================== Home ====================*/
+img.customPosition {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+}
+.titleHeader {
+  font-family: "Gilroy-ExtraBold";
+  font-size: 64px;
+  color: #1f2050;
+  margin-top: 70px;
+  line-height: 110%;
+}
+.textHeader span {
+  color: #1f2050 !important;
+}
+.custBtn1 {
+  width: 166px;
+  height: 67px;
+  color: #ffffff !important;
+  background: #5563ef !important;
+}
+.custBtn2 {
+  width: 166px;
+  height: 67px;
+  border: 2px solid #5563ef !important;
+  color: #5563ef !important;
+}
+.ornamen1 {
+  position: absolute;
+  top: 35px;
+  right: -15%;
+}
+.ornamen2 {
+  position: absolute;
+  top: -7%;
+  right: -25%;
+}
+.ornamen3 {
+  width: 100%;
+  height: 450px;
+  background: linear-gradient(162.31deg, rgba(31, 32, 80, 0.1) 12.09%, rgba(255, 255, 255, 0) 101.34%);
+  backdrop-filter: blur(22px);
+  border: none !important;
+  outline: none !important;
+  border-radius: 16px;
+}
+.ornamen4 {
+  position: absolute;
+  top: 72%;
+  left: -8%;
+}
+@-webkit-keyframes move1 {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes move1 {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@-webkit-keyframes move2 {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes move2 {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.header img.ornamen2.imgMove {
+  -webkit-animation: move2 4s infinite linear ease-in-out;
+  animation: move2 4s infinite linear;
+}
+.header img.ornamen4.imgMove {
+  -webkit-animation: move1 4s infinite linear ease-in-out;
+  animation: move1 4s infinite linear;
+}
