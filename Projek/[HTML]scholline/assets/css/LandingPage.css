@@ -228,7 +228,27 @@ body.dark-theme {
 
 @media screen and (max-width: 576px) {
 }
-@media screen and (min-width: 576px) {
+@media screen and (max-width: 768px) {
+  img.customPosition {
+    display: none !important;
+  }
+  .home__title {
+    font-size: 3rem !important;
+    text-align: center;
+  }
+  .home__description{
+    font-size: 1.25rem !important;
+    text-align: center;
+  }
+  .home {
+    background-image: url("../ico/bg.png");
+    width: auto !important;
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+  }
 }
 @media screen and (min-width: 768px) {
   .section {
@@ -252,6 +272,9 @@ body.dark-theme {
   .navbar__btns {
     padding: 0 0.8rem;
     margin-top: 1rem;
+  }
+  .nav__btns{
+    justify-content: center;
   }
   .navbar__btns .navbar__btn {
     padding: 0 !important;
@@ -367,6 +390,7 @@ img.customPosition {
 }
 .home {
   padding-top: 4.5rem !important;
+  height: 100vh;
 }
 .home__title {
   font-family: var(--header-font-extraBold);
@@ -452,4 +476,54 @@ img.customPosition {
 .home img.ornamen5.imgMove {
   -webkit-animation: move1 4s infinite linear ease-in-out;
   animation: move1 4s infinite linear;
+}
+
+/*==================== About ====================*/
+.about {  
+  padding: 6rem 0 2rem !important;
+  height: 100vh;
+}
+.underline {
+  width: 100%;
+}
+.line {
+  display: inline-block;
+  width: 408px;
+  height: 10px;
+  background: #fad6a1;
+}
+.bg-placeholder {
+  width: 86px;
+  height: 90px;
+}
+.about .card {
+  width: 288px;
+  background: transparent;
+  border: none;
+}
+.card-text.custFont {
+  line-height: 150% !important;
+}
+.ImgBanner {
+  width: auto;
+}
+
+/* Custom Responsive */
+/* @media (max-width: 992px) {
+  .titleHeader {
+    font-size: 54px !important;
+  }
+  .textHeader {
+    font-size: 18px !important;
+  }
+  .header form.center {
+    justify-content: center;
+  }
+  img.customPosition {
+    position: absolute;
+    width: 98%;
+    height: 658px !important;
+    right: 0%;
+    top: 0%;
+  }
 }
