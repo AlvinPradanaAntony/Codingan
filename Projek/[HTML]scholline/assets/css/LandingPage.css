@@ -390,7 +390,6 @@ img.customPosition {
 }
 .home {
   padding-top: 4.5rem !important;
-  height: 100vh;
 }
 .home__title {
   font-family: var(--header-font-extraBold);
