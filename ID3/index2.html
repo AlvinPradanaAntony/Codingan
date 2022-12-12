@@ -8,34 +8,27 @@
     <link rel="stylesheet" href="Assets/Private/css/Dashboard.css" />
     <link rel="stylesheet" href="Assets/css/bootstrap.min.css" />
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/solid.css" />
   </head>
   <body>
-    <div class="bodyDashboard">
-      <div class="sidebar">
+    <div class="wrapper">
+      <div class="sidebar" id="sidebar">
         <div class="logo-details">
-          <img
-            src="data:image/png;base64,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"
-            alt="Logo"
-          /><span class="logo_name">scholLine.id</span>
+          <img src="Assets/Private/img/logo.png" width="135" alt="Logo" id="logo_sidebar" />
         </div>
         <ul class="nav-links" id="main">
           <li id="dashboard" class="navItem active">
-            <a href="/#"
-              ><div class="frame-ico">
-                <img
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACXSURBVHgB7ZNhCoAgDEandIAdwRt1hM7WETpRHcEb2IwkE8dm0A/BByNijym4D6B3TP4TQkD6LFRYeJ5qM8YcLR4Uwx3VHnhiD7VemmuzM2YqBzzuvrXWu5iyBoKMxnl5Fn6m/wPyN/AKX+PUvXsFpfVzWi/NLYMWG3ENawFaKUC+xYvYisCBH7yHkWTOG0kWGUkWk9w/J0FpXj3VyFZUAAAAAElFTkSuQmCC"
-                  alt="item1"
-                  id="item1"
-                />
-              </div>
-              <span class="link_name">Dashboard</span></a
-            >
+            <a href="/#">
+              <i class="uis uis-apps"></i>
+              <span class="link_name">Dashboard</span>
+            </a>
             <ul class="sub-menu blank">
               <li><a class="link_name" href="/#">Dashboard</a></li>
             </ul>
           </li>
           <li id="courses" class="navItem">
-            <a href="/class"
+            <a href="/#"
               ><div class="frame-ico">
                 <img
                   src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAONSURBVHgB7VbbS1RrFF9r7RlHrfGMeqyDnkOnqKgwMIwuE0QPXaCIzJxIumtJPQS99Rb00EP9A0EXwayIJiskKeqhCKKkm0HQQz0UdsMujo7O6Mzea7X27FGnHEXLiqAfc/lmfWv/ft+sb31rfQCjhIhgZU3n32V7233wDcCROgZq5C8xO/0IHNCnVqopou87BNAQfW9eb2wsCI+EZ1jBbXvF190ZWizAZUi0CgQKks+06ziuowmOp3SouVFtF90evHnmiK99xIKlNeKeGg+vYDI36c/56jLJ8cMYCF8lxLo4wAMwzJjLzPQzmlsRcJGK5tnK+nqrn7cApa5X+HZj7Zf/vF+woiq0XMO1ThAqlcCbnO1ihqsERpMXvA21tZg2bIGAZOD49vUW4hoiWK2CniR5twBdEMM8df5o/rV+wcodXRNNib8WnUXEDyLcLCD12fF4U339P90wCqzaHcrNisJSIanU/V2UCLtINIMyp58+nv0KnRW2ZqE3exMD9Zqm0XTpZM5HGANsqHpfaJHbr1HKbaj1HYNfgbRZGgicM0zvsuIMQr/FPBMQs9T8DhkfE8Mjjlx7EQyut8p2Rf93xaILgGgOsuSrT4fuyVMN4b1uV+TZ5aNFkWEFy7a8yncZ4w4jQrnODHewXyayFmTakB4iuvd0FsLhPcHgf9E+syvVx+0ZVwwMVbaz5vcdEGwGQ+6jUBuKFFoifgKcp4spSZwAhBZNtIeaaM1sWS+RIEfn5+qMX9OvRHmqrZzxJ5X6VhpBQbRCc/VYKBVeOn/Ct1kZ5at119nhRu+y5+pHs4p8pQcOIH/lE7S5KqpD9Uq1kUAWpgpS32Bt9ccZ+rXfkdYqMljMYdO9c9YHnEYsCbTXHXcEcF/59ndTBgkaaExUrxwYY+iqc4E8/w4S/JEweCA5f4pgKv4I/hEcNVzpjKR9MbCzqwTFKmZLCtWQocU5pBWo1WB8wsiGVgervDo6ibCnRMvhZH3MbtoR7YNvEgWc7YIvIxPUQrFWOFahg2zsiwFh4jAxsXZ9vRHoDwN6HipnXmoLSNQYwF71jKVrRv2CBNQjKKYWXJdNOPTtKnn9cJCX1kVErxjoccZoWsTmgE4SbUWfWoDlpi7KhLGCzSVwI/om9/6AKQVLtknmBCNcKmy5hiQhma1hO6iRszTIh4Tl7lCuhpt6OlrbWq5cmdYL3wO7UQe2hwvgd8Bncedp1hhLVfgAAAAASUVORK5CYII="
@@ -75,7 +68,7 @@
             </div>
           </li>
         </ul>
-        <div class="menu"><i class="bx bx-menu menu-collapse"></i></div>
+        <div class="menu" id="menu"><i class="bx bx-menu menu-collapse"></i></div>
       </div>
       <section class="home-section">
         <div class="home-navbar">
@@ -86,6 +79,10 @@
                   <li class="nav-item d-flex align-items-center">
                     <div id="clockDisplay" class="me-2">Monday, December 12, 2022 | 03:48:39</div>
                     <span class="seperatorVertikal me-3"></span>
+
+                    <div class="nav__btns">
+                      <i class="uil uil-moon change-theme" id="theme-button"></i>
+                    </div>
                   </li>
                   <li class="nav-item dropdown frameProfile">
                     <a class="nav-link dropdown-toggle nav-user" href="/#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
@@ -120,19 +117,6 @@
     </div>
   </body>
   <script src="Assets/js/bootstrap.bundle.min.js"></script>
-  <script>
-    let arrow = document.querySelectorAll(".arrow");
-    for (var i = 0; i < arrow.length; i++) {
-      arrow[i].addEventListener("click", (e) => {
-        let arrowParent = e.target.parentElement.parentElement; //selecting main parent of arrow
-        arrowParent.classList.toggle("showMenu");
-      });
-    }
-
-    let sidebar = document.querySelector(".sidebar");
-    let sidebarBtn = document.querySelector(".menu");
-    sidebarBtn.addEventListener("click", () => {
-      sidebar.classList.toggle("close");
-    });
-  </script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="Assets/Private/js/sidebar.js"></script>
 </html>
