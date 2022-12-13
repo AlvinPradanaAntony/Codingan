@@ -75,31 +75,40 @@
       </div>
       <section class="home-section">
         <div class="home-navbar">
-          <nav class="navbar-custom navbar-expand-lg navbar-light bg-white shadowNavbar">
+          <nav class="navbar-custom navbar-expand-lg shadowNavbar">
             <div class="container-fluid">
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                   <li class="nav-item d-flex align-items-center">
-                    <div id="clockDisplay" class="me-2">Monday, December 12, 2022 | 03:48:39</div>
+                    <!-- <div id="clockDisplay" class="me-2"></div> -->
+                    <div class="time-frame me-3">
+                      <div id="date-part"></div>
+                      <div id="time-part"></div>
+                    </div>
                     <span class="seperatorVertikal me-3"></span>
-
                     <div class="nav__btns">
                       <i class="uil uil-moon change-theme" id="theme-button"></i>
                     </div>
                   </li>
                   <li class="nav-item dropdown frameProfile">
-                    <a class="nav-link dropdown-toggle nav-user" href="/#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                      ><span class="account-user-avatar d-inline-block"><img src="https://lh3.googleusercontent.com/a-/AFdZucqo6Dh9Ac4R3nu0r3zqSf_tTEckvSc_0Vpdv8VGZA=s96-c" class="cust-avatar img-fluid rounded-circle" /></span
-                      ><span><span class="account-user-name">Alvin Pradana Antony</span><span class="account-position">Student</span></span></a
-                    >
+                    <a class="nav-link dropdown-toggle nav-user" href="/#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <span class="account-user-avatar d-inline-block"><img src="https://lh3.googleusercontent.com/a-/AFdZucqo6Dh9Ac4R3nu0r3zqSf_tTEckvSc_0Vpdv8VGZA=s96-c" class="cust-avatar img-fluid rounded-circle" /></span>
+                      <span class="account-user-name">Alvin Pradana Antony</span><span class="account-position">Student</span>
+                    </a>
                     <ul class="dropdown-menu dropdown-menu-end me-1 border border-0 custom-rounded" aria-labelledby="navbarDropdown" style="">
                       <li>
-                        <a class="text-decoration-none" href="/profile"
-                          ><div class="dropdown-item custom-item-dropdown d-flex align-items-center"><i class="bx bxs-user s-14 me-2"></i><span class="nameItem">My Profile</span></div></a
-                        >
+                        <a class="text-decoration-none" href="/profile">
+                          <div class="dropdown-item custom-item-dropdown d-flex align-items-center">
+                            <i class="bx bxs-user s-14 me-2"></i>
+                            <span class="nameItem">My Profile</span>
+                          </div>
+                        </a>
                       </li>
                       <li>
-                        <a class="dropdown-item custom-item-dropdown d-flex align-items-center" href="/#"><i class="bx bx-log-out s-14 me-2"></i><span class="nameItem">Sign Out</span></a>
+                        <a class="dropdown-item custom-item-dropdown d-flex align-items-center" href="/#">
+                          <i class="bx bx-log-out s-14 me-2"></i>
+                          <span class="nameItem">Sign Out</span>
+                        </a>
                       </li>
                     </ul>
                   </li>
@@ -108,6 +117,7 @@
             </div>
           </nav>
         </div>
+
         <div class="content">
           <div class="container-fluid">
             <div class="row gx-4 pt-4">
@@ -129,9 +139,19 @@
   </body>
   <script src="Assets/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-  <script src="Assets/Private/js/sidebar.js"></script>
+  <script src="Assets/Private/js/moment.js"></script>
+  <script src="Assets/Private/js/script.js"></script>
   <script src="Assets/Private/js/changeIconMenu.js"></script>
-  <script></script>
+  <script>
+    $(document).ready(function () {
+      var interval = setInterval(function () {
+        moment.lang("de");
+        var momentNow = moment();
+        $("#date-part").html(momentNow.format("dddd").substring(0, 20) + ", " + momentNow.format("DD MMMM YYYY"));
+        $("#time-part").html(momentNow.format("hh:mm:ss A"));
+      }, 100);
+    });
+  </script>
 
   <!-- /*==================== LORDICON ====================*/ -->
   <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
