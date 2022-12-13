@@ -1,20 +1,18 @@
-//Page Dashboard
-$(".show-hide").click(function () {
-  $(this).toggleClass("fa-eye-slash fa-eye");
-  var input = $($(this).attr("toggle"));
-  if (input.attr("type") == "password") {
-    input.attr("type", "text");
-    $("#iconShowHide").css("color", "#5886ef");
+$("#data").hover(function () {
+  if ($("#ico__data").attr("src") === "https://cdn.lordicon.com/sbiheqdr.json") {
+    $("#ico__data").attr("src", "https://cdn.lordicon.com/nnbhwnej.json");
+    $("#ico__data").attr("colors", "primary:#FFFFFF");
   } else {
-    input.attr("type", "password");
-    $("#iconShowHide").css("color", "#d8d8d8");
+    $("#ico__data").attr("src", "https://cdn.lordicon.com/sbiheqdr.json");
+    $("#ico__data").attr("colors", "primary:#5372e7,secondary:#08a88a");
   }
 });
-
-// $("#main #courses").hover(function () {
-//   if ($("#main #courses #item2").attr("src") === require("../assets/ico/SchoolW.png")) {
-//     $("#main #courses #item2").attr("src", require("../assets/ico/School.png"));
-//   } else {
-//     $("#main #courses #item2").attr("src", require("../assets/ico/SchoolW.png"));
-//   }
-// });
+$("#proses").hover(function () {
+  if ($("#ico__proses").attr("src") === "https://cdn.lordicon.com/wrprwmwt.json") {
+    $("#ico__proses").attr("src", "https://cdn.lordicon.com/wjrtlwtp.json");
+    $("#ico__proses").attr("colors", "primary:#b4b4b4,secondary:#e4e4e4,tertiary:#1f2050,quaternary:#5372e7");
+  } else {
+    $("#ico__proses").attr("src", "https://cdn.lordicon.com/wrprwmwt.json");
+    $("#ico__proses").attr("colors", "primary:#5372e7,secondary:#1f2050");
+  }
+});

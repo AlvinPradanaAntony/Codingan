@@ -18,53 +18,50 @@
           <img src="Assets/Private/img/logo.png" width="135" alt="Logo" id="logo_sidebar" />
         </div>
         <ul class="nav-links" id="main">
-          <li id="dashboard" class="navItem active">
-            <a href="/#">
-              <i class="uis uis-apps"></i>
-              <span class="link_name">Dashboard</span>
+          <li class="nav-item">
+            <a data-bs-toggle="collapse" href="#data" aria-expanded="false" aria-controls="data" class="nav-link">
+              <i class="uil-apps"></i>
+              <span style="vertical-align: middle"> Ecommerce </span>
             </a>
-            <ul class="sub-menu blank">
-              <li><a class="link_name" href="/#">Dashboard</a></li>
-            </ul>
           </li>
-          <li id="courses" class="navItem">
-            <a href="/#"
-              ><div class="frame-ico">
-                <img
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAONSURBVHgB7VbbS1RrFF9r7RlHrfGMeqyDnkOnqKgwMIwuE0QPXaCIzJxIumtJPQS99Rb00EP9A0EXwayIJiskKeqhCKKkm0HQQz0UdsMujo7O6Mzea7X27FGnHEXLiqAfc/lmfWv/ft+sb31rfQCjhIhgZU3n32V7233wDcCROgZq5C8xO/0IHNCnVqopou87BNAQfW9eb2wsCI+EZ1jBbXvF190ZWizAZUi0CgQKks+06ziuowmOp3SouVFtF90evHnmiK99xIKlNeKeGg+vYDI36c/56jLJ8cMYCF8lxLo4wAMwzJjLzPQzmlsRcJGK5tnK+nqrn7cApa5X+HZj7Zf/vF+woiq0XMO1ThAqlcCbnO1ihqsERpMXvA21tZg2bIGAZOD49vUW4hoiWK2CniR5twBdEMM8df5o/rV+wcodXRNNib8WnUXEDyLcLCD12fF4U339P90wCqzaHcrNisJSIanU/V2UCLtINIMyp58+nv0KnRW2ZqE3exMD9Zqm0XTpZM5HGANsqHpfaJHbr1HKbaj1HYNfgbRZGgicM0zvsuIMQr/FPBMQs9T8DhkfE8Mjjlx7EQyut8p2Rf93xaILgGgOsuSrT4fuyVMN4b1uV+TZ5aNFkWEFy7a8yncZ4w4jQrnODHewXyayFmTakB4iuvd0FsLhPcHgf9E+syvVx+0ZVwwMVbaz5vcdEGwGQ+6jUBuKFFoifgKcp4spSZwAhBZNtIeaaM1sWS+RIEfn5+qMX9OvRHmqrZzxJ5X6VhpBQbRCc/VYKBVeOn/Ct1kZ5at119nhRu+y5+pHs4p8pQcOIH/lE7S5KqpD9Uq1kUAWpgpS32Bt9ccZ+rXfkdYqMljMYdO9c9YHnEYsCbTXHXcEcF/59ndTBgkaaExUrxwYY+iqc4E8/w4S/JEweCA5f4pgKv4I/hEcNVzpjKR9MbCzqwTFKmZLCtWQocU5pBWo1WB8wsiGVgervDo6ibCnRMvhZH3MbtoR7YNvEgWc7YIvIxPUQrFWOFahg2zsiwFh4jAxsXZ9vRHoDwN6HipnXmoLSNQYwF71jKVrRv2CBNQjKKYWXJdNOPTtKnn9cJCX1kVErxjoccZoWsTmgE4SbUWfWoDlpi7KhLGCzSVwI/om9/6AKQVLtknmBCNcKmy5hiQhma1hO6iRszTIh4Tl7lCuhpt6OlrbWq5cmdYL3wO7UQe2hwvgd8Bncedp1hhLVfgAAAAASUVORK5CYII="
-                  alt="item2"
-                  id="item2"
-                />
-              </div>
-              <span class="link_name">Courses</span></a
-            >
-            <ul class="sub-menu blank">
-              <li><a class="link_name" href="/#">Courses</a></li>
-            </ul>
+          <li class="nav-item">
+            <a data-bs-toggle="collapse" href="#data" aria-expanded="false" aria-controls="data" class="nav-link">
+              <i class="uil-apps"></i>
+              <span style="vertical-align: middle"> Ecommerce </span>
+              <span class="menu-arrow uil-angle-right"></span>
+            </a>
+            <div class="collapse" id="data">
+              <ul class="sub-menu">
+                <li>
+                  <a href="apps-ecommerce-products.html">Products</a>
+                </li>
+                <li>
+                  <a href="apps-ecommerce-products-details.html">Products Details</a>
+                </li>
+                <li>
+                  <a href="apps-ecommerce-orders.html">Orders</a>
+                </li>
+              </ul>
+            </div>
           </li>
-          <li id="teachers" class="navItem">
-            <a href="/teachers"
-              ><div class="frame-ico">
-                <img
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAROSURBVHgB7VVbTJxFFD5n/l2gW5YuICJaKBK8kFTtg01MG9OLpImaNFG626bQglukD14a4y0xMfXJRE0sUROTEsCH3sKPSR80fUApElt9bJtY9qVioZQ2tOyybFlY/n+O3/wIBmrNkugbZzPZmTlnvm/Od87sEq3Yf2y8nOCWFvHHZ2+ExMp93DvszsTszrKx5WCo5QTHncTzxLl9LNxvBqm8s+FofOdyMLLOcE/z+LOu8AlM1y6BuMVk1XW1B/uzwck6Q605TEIP3e2R+7Q4EcrSfAvHRPiFhvHg6jypJbE2KOJhR7lnvm0rGmFmeBlkci9F1s5j1DUnKhS7W0hb1SjyBSdo9Z5uLUzcRRh5Jb4+mKe+FqLNRmjBx9J8ZXdzvBHuc1hfvRcbM/3hYRwY2+xj/1ERq2auWBb5J+ncnqbRhlPflHkx3vbWpsG8El/BCRK1E7f8QTF3aRDD2QD3jbQ1VZPrBh6D/t1YVy3hG3Q178r478QCbiCGc/ez6GPM6rwWiUCdWiRx+k4gVH/mS57xaliSU/IIyJ6AI+bOZvZ3tRd23HITr2F9Hu6KAAeeVsmeS6h4FOs+JJ+cG/KTaOtNK7XmoolBfDm0+XHWSb9vMAwWlInh4hvzZ+KPGi6PkLW7GoEBjFR8uHTc7G1ZV5mBVqNeDq7k23bEtdtC/S7rfVrcHWZMTU++1N0Z/N622TUxc5Lx7aceboubucHC85mCaha5etUC4TRNDyL0JoKrS6uSe19uGSsbGLq9Ha2yEfsZocyAaYj6+vFgfsaf1o4zaEaxr1CFw+Q3PiEeAFQGY8flkbeeMxgGCzeoQoZDjj/37xoa230gcVCTbsVWDpbXMB4wVYdMX3S3h97e9erki+Q6e1ET8yuTM9ctlBHNMcX6JCT8LhJNfI4+fgPkDpPcnOteyZCWQ3Zn8dFFhIcPi/pteKIWL+BjLJ9EfYaY1Cc15WvaL48kTHAj6uajfzIhB0jHKNnTrApqm12i96AW6kmXRPQH3R1FPaCSBcJweHiVBPMPor2bTBeKUD7ms5hfR1QvdN+Hbz/9m4EUwp4C0TOofaloMRgpXPx3YfUVJyeP23Z52ruxFATrkdlHRkJzq79qYebrcKOoUBbG5AOZeUajIL+AtYuRg7mp4WdIyDRVq9raJHl4N68jqykt+hAFU7Xd7YXbxq6EtpOm/QgaouztKlq+kZLXPAwKhmpF1IdIyQ/SRsOlimkMWnMZbjKoCqZO2kfK0+ZkXx87lAr9jOBfsmVDzX+liaJe215vFCL7CKc5NXkcjouQuayYkuVK8Sq/eTym4+bJ5s17X8TpbAmh0IxtQ5dFGMAUUyJRJE7OQtehhyrD0cS7mtXikom7Ids/MYRV10Un3iFOLsZg/SCax5v6yHLSmM4guBLonyrUeilK1sa0CWlsoqUY2tDJ9dyAlfbgItH4NqRdQf+nMQ11dRSepRVbseXan8Qi5QiY37Q1AAAAAElFTkSuQmCC"
-                  alt="item4"
-                  id="item4"
-                />
-              </div>
-              <span class="link_name">All Teachers</span></a
-            >
-            <ul class="sub-menu blank">
-              <li><a class="link_name" href="/#">All Teachers</a></li>
-            </ul>
-          </li>
-          <li>
-            <div class="profile-details">
-              <div class="profile-content"><img src="https://lh3.googleusercontent.com/a-/AFdZucqo6Dh9Ac4R3nu0r3zqSf_tTEckvSc_0Vpdv8VGZA=s96-c" class="cust-avatar" /></div>
-              <div class="name-job">
-                <div class="profile_name">Alvin Pradana Antony</div>
-                <div class="job">quickgaming321@gmail.com</div>
-              </div>
-              <i class="bx bx-log-out"></i>
+          <li class="nav-item">
+            <a data-bs-toggle="collapse" href="#proses" aria-expanded="false" aria-controls="proses" class="nav-link">
+              <i class="uil-apps"></i>
+              <span style="vertical-align: middle"> Proses </span>
+              <span class="menu-arrow uil-angle-right"></span>
+            </a>
+            <div class="collapse" id="proses">
+              <ul class="sub-menu">
+                <li>
+                  <a href="apps-ecommerce-products.html">Products</a>
+                </li>
+                <li>
+                  <a href="apps-ecommerce-products-details.html">Products Details</a>
+                </li>
+                <li>
+                  <a href="apps-ecommerce-orders.html">Orders</a>
+                </li>
+              </ul>
             </div>
           </li>
         </ul>
@@ -108,7 +105,15 @@
         <div class="content">
           <div class="container-fluid">
             <div class="row gx-4 pt-4">
-              <div class="col-lg-9"></div>
+              <div class="col-lg-9">
+                <p>
+                  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> Link with href </a>
+                  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Button with data-bs-target</button>
+                </p>
+                <div class="collapse" id="collapseExample">
+                  <div class="card card-body">Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.</div>
+                </div>
+              </div>
               <div class="col-lg-3 m-0"></div>
             </div>
           </div>
@@ -119,4 +124,9 @@
   <script src="Assets/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script src="Assets/Private/js/sidebar.js"></script>
+  <script src="Assets/Private/js/changeIconMenu.js"></script>
+  <script></script>
+
+  <!-- /*==================== LORDICON ====================*/ -->
+  <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
 </html>
