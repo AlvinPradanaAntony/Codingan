@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How To Toggle Dark And Light Mode Using jQuery - Techsolutionstuff</title>
+    <style>
+      body {
+        padding: 2% 3% 10% 3%;
+        text-align: center;
+      }
+      h1 {
+        color: #000;
+        margin-top: 30px;
+      }
+      .dark {
+        background-color: #222;
+        color: #e6e6e6;
+      }
+      .dark h1 {
+        color: #fff;
+      }
+      .theme-switch-wrapper {
+        display: flex;
+        align-items: center;
+        float: right;
+      }
+      .theme-switch {
+        display: inline-block;
+        height: 34px;
+        position: relative;
+        width: 60px;
+        text-align: right;
+      }
+      .theme-switch input {
+        display: none;
+      }
+      .slider {
+        background-color: #ccc;
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transition: 0.4s;
+      }
+      .slider:before {
+        background-color: #fff;
+        bottom: 4px;
+        content: "";
+        height: 26px;
+        left: 4px;
+        position: absolute;
+        transition: 0.4s;
+        width: 26px;
+      }
+      input:checked + .slider {
+        background-color: #66bb6a;
+      }
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+      .slider.round {
+        border-radius: 34px;
+      }
+      .slider.round:before {
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="theme-switch-wrapper">
+      <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+      </label>
+      <label style="margin-left: 10px">Select Mode</label>
+    </div>
+    <br />
+    <h1><i>Techsolutionstuff</i></h1>
+    <p><i>We Give Best Tech Stuff for You</i></p>
+    <h3>Light Mode and Dark Mode</h3>
+    <script>
+      $(document).ready(function () {
+        $("#checkbox").click(function () {
+          var element = document.body;
+          element.classList.toggle("dark");
+        });
+      });
+    </script>
+  </body>
+</html>
