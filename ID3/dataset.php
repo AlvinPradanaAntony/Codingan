@@ -18,13 +18,13 @@
           <img src="Assets/Private/img/logo.png" width="135" alt="Logo" id="logo_sidebar" />
         </div>
         <ul class="nav-links" id="main">
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a href="#" class="nav-link">
               <i class="uil-apps"></i>
               <span style="vertical-align: middle" class="link_name"> Beranda </span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a data-bs-toggle="collapse" href="#data" aria-expanded="false" aria-controls="data" class="nav-link">
               <i class="uil uil-database"></i>
               <span style="vertical-align: middle" class="link_name"> Data </span>
