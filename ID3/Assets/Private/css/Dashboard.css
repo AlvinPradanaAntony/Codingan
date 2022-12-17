@@ -143,6 +143,9 @@ body {
 
 .sidebar .nav-links li {
   list-style: none;
+
+}
+.sidebar .nav-item{
   margin-bottom: var(--mb-0-5);
 }
 .sidebar .nav-item .nav-link {
@@ -214,15 +217,6 @@ body {
   transition: all 0.4s;
   font-size: 0.89rem;
   text-decoration: none;
-}
-
-.frame-ico {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 55px;
-  min-height: 50px;
-  transition: linear 1s;
 }
 
 .menu {
