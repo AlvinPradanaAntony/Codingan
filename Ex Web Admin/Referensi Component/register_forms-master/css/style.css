@@ -1,0 +1,189 @@
+
+body {
+    color: #2b2c48;
+    font-family: "Jost", sans-serif;
+    background-image: url('../images/background-image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.card-header {
+    position: relative;
+    display: flex;
+    height: 150px;
+    flex-shrink: 0;
+    width: 100%;
+    transition: 0.3s;
+}
+.card-cover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    height: 160px;
+    top: -20%;
+    left: 0;
+    will-change: top;
+    background-size: cover;
+    background-position: center;
+    filter: blur(30px);
+    transform: scale(1.2);
+    transition: 0.5s;
+}
+
+.card-avatar {
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    object-position: center;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    border: 4px solid #7b718a;
+    transform: translateX(-50%) translateY(-64px);
+}
+
+.card-fullname {
+    position: absolute;
+    bottom: 0;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    transform: translateY(-10px) translateX(-50%);
+    left: 50%;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgb(0 0 0 / 0%);
+    border-bottom: 1px solid rgb(0 0 0 / 0%);
+}
+
+.form-control {
+	font-size: 15px;
+}
+.form-control, .form-control:focus, .input-group-text {
+	border-bottom-color: rgb(137 120 121 / 40%);
+}
+.form-control, .btn {        
+	border-radius: 3px;
+}
+
+.input-group-text {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: .375rem .75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e9ecef00 !important;
+    border-width: 0 0 1px 0;
+    border-radius:1px;
+}
+.color-already-login {
+	color: #749fdf;
+    font-weight: bolder;
+}
+.signup-form {
+	width: 400px;
+	margin: 0 auto;
+	padding: 60px 0;		
+}
+.signup-form form {
+	color: #999;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    background: #fff;
+	padding: 30px;
+	border-radius: 10px;
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
+}
+.signup-form h2 {
+	color: #333;
+	font-weight: bold;
+	margin-top: 0;
+}
+.signup-form hr {
+	margin: 0 -30px 20px;
+}
+.signup-form .form-group {
+	margin-bottom: 20px;
+}
+.signup-form label {
+	font-weight: normal;
+	font-size: 15px;
+}
+.signup-form .form-control {
+	min-height: 38px;
+	box-shadow: none !important;
+	border-width: 0 0 1px 0;
+	border-radius:1px;
+}	
+.signup-form .input-group-addon {
+	max-width: 42px;
+    text-align: center;
+    background: none;
+    border-bottom: 1px solid #ced4da;
+    padding-right: 5px;
+    border-radius: 0;
+}	
+.signup-form .btn, .signup-form .btn:active {        
+    border: 0;
+    outline: none;
+    background: linear-gradient(to right, rgba(83, 200, 239, 0.8) 0%, rgba(81, 106, 204, 0.8) 96%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    padding: 12px 16px;
+    width: 100%;
+    border-radius: 50px;
+    margin-top: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Jost", sans-serif;
+    transition: 0.3s;
+}
+.signup-form .btn:hover, .signup-form .btn:focus {
+	background: linear-gradient(to right, rgba(96, 197, 231, 0.8) 0%, rgba(109, 130, 214, 0.8) 96%);
+}
+.signup-form a {
+	color: #fff;	
+	text-decoration: underline;
+}
+.signup-form a:hover {
+	text-decoration: none;
+}
+.signup-form form a {
+	color: rgba(83, 200, 239, 0.8);
+	text-decoration: none;
+}	
+.signup-form form a:hover {
+	text-decoration: underline;
+}
+.signup-form .fa {
+	font-size: 21px;
+}
+.signup-form .fa-paper-plane {
+	font-size: 18px;
+}
+.signup-form .fa-check {
+	color: #fff;
+	left: 17px;
+	top: 18px;
+	font-size: 7px;
+	position: absolute;
+}
