@@ -1,23 +1,6 @@
 $(document).ready(function () {
   $("#menu").click(function (e) {
     $("#sidebar").toggleClass("close");
-
-    e.preventDefault();
-    if ($("#sidebar").hasClass("close")) {
-      $("#logo_sidebar")
-        .fadeOut(150, function () {
-          $("#logo_sidebar").attr("src", "Assets/Private/img/logoLt.png");
-          $("#logo_sidebar").attr("width", "40");
-        })
-        .fadeIn(150);
-    } else {
-      $("#logo_sidebar")
-        .fadeOut(150, function () {
-          $("#logo_sidebar").attr("src", "Assets/Private/img/logo.png");
-          $("#logo_sidebar").attr("width", "135");
-        })
-        .fadeIn(150);
-    }
   });
 });
 
@@ -30,34 +13,118 @@ $(document).ready(function () {
 });
 
 /*==================== DARK LIGHT THEME ====================*/
-// const themeButton = document.getElementById("theme-button");
-// const darkTheme = "dark-theme";
-// const iconTheme = "uil-sun";
+$(document).ready(function () {
+  var darkMode;
 
-// // Previously selected topic (if user selected)
-// const selectedTheme = localStorage.getItem("selected-theme");
-// const selectedIcon = localStorage.getItem("selected-icon");
+  if (localStorage.getItem("dark-mode")) {
+    // if dark mode is in storage, set variable with that value
+    darkMode = localStorage.getItem("dark-mode");
+  } else {
+    // if dark mode is not in storage, set variable to 'light'
+    darkMode = "light";
+  }
 
-// // We obtain the current theme that the interface has by validating the dark-theme class
-// const getCurrentTheme = () => (document.body.classList.contains(darkTheme) ? "dark" : "light");
-// const getCurrentIcon = () => (themeButton.classList.contains(iconTheme) ? "uil-moon" : "uil-sun");
+  // set new localStorage value
+  localStorage.setItem("dark-mode", darkMode);
 
-// // We validate if the user previously chose a topic
-// if (selectedTheme) {
-//   // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
-//   document.body.classList[selectedTheme === "dark" ? "add" : "remove"](darkTheme);
-//   themeButton.classList[selectedIcon === "uil-moon" ? "add" : "remove"](iconTheme);
-// }
+  if (localStorage.getItem("dark-mode") == "dark") {
+    // if the above is 'dark' then apply .dark to the body
+    $("body").addClass("dark-theme");
+    $("#theme-button").removeClass("uil-moon");
+    $("#theme-button").addClass("uil-sun");
+    $("#logo_sidebar").attr("src", "Assets/Private/img/logoW.png");
 
-// // Activate / deactivate the theme manually with the button
-// themeButton.addEventListener("click", () => {
-//   // Add or remove the dark / icon theme
-//   document.body.classList.toggle(darkTheme);
-//   themeButton.classList.toggle(iconTheme);
-//   // We save the theme and the current icon that the user chose
-//   localStorage.setItem("selected-theme", getCurrentTheme());
-//   localStorage.setItem("selected-icon", getCurrentIcon());
-// });
+    if ($("#sidebar").hasClass("close")) {
+      $("#logo_sidebar")
+        .fadeOut(150, function () {
+          $("#logo_sidebar").attr("src", "Assets/Private/img/logoLtW.png");
+          $("#logo_sidebar").attr("width", "40");
+        })
+        .fadeIn(150);
+    } else {
+      $("#logo_sidebar")
+        .fadeOut(150, function () {
+          $("#logo_sidebar").attr("src", "Assets/Private/img/logoW.png");
+          $("#logo_sidebar").attr("width", "135");
+        })
+        .fadeIn(150);
+    }
+  }
+
+  $("#theme-button").on("click", function () {
+    if ($("body").hasClass("dark-theme")) {
+      $("#theme-button").removeClass("uil-sun");
+      $("#theme-button").addClass("uil-moon");
+      $("body").removeClass("dark-theme");
+      $("#logo_sidebar").attr("src", "Assets/Private/img/logo.png");
+
+      if ($("#sidebar").hasClass("close")) {
+        $("#logo_sidebar")
+          .fadeOut(150, function () {
+            $("#logo_sidebar").attr("src", "Assets/Private/img/logoLt.png");
+            $("#logo_sidebar").attr("width", "40");
+          })
+          .fadeIn(150);
+      } else {
+        $("#logo_sidebar")
+          .fadeOut(150, function () {
+            $("#logo_sidebar").attr("src", "Assets/Private/img/logo.png");
+            $("#logo_sidebar").attr("width", "135");
+          })
+          .fadeIn(150);
+      }
+      // set stored value to 'light'
+      localStorage.setItem("dark-mode", "light");
+    } else {
+      $("#theme-button").removeClass("uil-moon");
+      $("#theme-button").addClass("uil-sun");
+      $("body").addClass("dark-theme");
+      $("#logo_sidebar").attr("src", "Assets/Private/img/logoW.png");
+
+      if ($("#sidebar").hasClass("close")) {
+        $("#logo_sidebar")
+          .fadeOut(150, function () {
+            $("#logo_sidebar").attr("src", "Assets/Private/img/logoLtW.png");
+            $("#logo_sidebar").attr("width", "40");
+          })
+          .fadeIn(150);
+      } else {
+        $("#logo_sidebar")
+          .fadeOut(150, function () {
+            $("#logo_sidebar").attr("src", "Assets/Private/img/logoW.png");
+            $("#logo_sidebar").attr("width", "135");
+          })
+          .fadeIn(150);
+      }
+      // set stored value to 'dark'
+      localStorage.setItem("dark-mode", "dark");
+    }
+  });
+  $("#menu").click(function (e) {
+    e.preventDefault();
+    $("#logo_sidebar")
+      .fadeOut(150, function () {
+        if ($("#sidebar").hasClass("close")) {
+          if ($("body").hasClass("dark-theme")) {
+            $("#logo_sidebar").attr("src", "Assets/Private/img/logoLtW.png");
+            $("#logo_sidebar").attr("width", "40");
+          } else {
+            $("#logo_sidebar").attr("src", "Assets/Private/img/logoLt.png");
+            $("#logo_sidebar").attr("width", "40");
+          }
+        } else {
+          if ($("body").hasClass("dark-theme")) {
+            $("#logo_sidebar").attr("src", "Assets/Private/img/logoW.png");
+            $("#logo_sidebar").attr("width", "135");
+          } else {
+            $("#logo_sidebar").attr("src", "Assets/Private/img/logo.png");
+            $("#logo_sidebar").attr("width", "135");
+          }
+        }
+      })
+      .fadeIn(150);
+  });
+});
 
 /*==================== Waktu ====================*/
 $(document).ready(function () {
