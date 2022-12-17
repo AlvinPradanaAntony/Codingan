@@ -175,6 +175,22 @@
         $("#theme-button").removeClass("uil-moon");
         $("#theme-button").addClass("uil-sun");
         $("#logo_sidebar").attr("src", "Assets/Private/img/logoW.png");
+
+        if ($("#sidebar").hasClass("close")) {
+          $("#logo_sidebar")
+            .fadeOut(150, function () {
+              $("#logo_sidebar").attr("src", "Assets/Private/img/logoLtW.png");
+              $("#logo_sidebar").attr("width", "40");
+            })
+            .fadeIn(150);
+        } else {
+          $("#logo_sidebar")
+            .fadeOut(150, function () {
+              $("#logo_sidebar").attr("src", "Assets/Private/img/logoW.png");
+              $("#logo_sidebar").attr("width", "135");
+            })
+            .fadeIn(150);
+        }
       }
 
       $("#theme-button").on("click", function () {
@@ -183,13 +199,45 @@
           $("#theme-button").addClass("uil-moon");
           $("body").removeClass("dark-theme");
           $("#logo_sidebar").attr("src", "Assets/Private/img/logo.png");
+
+          if ($("#sidebar").hasClass("close")) {
+            $("#logo_sidebar")
+              .fadeOut(150, function () {
+                $("#logo_sidebar").attr("src", "Assets/Private/img/logoLt.png");
+                $("#logo_sidebar").attr("width", "40");
+              })
+              .fadeIn(150);
+          } else {
+            $("#logo_sidebar")
+              .fadeOut(150, function () {
+                $("#logo_sidebar").attr("src", "Assets/Private/img/logo.png");
+                $("#logo_sidebar").attr("width", "135");
+              })
+              .fadeIn(150);
+          }
           // set stored value to 'light'
           localStorage.setItem("dark-mode", "light");
-        } else{
+        } else {
           $("#theme-button").removeClass("uil-moon");
           $("#theme-button").addClass("uil-sun");
           $("body").addClass("dark-theme");
           $("#logo_sidebar").attr("src", "Assets/Private/img/logoW.png");
+
+          if ($("#sidebar").hasClass("close")) {
+            $("#logo_sidebar")
+              .fadeOut(150, function () {
+                $("#logo_sidebar").attr("src", "Assets/Private/img/logoLtW.png");
+                $("#logo_sidebar").attr("width", "40");
+              })
+              .fadeIn(150);
+          } else {
+            $("#logo_sidebar")
+              .fadeOut(150, function () {
+                $("#logo_sidebar").attr("src", "Assets/Private/img/logoW.png");
+                $("#logo_sidebar").attr("width", "135");
+              })
+              .fadeIn(150);
+          }
           // set stored value to 'dark'
           localStorage.setItem("dark-mode", "dark");
         }
