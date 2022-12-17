@@ -56,8 +56,7 @@ $(document).ready(function () {
       $("#theme-button").removeClass("uil-sun");
       $("#theme-button").addClass("uil-moon");
       $("body").removeClass("dark-theme");
-      $("#logo_sidebar").attr("src", "Assets/Private/img/logo.png");
-
+      
       if ($("#sidebar").hasClass("close")) {
         $("#logo_sidebar")
           .fadeOut(150, function () {
@@ -79,8 +78,7 @@ $(document).ready(function () {
       $("#theme-button").removeClass("uil-moon");
       $("#theme-button").addClass("uil-sun");
       $("body").addClass("dark-theme");
-      $("#logo_sidebar").attr("src", "Assets/Private/img/logoW.png");
-
+      
       if ($("#sidebar").hasClass("close")) {
         $("#logo_sidebar")
           .fadeOut(150, function () {
