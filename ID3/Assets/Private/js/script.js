@@ -11,6 +11,14 @@ $(document).ready(function () {
     });
   });
 });
+$(document).ready(function () {
+  // Tambahkan class ketika collapse di klik
+  $(".collapse").on("show.bs.collapse", function () {
+    $(this).parent().addClass("nav-item-active");
+  }).on("hide.bs.collapse", function () {
+    $(".nav-item").removeClass("nav-item-active");
+  });
+});
 
 /*==================== DARK LIGHT THEME ====================*/
 $(document).ready(function () {

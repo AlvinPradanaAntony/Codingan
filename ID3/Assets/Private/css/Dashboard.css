@@ -181,7 +181,7 @@ body {
 }
 .sidebar .nav-item > a[aria-expanded="true"]{
   color:var(--first-color) !important;
-  font-weight: var(--font-medium) !important;
+  font-weight: var(--font-bold) !important;
 }
 /* .sidebar .nav-item:hover > a[aria-expanded="true"] + .collapse {
   border-radius: 18px;
@@ -198,7 +198,6 @@ body {
 }
 .sidebar .nav-item:hover .nav-link {
   color: var(--first-color) !important;
-  font-weight: var(--font-medium) !important;
 }
 .sidebar .nav-item-active{
   border-radius: 18px;
