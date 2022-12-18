@@ -172,13 +172,21 @@ body {
   transition: transform 0.15s;
   transition: transform 0.15s, -webkit-transform 0.15s;
   position: absolute;
-  right: 0px;
+  right: 15px;
   display: inline-block;
   line-height: 1.5rem;
   font-size: 1.1rem;
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
 }
+.sidebar .nav-item > a[aria-expanded="true"]{
+  color:var(--first-color) !important;
+  font-weight: var(--font-medium) !important;
+}
+/* .sidebar .nav-item:hover > a[aria-expanded="true"] + .collapse {
+  border-radius: 18px;
+  background-color: var(--input-color);
+} */
 .sidebar .nav-item > a[aria-expanded="true"] > span.menu-arrow {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -186,7 +194,24 @@ body {
 .sidebar .nav-item:hover {
   border-radius: 25px;
   background-color: var(--input-color);
+  transition: all 0.5s ease;
 }
+.sidebar .nav-item:hover .nav-link {
+  color: var(--first-color) !important;
+  font-weight: var(--font-medium) !important;
+}
+.sidebar .nav-item-active{
+  border-radius: 18px;
+  transition: all 0.5s ease;
+  background-color: var(--input-color);
+}
+.sidebar .nav-item-active:hover{
+  border-radius: 18px;
+  transition: all 0.5s ease;
+  background-color: var(--input-color);
+}
+
+
 
 
 /*==================== ITEM ACTIVE in SIDEBAR ====================*/
