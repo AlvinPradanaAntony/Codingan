@@ -19,6 +19,10 @@ $(document).ready(function () {
     $(".nav-item").removeClass("nav-item-active");
   });
 });
+$(document).ready(function () {
+
+});
+
 
 /*==================== DARK LIGHT THEME ====================*/
 $(document).ready(function () {
