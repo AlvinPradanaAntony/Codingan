@@ -266,7 +266,7 @@ body {
   cursor: pointer;
 }
 
-/* Section */
+/*====================  SECTION ====================*/
 .home-section {
   position: relative;
   min-height: 100vh;
@@ -281,7 +281,7 @@ body {
   }
 }
 
-/* custom navbar */
+/*==================== CUSTOM NAVBAR ====================*/
 .navbar-custom {
   padding: 0 24px !important;
   min-height: 70px !important;
@@ -309,15 +309,11 @@ body {
   list-style: none;
 }
 
-/* custom Item Profile */
+/*==================== CUSTOM ITEM PROFILE ====================*/
 .nav-user {
   padding: calc(31px / 2) 5px calc(31px / 2) 57px !important;
   text-align: left !important;
   width: 170px;
-  /* background-color: #fafbfd;
-  border: 1px solid #f1f3fa;
-  border-width: 0 1px;
-  border-radius: 35px; */
   min-height: 70px;
 }
 .account-user-avatar {
@@ -360,15 +356,27 @@ body {
   border-right: 0.3em solid transparent;
   border-bottom: 0;
   border-left: 0.3em solid transparent;
+  color: var(--text-color);
 }
 .dropdown-menu.custom-rounded {
   background-color: var(--container-color);
   border-radius: 8px !important;
-  box-shadow: 0px 13.8677px 24.1177px rgba(0, 0, 0, 0.0456112), 0px 5.75991px 10.0172px rgba(0, 0, 0, 0.035), 0px 2.08325px 3.62304px rgba(0, 0, 0, 0.0243888) !important;
+  box-shadow: 0px 4px 22px rgb(69 69 69 / 8%) !important;
 }
 .custom-item-dropdown {
   padding: 7px 20px !important;
   font-size: var(--small-font-size);
+}
+.custom-item-dropdown:hover {
+  background-color: var(--input-color) !important;
+}
+.custom-item-dropdown:hover > i{
+  color: var(--title-color) !important;
+  font-weight: var(--font-bold) !important;
+}
+.custom-item-dropdown:hover > span.nameItem{
+  color: var(--title-color) !important;
+  font-weight: var(--font-bold) !important;
 }
 .custom-item-dropdown i,
 .custom-item-dropdown span.nameItem {
@@ -387,6 +395,9 @@ body {
 }
 .sidebar.close .sub-menu {
   display: none;
+}
+.sidebar.close .sub-menu li a:hover {
+  color: var(--first-color) !important;
 }
 .sidebar.close .nav-item .link_name,
 .sidebar.close .nav-item .menu-arrow {
@@ -411,11 +422,15 @@ body {
 .sidebar.close .nav-item:hover > .collapse,
 .sidebar.close .nav-item:hover > .collapsing {
   display: block;
+  width: 145%;
+  height: 50px;
+  position: absolute;
+  top: 0;
 }
 .sidebar.close .nav-item:hover > .collapse > .sub-menu,
 .sidebar.close .nav-item:hover > .collapsing > .sub-menu {
   display: block;
-  left: 140%;
+  left: 100%;
   top: 0;
   min-width: 135px;
   white-space: nowrap;
@@ -466,7 +481,13 @@ body {
 }
 .sidebar.close > .menu {
   left: 84px;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
   transition: all 0.5s ease;
+  background-color: transparent;
+  font-size: var(--h1-font-size);
+  box-shadow: none;
+  transition: all 0.5s ease !important;
 }
 .sidebar.close .nav-item .nav-link {
   padding: 10px 10px 10px 15px;
