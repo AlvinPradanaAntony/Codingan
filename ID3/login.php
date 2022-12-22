@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Assets/css/bootstrap.min.css" />
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/solid.css" />
+    <link rel="stylesheet" href="Assets/Private/css/auth.css" />
+  </head>
+  <body>
+    <div class="auth-page d-flex align-items-center min-vh-100">
+      <div class="container-fluid p-0">
+        <div class="row g-0 vh-100">
+          <div class="col-xxl-4 col-lg-4 col-md-4 d-none d-md-block">
+            <div class="d-flex flex-column h-100 py-5 px-4">
+              <div class="text-center text-muted mb-2">
+                <div class="pb-3 title">
+                  <a href="#">
+                    <div class="logo-details">
+                      <img src="Assets/Private/img/logo.png" width="135" alt="Logo" id="logo_sidebar" />
+                    </div>
+                  </a>
+                  <p class="text-muted w-75 mx-auto mt-3 mb-0 title">Sistem Informasi Rekomendasi Kelayakan Skripsi dengan metode ID3</p>
+                </div>
+              </div>
+
+              <div class="my-auto">
+                <div class="p-3 text-center">
+                  <img src="Assets/Private/img/auth-img.png" alt="" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xxl-8 col-lg-8 col-md-8">
+            <div class="auth-bg py-md-5 p-4 d-flex h-100">
+              <div class="bg-overlay-gradient"></div>
+
+              <div class="row justify-content-center g-0 align-items-center w-100">
+                <div class="col-xl-6 col-lg-7">
+                  <div class="card panel_login">
+                    <div class="card-body">
+                      <div class="pt-4 px-3 py-3">
+                        <div class="text-center">
+                          <h5 class="mb-0 title">Login</h5>
+                          <p class="text-muted mt-2 description">Masuk dengan data Anda yang Anda masukkan saat pendaftaran.</p>
+                        </div>
+                        <form class="mt-4 pt-2">
+                          <div class="form-floating form-floating-custom mb-3">
+                            <input type="text" class="form-control form-control-custom" id="input-username" placeholder="Enter User Name" />
+                            <label for="input-username">Email</label>
+                            <div class="form-floating-icon">
+                              <i class="uil uil-users-alt"></i>
+                            </div>
+                          </div>
+                          <div class="form-floating form-floating-custom mb-3 auth-pass-inputgroup">
+                            <input type="password" class="form-control form-control-custom" id="passInput" placeholder="Enter Password" />
+                            <span class="eye hidden" id="spanEye">
+                              <i class="uil uil-eye-slash show-hide" toggle="#passInput" id="iconShowHide"></i>
+                            </span>
+                            <label for="password-input">Kata Sandi</label>
+                            <div class="form-floating-icon">
+                              <i class="uil uil-padlock"></i>
+                            </div>
+                          </div>
+                          <div class="form-check form-check-primary font-size-16 py-1">
+                            <input class="form-check-input" type="checkbox" id="remember-check" />
+                            <div class="float-end">
+                              <a href="auth-resetpassword-basic.html" class="text-muted text-decoration-none forget-pass">Lupa Kata Sandi?</a>
+                            </div>
+                            <label class="form-check-label remember-me" for="remember-check"> Remember me </label>
+                          </div>
+
+                          <div class="mt-3">
+                            <button class="btn btn-primary w-100 rounded-pill" type="submit">Log In</button>
+                          </div>
+
+                          <div class="mt-4 pt-3 text-center">
+                            <p class="text-muted mb-0">Belum punya akun ? <a href="auth-signup-cover.html" class="text-decoration-underline"> Daftar Sekarang ! </a></p>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="Assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+      $("#passInput").keyup(function () {
+        var inputs = $("#passInput").val();
+        $("#spanEye").fadeIn("slow");
+        if (inputs == "") {
+          $("#spanEye").fadeOut("slow");
+          $("#spanEye").removeClass("show");
+          $("#spanEye").addClass("hidden");
+        } else {
+          $("#spanEye").fadeIn("slow");
+          $("#spanEye").removeClass("hidden");
+          $("#spanEye").addClass("show");
+        }
+      });
+      $(".show-hide").click(function () {
+        $(this).toggleClass("uil-eye-slash uil-eye");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+          input.attr("type", "text");
+          $("#iconShowHide").css("color", "#5886ef");
+        } else {
+          input.attr("type", "password");
+          $("#iconShowHide").css("color", "#d8d8d8");
+        }
+      });
+    </script>
+  </body>
+</html>

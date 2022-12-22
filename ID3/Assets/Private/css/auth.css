@@ -4,13 +4,13 @@
   font-size: 14px !important;
 }
 .auth-bg {
-  background-color: #307bf4;
-  /* background-image: url(../img/bg-3.png);
+  /* background-color: #307bf4; */
+  background-image: url(../img/bg-3.png);
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat; */
-  /* -webkit-clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
-  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%); */
+  background-repeat: no-repeat;
+  -webkit-clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
 }
 .bg-overlay-gradient {
   position: absolute;

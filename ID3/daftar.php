@@ -38,7 +38,7 @@
 
           <div class="col-xxl-8 col-lg-8 col-md-8">
             <div class="auth-bg py-md-5 p-4 d-flex h-100">
-              <!-- <div class="bg-overlay-gradient"></div> -->
+              <div class="bg-overlay-gradient"></div>
 
               <div class="row justify-content-center g-0 align-items-center w-100">
                 <div class="col-xl-6 col-lg-7">
@@ -83,7 +83,6 @@
                             <p class="text-muted mb-0">Belum punya akun ? <a href="auth-signup-cover.html" class="text-decoration-underline"> Daftar Sekarang ! </a></p>
                           </div>
                         </form>
-                        <!-- end form -->
                       </div>
                     </div>
                   </div>
