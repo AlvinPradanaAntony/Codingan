@@ -111,6 +111,20 @@ body {
   overflow: hidden;
 }
 
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="checkbox"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="search"]:focus {
+  border-color: #307bf4;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px #527bdd;
+  outline: 0 none;
+  transition: 0.4s ease-in-out;
+}
+
 /*==================== SIDEBAR ====================*/
 .sidebar {
   position: fixed;
