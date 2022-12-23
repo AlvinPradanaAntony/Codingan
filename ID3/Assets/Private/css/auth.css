@@ -10,6 +10,9 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transition: clip-path 1s  ease-in-out;
 }
 .bg-overlay-gradient {
   position: absolute;
@@ -30,6 +33,9 @@
 .nav__btns i {
   color: var(--text-color-light);
   margin: 0 !important;
+}
+.panel{
+  transition: all 0.5s ease;
 }
 .card.panel_login {
   border-radius: 20px;
@@ -115,21 +121,30 @@
 }
 
 /*==================== RESPONSIVE ====================*/
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
   .auth-bg {
     -webkit-clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
     clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
   }
-}
+} */
 @media (min-width: 768px) {
   .auth-bg {
     height: 100vh;
-    -webkit-clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
-    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+    padding-left: 24px !important;
   }
 }
 @media (min-width: 992px) {
-
+  .auth-bg {
+    -webkit-clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+    padding-left: 120px !important;
+    transition: clip-path 1s  ease-in-out;
+  }
+}
+@media (min-width: 1200px) {
+  .side-left {
+    height: 100vh !important;
+  }
 }
 @media (max-width: 992px) {
   .nav__btns {

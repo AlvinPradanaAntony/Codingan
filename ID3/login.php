@@ -18,7 +18,7 @@
     <div class="container-fluid p-0">
       <div class="row g-0 vh-100">
         <div class="col-xxl-4 col-lg-4 col-md-4 d-none d-md-block">
-          <div class="d-flex flex-column h-100 py-5 px-4">
+          <div class="d-flex flex-column h-100 py-5 px-4 side-left">
             <div class="text-center text-muted mb-2">
               <div class="pb-3 title">
                 <a href="#">
@@ -36,67 +36,69 @@
               </div>
             </div>
 
-            <!-- <div>
-              <p>Copyright <span id="year">TEXT</span> Company Name - All Rights Reserved.</p>
-            </div> -->
+            <div class="mt-4 d-flex justify-content-center">
+              <p class="description w-75 m-0 text-center">@<span id="year">TEXT</span> Kelompok 3 & Kelompok 5 - Politeknik Negeri Jember</p>
+            </div>
           </div>
         </div>
 
         <div class="col-xxl-8 col-lg-8 col-md-8 position-relative">
-        <div class="nav__btns">
-              <i class="uil uil-moon change-theme" id="theme-button"></i>
-            </div>
+          <div class="nav__btns">
+            <i class="uil uil-moon change-theme" id="theme-button"></i>
+          </div>
           <div class="auth-bg py-md-5 p-4 d-flex h-100">
             <div class="bg-overlay-gradient"></div>
-            <div class="row justify-content-center g-0 align-items-center w-100">
+            <div class="container">
+              <div class="row justify-content-center g-0 align-items-center w-100 h-100">
+                <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-10 panel">
+                  <div class="card panel_login">
+                    <div class="card-body">
+                      <div class="pt-4 px-3 py-3">
+                        <div class="text-center">
+                          <h5 class="mb-0 title">Login</h5>
+                          <p class="mt-2 description">Masuk dengan data Anda yang Anda masukkan saat pendaftaran.</p>
+                        </div>
+                        <form class="mt-4 pt-2">
+                          <div class="form-floating form-floating-custom mb-3">
+                            <input type="text" class="form-control form-control-custom" id="input-username" placeholder="Enter User Name" />
+                            <label for="input-username">Email</label>
+                            <div class="form-floating-icon">
+                              <i class="uil uil-users-alt"></i>
+                            </div>
+                          </div>
+                          <div class="form-floating form-floating-custom mb-3 auth-pass-inputgroup">
+                            <input type="password" class="form-control form-control-custom" id="passInput" placeholder="Enter Password" />
+                            <span class="eye hidden" id="spanEye">
+                              <i class="uil uil-eye-slash show-hide" toggle="#passInput" id="iconShowHide"></i>
+                            </span>
+                            <label for="password-input">Kata Sandi</label>
+                            <div class="form-floating-icon">
+                              <i class="uil uil-padlock"></i>
+                            </div>
+                          </div>
+                          <div class="form-check form-check-primary font-size-16 py-1">
+                            <input class="form-check-input" type="checkbox" id="remember-check" />
+                            <div class="float-end">
+                              <a href="auth-resetpassword-basic.html" class="text-decoration-none forget-pass">Lupa Kata Sandi?</a>
+                            </div>
+                            <label class="form-check-label remember-me" for="remember-check"> Remember me </label>
+                          </div>
 
-              <div class="col-xl-6 col-lg-7">
-                <div class="card panel_login">
-                  <div class="card-body">
-                    <div class="pt-4 px-3 py-3">
-                      <div class="text-center">
-                        <h5 class="mb-0 title">Login</h5>
-                        <p class="mt-2 description">Masuk dengan data Anda yang Anda masukkan saat pendaftaran.</p>
+                          <div class="mt-3">
+                            <button class="btn btn-primary w-100 rounded-pill" type="submit">Log In</button>
+                          </div>
+
+                          <div class="mt-4 pt-3 text-center">
+                            <p class="mb-0 sign-up">Belum punya akun ? <a href="auth-signup-cover.html"> Daftar Sekarang ! </a></p>
+                          </div>
+                        </form>
                       </div>
-                      <form class="mt-4 pt-2">
-                        <div class="form-floating form-floating-custom mb-3">
-                          <input type="text" class="form-control form-control-custom" id="input-username" placeholder="Enter User Name" />
-                          <label for="input-username">Email</label>
-                          <div class="form-floating-icon">
-                            <i class="uil uil-users-alt"></i>
-                          </div>
-                        </div>
-                        <div class="form-floating form-floating-custom mb-3 auth-pass-inputgroup">
-                          <input type="password" class="form-control form-control-custom" id="passInput" placeholder="Enter Password" />
-                          <span class="eye hidden" id="spanEye">
-                            <i class="uil uil-eye-slash show-hide" toggle="#passInput" id="iconShowHide"></i>
-                          </span>
-                          <label for="password-input">Kata Sandi</label>
-                          <div class="form-floating-icon">
-                            <i class="uil uil-padlock"></i>
-                          </div>
-                        </div>
-                        <div class="form-check form-check-primary font-size-16 py-1">
-                          <input class="form-check-input" type="checkbox" id="remember-check" />
-                          <div class="float-end">
-                            <a href="auth-resetpassword-basic.html" class="text-decoration-none forget-pass">Lupa Kata Sandi?</a>
-                          </div>
-                          <label class="form-check-label remember-me" for="remember-check"> Remember me </label>
-                        </div>
-
-                        <div class="mt-3">
-                          <button class="btn btn-primary w-100 rounded-pill" type="submit">Log In</button>
-                        </div>
-
-                        <div class="mt-4 pt-3 text-center">
-                          <p class="mb-0 sign-up">Belum punya akun ? <a href="auth-signup-cover.html"> Daftar Sekarang ! </a></p>
-                        </div>
-                      </form>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
