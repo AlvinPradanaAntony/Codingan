@@ -52,10 +52,30 @@
               <div class="row justify-content-center g-0 align-items-center w-100 h-100">
                 <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-10 panel">
                   <div class="card panel_login">
+                    <div class="card-header justify-content-end pb-0 d-none">
+                      <div class="dropdown">
+                        <button class="btn btn-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="uil uil-ellipsis-v"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end me-1 border border-0 custom-rounded" aria-labelledby="navbarDropdown">
+                          <li>
+                            <a class="dropdown-item custom-item-dropdown align-items-center" id="theme-button2" href="#">
+                            <i class="uil uil-moon change-theme fs-6" id="dark-dropdownItem"></i>
+                              <span class="nameItem">Tema Gelap</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                     <div class="card-body">
-                      <div class="pt-4 px-3 py-3">
+                      <div class="pt-md-4 pt-0 px-3 py-3">
                         <div class="text-center">
                           <h5 class="mb-0 title">Login</h5>
+                          <a href="#">
+                            <div class="logo-details d-none">
+                              <img src="Assets/Private/img/logo.png" width="135" alt="Logo" id="logo_sidebar" />
+                            </div>
+                          </a>
                           <p class="mt-2 description">Masuk dengan data Anda yang Anda masukkan saat pendaftaran.</p>
                         </div>
                         <form class="mt-4 pt-2">

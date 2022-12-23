@@ -42,6 +42,9 @@ $(document).ready(function () {
 
   if (localStorage.getItem("dark-mode") == "dark") {
     $("body").addClass("dark-theme");
+    $("#dark-dropdownItem").removeClass("uil-moon");
+    $("#dark-dropdownItem").addClass("uil-sun");
+    $(".nameItem").text("Tema Terang");
     $("#theme-button").removeClass("uil-moon");
     $("#theme-button").addClass("uil-sun");
     $("#logo_sidebar").attr("src", "Assets/Private/img/logoW.png");
@@ -69,8 +72,11 @@ $(document).ready(function () {
     }
   }
 
-  $("#theme-button").on("click", function () {
+  $("#theme-button, #theme-button2").on("click", function () {
     if ($("body").hasClass("dark-theme")) {
+      $("#dark-dropdownItem").removeClass("uil-sun");
+      $("#dark-dropdownItem").addClass("uil-moon");
+      $(".nameItem").text("Tema Gelap");
       $("#theme-button").removeClass("uil-sun");
       $("#theme-button").addClass("uil-moon");
       $("body").removeClass("dark-theme");
@@ -98,6 +104,9 @@ $(document).ready(function () {
       // set stored value to 'light'
       localStorage.setItem("dark-mode", "light");
     } else {
+      $("#dark-dropdownItem").removeClass("uil-moon");
+      $("#dark-dropdownItem").addClass("uil-sun");
+      $(".nameItem").text("Tema Terang");
       $("#theme-button").removeClass("uil-moon");
       $("#theme-button").addClass("uil-sun");
       $("body").addClass("dark-theme");
@@ -183,10 +192,10 @@ $(".show-hide").click(function () {
   var input = $($(this).attr("toggle"));
   if (input.attr("type") == "password") {
     input.attr("type", "text");
-    $("#iconShowHide").css("color", "#5886ef");
+    $("#iconShowHide").css("color", "var(--first-color)");
   } else {
     input.attr("type", "password");
-    $("#iconShowHide").css("color", "#d8d8d8");
+    $("#iconShowHide").css("color", "var(--text-color-light)");
   }
 });
 
