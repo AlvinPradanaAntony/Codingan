@@ -140,20 +140,91 @@
       </div>
 
       <div class="content">
-        <div class="container-fluid">
-          <div class="row gx-4 pt-4">
-            <div class="col-lg-9">
-              <p>
-                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> Link with href </a>
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Button with data-bs-target</button>
-              </p>
-              <div class="collapse" id="collapseExample">
-                <div class="card card-body">Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.</div>
+        <div class="row pt-4">
+          <!-- Card Total Data Bus -->
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 gradientBlue shadow h-100 py-2 rounded">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="RobotoReg14 text-white">Data Bus</div>
+                    <div class="RobotoBold18 text-white">
+                      5<span> Bus</span></div>
+                  </div>
+                  <div class="col-auto">
+                    <img src="img/ico/icons8_Shuttle_bus_50px.png" alt="logoBus">
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col-lg-3 m-0"></div>
+          </div>
+
+          <!-- Card Total Data Driver -->
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 gradientPink shadow h-100 py-2 rounded">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="RobotoReg14 text-white">Data Driver</div>
+                    <div class="RobotoBold18 text-white">(Belum Tersedia)</div>
+                  </div>
+                  <div class="col-auto">
+                    <img src="img/ico/icons8_driver_50px.png" alt="logoDriver">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Total Data Pemesanan -->
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 gradientYellow shadow h-100 py-2 rounded">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="RobotoReg14 text-white">Data Pemesanan</div>
+                    <div class="RobotoBold18 text-white">
+                      10 Pesanan</div>
+                  </div>
+                  <div class="col-auto">
+                    <img src="img/ico/icons8_bus_tickets_50px.png" alt="logoTicket">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Total Data Penghasilan -->
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 gradientGreen shadow h-100 py-2 rounded">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="RobotoReg14 text-white">Total Penghasilan</div>
+                    <div class="RobotoBold18 text-white"><span>Rp.</span>
+                      875000</div>
+                  </div>
+                  <div class="col-auto">
+                    <img src="img/ico/icons8_add_dollar_45px.png" alt="logoPay">
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <div class="row gx-4 pt-4">
+          <div class="col-lg-9">
+            <p>
+              <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> Link with href </a>
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Button with data-bs-target</button>
+            </p>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.</div>
+            </div>
+          </div>
+          <div class="col-lg-3 m-0"></div>
+        </div>
+
       </div>
     </section>
   </div>
@@ -163,16 +234,7 @@
 <script src="Assets/Private/js/moment.js"></script>
 <script src="Assets/Private/js/script.js"></script>
 <script src="Assets/Private/js/changeIconMenu.js"></script>
-<script>
-  //   $(".sidebar.close .nav-link").parent(".sidebar.close .nav-item").hover(
-  //   function () {
-  //     $(this).children(".sidebar.close .collapse").collapse("show");
-  //   },
-  //   function () {
-  //     $(this).children(".sidebar.close .collapse").collapse("hide");
-  //   }
-  // );
-</script>
+<script></script>
 
 <!-- /*==================== LORDICON ====================*/ -->
 <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
