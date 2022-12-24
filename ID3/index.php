@@ -96,7 +96,7 @@
       <div class="menu" id="menu"><i class="bx bx-menu menu-collapse"></i></div>
     </div>
     <section class="home-section">
-      <div class="home-navbar">
+      <div class="home-navbar sticky-top">
         <nav class="navbar-custom navbar-expand-lg shadowNavbar">
           <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">

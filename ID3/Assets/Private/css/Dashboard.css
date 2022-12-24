@@ -109,7 +109,6 @@ body {
 .wrapper {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 textarea:focus,
@@ -310,14 +309,8 @@ input[type="search"]:focus {
 
 /*==================== CUSTOM NAVBAR ====================*/
 .navbar-custom {
-  padding: 0 24px !important;
   min-height: 70px !important;
-  position: fixed !important;
   border-radius: 16px;
-  left: 252px !important;
-  top: 0 !important;
-  right: 0 !important;
-  margin: 20px;
   transition: all 0.5s ease;
   background-color: var(--container-color);
   z-index: 2 !important;
@@ -502,10 +495,6 @@ input[type="search"]:focus {
 }
 .sidebar.close ~ .home-section {
   margin-left: 98px !important;
-  transition: all 0.5s ease;
-}
-.sidebar.close ~ .home-section .navbar-custom {
-  left: 98px !important;
   transition: all 0.5s ease;
 }
 .sidebar.close > .menu {
