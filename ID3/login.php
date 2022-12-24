@@ -105,7 +105,7 @@
                           </div>
 
                           <div class="mt-3">
-                            <button class="btn btn-primary w-100 rounded-pill" type="submit">Log In</button>
+                            <button class="btn btn-primary w-100 rounded-pill" type="submit">Login</button>
                           </div>
 
                           <div class="mt-4 pt-3 text-center">

@@ -10,8 +10,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
+  height: calc(100vh - 50px) !important;
   width: 260px;
+  margin: 20px;
+  border-radius: 16px;
   background: #11101d;
   z-index: 100;
   transition: all 0.5s ease;
