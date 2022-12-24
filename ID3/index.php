@@ -93,14 +93,14 @@
           </li>
         </div>
       </ul>
-      <div class="menu" id="menu"><i class="bx bx-menu menu-collapse"></i></div>
     </div>
     <section class="home-section">
       <div class="home-navbar sticky-top">
         <nav class="navbar-custom navbar-expand-lg shadowNavbar">
           <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <div class="menu" id="menu"><i class="bx bx-menu menu-collapse"></i></div>
+            <div class="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
+              <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item d-flex align-items-center">
                   <div class="time-frame me-3">
                     <div id="date-part"></div>
