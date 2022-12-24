@@ -12,7 +12,7 @@
 
   /* HSL color mode */
   --first-color: #307bf4;
-  --first-color-second: #FD5353;
+  --first-color-second: #fd5353;
   --first-color-alt: hsl(var(--hue-color2), 57%, 53%);
   --first-color-lighter: hsl(var(--hue-color2), 92%, 85%);
   --title-color: #130f26;
@@ -76,7 +76,7 @@
 body.dark-theme {
   /* HSL color mode */
 
-  --first-color-second: #FD5353;
+  --first-color-second: #fd5353;
   --title-color: hsl(var(--hue-color), 8%, 100%);
   --text-color: hsl(var(--hue-color), 8%, 75%);
   --input-color: hsl(var(--hue-color2), 29%, 16%);
@@ -124,7 +124,6 @@ input[type="search"]:focus {
   outline: 0 none !important;
   transition: 0.4s ease-in-out !important;
 }
-
 
 /*==================== SIDEBAR ====================*/
 .sidebar {
@@ -175,7 +174,7 @@ input[type="search"]:focus {
   list-style: none;
   transition: all 0.5s ease;
 }
-.sidebar .nav-item > .nav-link.sign-out{
+.sidebar .nav-item > .nav-link.sign-out {
   color: var(--first-color-second);
 }
 .sidebar .nav-item .nav-link i {
@@ -186,7 +185,7 @@ input[type="search"]:focus {
   width: 20px !important;
   height: 30px !important;
 }
-.sidebar .nav-item .nav-link .link_name{
+.sidebar .nav-item .nav-link .link_name {
   font-size: var(--small-font-size);
 }
 .sidebar .menu-arrow {
@@ -254,7 +253,7 @@ input[type="search"]:focus {
 .sub-menu {
   padding: 0;
 }
-.sub-menu .link_name{
+.sub-menu .link_name {
   display: none;
 }
 .sub-menu li a {
@@ -277,9 +276,6 @@ input[type="search"]:focus {
 .menu {
   transition: all 0.5s ease;
   display: flex;
-  position: fixed;
-  top: 38px;
-  left: 288px;
   justify-content: center;
   align-items: center;
   width: 35px;
@@ -290,6 +286,7 @@ input[type="search"]:focus {
   font-size: 18px;
   box-shadow: 0 2px 12px rgb(0 0 0 / 11%);
   cursor: pointer;
+  transform: rotate(0deg);
 }
 
 /*====================  SECTION ====================*/
@@ -310,6 +307,7 @@ input[type="search"]:focus {
 /*==================== CUSTOM NAVBAR ====================*/
 .navbar-custom {
   min-height: 70px !important;
+  display: flex;
   border-radius: 16px;
   transition: all 0.5s ease;
   background-color: var(--container-color);
@@ -392,11 +390,11 @@ input[type="search"]:focus {
 .custom-item-dropdown:hover {
   background-color: var(--input-color) !important;
 }
-.custom-item-dropdown:hover > i{
+.custom-item-dropdown:hover > i {
   color: var(--title-color) !important;
   font-weight: var(--font-bold) !important;
 }
-.custom-item-dropdown:hover > span.nameItem{
+.custom-item-dropdown:hover > span.nameItem {
   color: var(--title-color) !important;
   font-weight: var(--font-bold) !important;
 }
@@ -428,14 +426,14 @@ input[type="search"]:focus {
 .sidebar.close .nav-links {
   overflow: visible;
 }
-.sidebar.close .nav-links li .sub-menu .link_name{
+.sidebar.close .nav-links li .sub-menu .link_name {
   display: block;
   font-size: 12px;
   padding: 8px 24px;
   color: var(--text-color-light) !important;
-  font-weight: var(--font-extra-bold) ;
+  font-weight: var(--font-extra-bold);
 }
-.sidebar.close .nav-links li .sub-menu.blank .link_name{
+.sidebar.close .nav-links li .sub-menu.blank .link_name {
   display: block;
   font-size: var(--small-font-size);
   font-weight: 400;
@@ -497,11 +495,9 @@ input[type="search"]:focus {
   margin-left: 98px !important;
   transition: all 0.5s ease;
 }
-.sidebar.close > .menu {
-  left: 138px;
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-  transition: all 0.5s ease;
+.sidebar.close ~ .home-section .menu {
+  -webkit-transform: rotate(90deg) !important;
+  transform: rotate(90deg) !important;
   transition: all 0.5s ease !important;
 }
 .sidebar.close .nav-item .nav-link {
@@ -509,4 +505,28 @@ input[type="search"]:focus {
 }
 .sidebar.close .nav-item .nav-link i {
   margin: 0;
+}
+
+/*==================== CONTENT ====================*/
+.home-section .content .card#data1{
+  background: linear-gradient(102.27deg, #4C3F91 0%, #633F91 100%);
+  border-radius: 16px;
+  box-shadow: 0px 4px 22px rgba(69, 69, 69, 0.08) !important;
+}
+.home-section .content .card-icon {
+  width: 54px;
+  height: 54px;
+  background-color: rgba(255, 255, 255, 0.4);;
+  border-radius: 10px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.home-section .content .card-detail {
+  text-align: right !important;
+}
+.home-section .content .card-detail{
+  
 }

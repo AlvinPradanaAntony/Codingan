@@ -97,8 +97,8 @@
     <section class="home-section">
       <div class="home-navbar sticky-top">
         <nav class="navbar-custom navbar-expand-lg shadowNavbar">
-          <div class="container-fluid">
-          <div class="menu" id="menu"><i class="bx bx-menu menu-collapse"></i></div>
+          <div class="container-fluid d-flex align-items-center">
+            <div class="menu" id="menu"><i class="bx bx-menu menu-collapse"></i></div>
             <div class="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
               <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item d-flex align-items-center">
@@ -143,16 +143,15 @@
         <div class="row pt-4">
           <!-- Card Total Data Bus -->
           <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-0 gradientBlue shadow h-100 py-2 rounded">
-              <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                  <div class="col mr-2">
-                    <div class="RobotoReg14 text-white">Data Bus</div>
-                    <div class="RobotoBold18 text-white">
-                      5<span> Bus</span></div>
+            <div class="card" id="data1">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center">
+                  <div class="card-icon text-white">
+                    <i class="uil uil-users-alt"></i>
                   </div>
-                  <div class="col-auto">
-                    <img src="img/ico/icons8_Shuttle_bus_50px.png" alt="logoBus">
+                  <div class=" ms-auto card-detail">
+                    <p class="mb-0 card-detail_text">Total Orders</p>
+                    <h4 class="my-1 card-detail_data">4805</h4>
                   </div>
                 </div>
               </div>
