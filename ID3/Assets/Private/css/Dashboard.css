@@ -512,6 +512,7 @@ input[type="search"]:focus {
   background: linear-gradient(102.27deg, #4C3F91 0%, #633F91 100%);
   border-radius: 16px;
   box-shadow: 0px 4px 22px rgba(69, 69, 69, 0.08) !important;
+  overflow: hidden;
 }
 .home-section .content .card-icon {
   width: 54px;
@@ -547,4 +548,7 @@ input[type="search"]:focus {
     background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
     background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
     background: linear-gradient(to right, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+}
+.invoice-card{
+
 }
