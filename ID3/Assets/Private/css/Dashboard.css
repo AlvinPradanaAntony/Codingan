@@ -506,18 +506,44 @@ input[type="search"]:focus {
 .sidebar.close .nav-item .nav-link i {
   margin: 0;
 }
+/*========== SCROLL BAR ==========*/
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: var(--scroll-bar-color);
+  border-radius: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb-color);
+  border-radius: 0.5rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-thumb-hover-color);
+}
 
 /*==================== CONTENT ====================*/
-.home-section .content .card#data1{
-  background: linear-gradient(102.27deg, #4C3F91 0%, #633F91 100%);
+.home-section .content .card {
   border-radius: 16px;
-  box-shadow: 0px 4px 22px rgba(69, 69, 69, 0.08) !important;
   overflow: hidden;
+  position: relative;
+  border: none;
+  box-shadow: 2px 0px 20px rgb(69 69 69 / 8%);
+}
+.home-section .content .card#data1 {
+  background: linear-gradient(102.27deg, #29BB89 0%, #66E7BA 100%);
+}
+.home-section .content .card#data2 {
+  background: linear-gradient(102.27deg, #8364e8 0%, #d397fa 100%);
+}
+.home-section .content .card#data3 {
+  background: linear-gradient(102.27deg, #307BF4 0%, #19b0ec 100%);
+}
+.home-section .content .card#data4 {
+  background: linear-gradient(102.27deg, #f64c18 0%, #ee9539 100%);
 }
 .home-section .content .card-icon {
   width: 54px;
   height: 54px;
-  background-color: rgba(255, 255, 255, 0.4);;
+  background-color: rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   font-size: 24px;
   display: flex;
@@ -529,26 +555,23 @@ input[type="search"]:focus {
   text-align: right !important;
 }
 .home-section .content .card-detail_text,
-.home-section .content .card-detail_data{
+.home-section .content .card-detail_data {
   color: #fafbfc;
   font-size: var(--normal-font-size);
 }
-.home-section .content .card-detail_data{
+.home-section .content .card-detail_data {
   font-size: var(--h2-font-size);
   font-weight: var(--font-extra-bold);
 }
-.home-section .content .abstract1{
+.home-section .content .abstract1 {
   position: absolute;
   height: 120px;
-    width: 120px;
-    transform: rotate(40deg);
-    top: -35px;
-    right: -35px;
-    border-radius: 1.75rem;
-    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
-    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
-}
-.invoice-card{
-
+  width: 120px;
+  transform: rotate(40deg);
+  top: -35px;
+  right: -35px;
+  border-radius: 1.75rem;
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
 }
