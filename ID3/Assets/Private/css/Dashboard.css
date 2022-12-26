@@ -22,9 +22,9 @@
   --body-color: #fafbfc;
   --container-color: #fff;
   --container-color2: #fff;
-  --scroll-bar-color: hsl(var(--hue-color2), 12%, 90%);
-  --scroll-thumb-color: hsl(var(--hue-color2), 12%, 80%);
-  --scroll-thumb-hover-color: hsl(var(--hue-color2), 8%, 65%);
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+  --scroll-thumb-hover-color: hsl(var(--hue-color), 8%, 65%);
 
   /*========== Font and typography ==========*/
   --body-font: "Nunito Sans", sans-serif;
@@ -82,9 +82,9 @@ body.dark-theme {
   --input-color: hsl(var(--hue-color2), 29%, 16%);
   --body-color: #131517;
   --container-color: #1e1f25;
-  --scroll-bar-color: hsl(var(--hue-color), 28%, 20%);
-  --scroll-thumb-color: hsl(var(--hue-color), 28%, 60%);
-  --scroll-thumb-hover-color: hsl(var(--hue-color), 69%, 61%);
+  --scroll-bar-color: #131517;
+  --scroll-thumb-color: #1e1f25;
+  --scroll-thumb-hover-color: #307bf4;
 }
 
 /*==================== BASE ====================*/
@@ -571,6 +571,19 @@ input[type="search"]:focus {
   top: -35px;
   right: -35px;
   border-radius: 1.75rem;
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+}
+.home-section .content .abstract2 {
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  transform: rotate(40deg);
+  top: 60px;
+  left:-45px;
+  right: 0px;
+  border-radius: 100px;
   background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
   background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
   background: linear-gradient(to right, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
