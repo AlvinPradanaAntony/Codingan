@@ -95,7 +95,7 @@
       </ul>
     </div>
     <section class="home-section">
-      <div class="home-navbar sticky-top">
+      <div class="home-navbar sticky-top" id="sticky-element">
         <nav class="navbar-custom navbar-expand-lg shadowNavbar">
           <div class="container-fluid d-flex align-items-center">
             <div class="menu" id="menu"><i class="bx bx-menu menu-collapse"></i></div>
@@ -141,7 +141,7 @@
 
       <div class="content">
         <div class="row pt-4">
-          <!-- Card Total Data Bus -->
+
           <div class="col-xl-3 col-md-6 mb-4">
             <div class="card" id="data1">
               <div class="card-body p-4">
@@ -160,13 +160,12 @@
             </div>
           </div>
 
-          <!-- Card Total Data Driver -->
           <div class="col-xl-3 col-md-6 mb-4">
             <div class="card" id="data2">
               <div class="card-body p-4">
                 <div class="d-flex align-items-center">
                   <div class="card-icon text-white">
-                    <i class="uil uil-users-alt"></i>
+                    <i class="uil uil-database"></i>
                   </div>
                   <div class=" ms-auto card-detail">
                     <p class="mb-0 card-detail_text">Data Latih</p>
@@ -179,13 +178,12 @@
             </div>
           </div>
 
-          <!-- Card Total Data Pemesanan -->
           <div class="col-xl-3 col-md-6 mb-4">
             <div class="card" id="data3">
               <div class="card-body p-4">
                 <div class="d-flex align-items-center">
                   <div class="card-icon text-white">
-                    <i class="uil uil-users-alt"></i>
+                    <i class="uil uil-server-connection"></i>
                   </div>
                   <div class=" ms-auto card-detail">
                     <p class="mb-0 card-detail_text">Data Uji</p>
@@ -198,13 +196,12 @@
             </div>
           </div>
 
-          <!-- Card Total Data Penghasilan -->
           <div class="col-xl-3 col-md-6 mb-4">
             <div class="card" id="data4">
               <div class="card-body p-4">
                 <div class="d-flex align-items-center">
                   <div class="card-icon text-white">
-                    <i class="uil uil-users-alt"></i>
+                    <i class="uil uil-percentage"></i>
                   </div>
                   <div class=" ms-auto card-detail">
                     <p class="mb-0 card-detail_text">Akurasi</p>
@@ -233,7 +230,10 @@
 <script src="Assets/Private/js/moment.js"></script>
 <script src="Assets/Private/js/script.js"></script>
 <script src="Assets/Private/js/changeIconMenu.js"></script>
-<script></script>
+<script>
+
+
+</script>
 
 <!-- /*==================== LORDICON ====================*/ -->
 <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>

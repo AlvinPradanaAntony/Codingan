@@ -204,3 +204,18 @@ var currentYear = new Date().getFullYear();
 $(document).ready(function () {
   $("#year").text(new Date().getFullYear());
 });
+
+/*========== NAVBAR ==========*/
+$(window).scroll(function () {
+  var stickyElement = $("#sticky-element");
+  var customNavbar = $(".navbar-custom");
+  var stickyPosition = stickyElement.offset().top;
+
+  if (stickyPosition <= $(window).scrollTop()) {
+    // element has been pinned
+    customNavbar.addClass("sticky-pinned");
+  } else {
+    // element is not pinned
+    customNavbar.removeClass("sticky-pinned");
+  }
+});

@@ -313,6 +313,10 @@ input[type="search"]:focus {
   background-color: var(--container-color);
   z-index: 2 !important;
 }
+.navbar-custom.sticky-pinned{
+  border-radius: 0px 0px 16px 16px;
+  transition: all 0.5s ease;
+}
 .time-frame {
   font-size: 10px;
   color: var(--text-color);
@@ -408,6 +412,7 @@ input[type="search"]:focus {
   margin-right: var(--mb-1);
   cursor: pointer;
 }
+
 
 /*==================== SIDEBAR CLOSING ====================*/
 .sidebar.close {
@@ -529,13 +534,13 @@ input[type="search"]:focus {
   box-shadow: 2px 0px 20px rgb(69 69 69 / 8%);
 }
 .home-section .content .card#data1 {
-  background: linear-gradient(102.27deg, #29BB89 0%, #66E7BA 100%);
+  background: linear-gradient(102.27deg, #29bb89 0%, #66e7ba 100%);
 }
 .home-section .content .card#data2 {
   background: linear-gradient(102.27deg, #8364e8 0%, #d397fa 100%);
 }
 .home-section .content .card#data3 {
-  background: linear-gradient(102.27deg, #307BF4 0%, #19b0ec 100%);
+  background: linear-gradient(102.27deg, #307bf4 0%, #19b0ec 100%);
 }
 .home-section .content .card#data4 {
   background: linear-gradient(102.27deg, #f64c18 0%, #ee9539 100%);
@@ -553,6 +558,8 @@ input[type="search"]:focus {
 }
 .home-section .content .card-detail {
   text-align: right !important;
+  position: relative;
+  z-index: 1;
 }
 .home-section .content .card-detail_text,
 .home-section .content .card-detail_data {
@@ -581,7 +588,7 @@ input[type="search"]:focus {
   width: 120px;
   transform: rotate(40deg);
   top: 60px;
-  left:-45px;
+  left: -45px;
   right: 0px;
   border-radius: 100px;
   background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
