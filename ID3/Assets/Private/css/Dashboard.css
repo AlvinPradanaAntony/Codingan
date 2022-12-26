@@ -227,11 +227,44 @@ input[type="search"]:focus {
   transition: all 0.5s ease;
   background-color: var(--input-color);
 }
-/* .setting{
-  height: 100%;
-} */
 .sidebar-divider {
   border-top: 1px solid var(--text-color-light);
+}
+
+/*==================== RESPONSIVE SIDEBAR ====================*/
+@media (max-width: 768px) {
+  .sidebar{
+    display: none;
+  }
+  .home-section{
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .content{
+    padding: 20px 20px 65px;
+  }
+  .navbar-custom {
+    border-radius: 0 !important;
+  }
+  .navbar-custom .container-fluid{
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+@media (min-width: 576px) {
+
+}
+@media (min-width: 768px) {
+
+}
+@media (min-width: 992px) {
+
+}
+@media (min-width: 1200px) {
+
+}
+@media (max-width: 992px) {
+
 }
 
 /*==================== ITEM ACTIVE in SIDEBAR ====================*/
@@ -511,6 +544,8 @@ input[type="search"]:focus {
 .sidebar.close .nav-item .nav-link i {
   margin: 0;
 }
+
+
 /*========== SCROLL BAR ==========*/
 ::-webkit-scrollbar {
   width: 0.6rem;

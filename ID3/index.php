@@ -96,11 +96,11 @@
     </div>
     <section class="home-section">
       <div class="home-navbar sticky-top" id="sticky-element">
-        <nav class="navbar-custom navbar-expand-lg shadowNavbar">
+        <nav class="navbar-custom navbar-expand-md shadowNavbar">
           <div class="container-fluid d-flex align-items-center">
             <div class="menu" id="menu"><i class="bx bx-menu menu-collapse"></i></div>
             <div class="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
-              <ul class="navbar-nav mb-2 mb-lg-0">
+              <ul class="navbar-nav mb-lg-0">
                 <li class="nav-item d-flex align-items-center">
                   <div class="time-frame me-3">
                     <div id="date-part"></div>
