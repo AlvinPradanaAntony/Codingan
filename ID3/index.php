@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Ithesis - Dashboard</title>
+  <link rel="shortcut icon" type="image/png" href="Assets/Private/img/logoLtW.png">
   <link rel="stylesheet" href="Assets/Private/css/Dashboard.css" />
   <link rel="stylesheet" href="Assets/css/bootstrap.min.css" />
   <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
@@ -20,8 +21,8 @@
         <img src="Assets/Private/img/logo.png" width="135" alt="Logo" id="logo_sidebar" />
       </div>
       <ul class="nav-links m-0" id="main">
-        <li class="nav-item active">
-          <a href="#" class="nav-link">
+        <li class="nav-item">
+          <a href="#" class="nav-link active">
             <i class="uil-apps"></i>
             <span style="vertical-align: middle" class="link_name"> Beranda </span>
           </a>
@@ -42,7 +43,7 @@
                 <a href="dataset.php">Lihat Dataset</a>
               </li>
               <li>
-                <a href="apps-ecommerce-products-details.html">Import Dataset</a>
+                <a href="#">Import Dataset</a>
               </li>
             </ul>
           </div>
@@ -230,10 +231,7 @@
 <script src="Assets/Private/js/moment.js"></script>
 <script src="Assets/Private/js/script.js"></script>
 <script src="Assets/Private/js/changeIconMenu.js"></script>
-<script>
-
-
-</script>
+<script></script>
 
 <!-- /*==================== LORDICON ====================*/ -->
 <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>

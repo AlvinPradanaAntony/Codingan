@@ -149,7 +149,7 @@ input[type="search"]:focus {
   transition: all 0.5s ease;
 }
 .sidebar .nav-links {
-  height: calc(100% - 38px);
+  height: calc(100% - (-28px));
   padding: 30px 15px 150px 15px;
   list-style: none;
   overflow: auto;
@@ -218,7 +218,7 @@ input[type="search"]:focus {
   color: var(--first-color) !important;
 }
 .sidebar .nav-item-active {
-  border-radius: 18px;
+  border-radius: 18px !important;
   transition: all 0.5s ease;
   background-color: var(--input-color);
 }
@@ -268,19 +268,47 @@ input[type="search"]:focus {
 }
 
 /*==================== ITEM ACTIVE in SIDEBAR ====================*/
-.sidebar .nav-item.active {
+.sidebar .nav-item.nav-item.nav-item-active > .nav-link.active {
+  border-radius: 16px 16px 0px 0px;
+  transition: all 0.5s ease;
+  color: #ffffff !important;
+  font-weight: var(--font-extra-bold) !important;
+}
+.sidebar .nav-link.active {
   border-radius: 25px;
   transition: all 0.5s ease;
   background-color: var(--first-color);
 }
-.sidebar .nav-item.active .nav-link {
+.sidebar .nav-link.active {
   color: #ffffff !important;
   font-weight: var(--font-extra-bold) !important;
 }
-.sidebar .nav-item.active:hover {
+.sidebar .nav-link.active:hover {
   border-radius: 25px;
+  color: #ffffff !important;
   background-color: var(--first-color);
 }
+/* .sidebar .nav-item-active > .collapse.show .sub-menu{
+  border-radius: 0px 0px 14px 14px!important;
+  transition: all 0.5s ease;
+  background-color: var(--input-color) !important;
+} */
+/* .sidebar .nav-item.active .sub-menu .link_name {
+  display: none;
+}
+.sidebar .nav-item.active .sub-menu li a {
+  padding: 8px 10px 8px 62px;
+  color: var(--title-color);
+  position: relative;
+  display: block;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  font-size: var(--small-font-size);
+  text-decoration: none;
+}
+.sidebar .nav-item.active .sub-menu li a:hover {
+  color: var(--first-color);
+} */
 
 /*==================== SUBMENU in SIDEBAR ====================*/
 .sub-menu {
