@@ -18,7 +18,7 @@ if (isset($_GET['act'])) {
 		header('location:index.php?menu=data');
 	}
 } else {
-	include "form_data_training.php";
+	// include "form_data_training.php";
 	$query = mysql_query("select * from data_training order by(id)");
 	$jumlah = mysql_num_rows($query);
 ?>

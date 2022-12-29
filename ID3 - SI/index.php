@@ -1,18 +1,19 @@
 <?php
-    session_start();
-    if (!isset($_SESSION['usr'])){
-        header("location:login.php");
-    }
-    $sesName = $_SESSION['nama'];
+session_start();
+if (!isset($_SESSION['usr'])) {
+  header("location:login.php");
+}
+$sesName = $_SESSION['nama'];
 
-    if($_SESSION['lvl'] == 0){
-      $status = "Admin";
-    } else{
-      $status = "User";
-    }
+if ($_SESSION['lvl'] == 0) {
+  $status = "Admin";
+} else {
+  $status = "User";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -33,12 +34,11 @@
         <img src="Assets/Private/img/logo.png" width="135" alt="Logo" id="logo_sidebar" />
       </div>
       <ul class="nav-links m-0" id="main">
-      <?php
-				$level=$_SESSION['lvl'];
-				//jika user kaprodi
+        <?php
+        $level = $_SESSION['lvl'];
         ?>
         <li class="nav-item">
-          <a href="#" class="nav-link active">
+          <a href='index.php?menu=home' accesskey='1' class="nav-link">
             <i class="uil-apps"></i>
             <span style="vertical-align: middle" class="link_name"> Beranda </span>
           </a>
@@ -46,25 +46,25 @@
             <li><a class="link_name" href="#">Beranda</a></li>
           </ul>
         </li>
-        <?php if ($level=="0"): ?>
-        <li class="nav-item">
-          <a data-bs-toggle="collapse" href="#data" aria-expanded="false" aria-controls="data" class="nav-link">
-            <i class="uil uil-database"></i>
-            <span style="vertical-align: middle" class="link_name"> Data </span>
-            <span class="menu-arrow uil-angle-right"></span>
-          </a>
-          <div class="collapse" id="data">
-            <ul class="sub-menu">
-              <li><a class="link_name" href="#">DATA</a></li>
-              <li>
-                <a href="dataset.php">Lihat Dataset</a>
-              </li>
-              <li>
-                <a href="#">Import Dataset</a>
-              </li>
-            </ul>
-          </div>
-        </li>
+        <?php if ($level == "0") : ?>
+          <li class="nav-item">
+            <a data-bs-toggle="collapse" href="#data" aria-expanded="false" aria-controls="data" class="nav-link">
+              <i class="uil uil-database"></i>
+              <span style="vertical-align: middle" class="link_name"> Data </span>
+              <span class="menu-arrow uil-angle-right"></span>
+            </a>
+            <div class="collapse" id="data">
+              <ul class="sub-menu">
+                <li><a class="link_name" href="#">DATA</a></li>
+                <li>
+                  <a href='?menu=data' accesskey='1'>Lihat Dataset</a>
+                </li>
+                <li>
+                  <a href='?menu=dataImport' accesskey='6'>Import Dataset</a>
+                </li>
+              </ul>
+            </div>
+          </li>
         <?php endif ?>
         <li class="nav-item">
           <a data-bs-toggle="collapse" href="#proses" aria-expanded="false" aria-controls="proses" class="nav-link">
@@ -75,21 +75,21 @@
           <div class="collapse" id="proses">
             <ul class="sub-menu">
               <li><a class="link_name" href="#">PROSES</a></li>
-              <?php if ($level=="0"): ?>
-              <li>
-                <a href="#">ID3</a>
-              </li>
+              <?php if ($level == "0") : ?>
+                <li>
+                  <a href='?menu=mining' accesskey='2'>ID3</a>
+                </li>
               <?php endif ?>
               <li>
-                <a href="#">Lihat Rules</a>
+                <a href='?menu=uji_rule' accesskey='7'>Lihat Rules</a>
               </li>
               <li>
-                <a href="#">Pohon Keputusan</a>
+                <a href='?menu=pohon_tree' accesskey='3'>Pohon Keputusan</a>
               </li>
-              <?php if ($level=="0"): ?>
-              <li>
-                <a href="#">Cek Akurasi</a>
-              </li>
+              <?php if ($level == "0") : ?>
+                <li>
+                  <a href="#">Cek Akurasi</a>
+                </li>
               <?php endif ?>
             </ul>
           </div>
@@ -240,14 +240,60 @@
         <div class="row gx-4 pt-4">
           <div class="col-lg-9">
             <?php
-                  echo '<pre>';
-                  print_r($_SESSION);
-                  echo '</pre>';
+            //jika menu sudah diset
+            if (isset($_GET['menu'])) {
+              $kode = $_GET['menu'];
+              //menu home
+              if ($kode == 'home') {
+
+                // echo '<pre>';
+                // print_r($_SESSION);
+                // echo '</pre>';
+              } //menu olah data
+              else if ($kode == 'data') {
+                include 'data_training.php';
+              }
+              //menu mining (proses pembentukan pohon keputusan)
+              else if ($kode == 'mining') {
+                include 'mining.php';
+              }
+              //menu pohon keputusan atau rule
+              else if ($kode == 'tree') {
+                include 'tree.php';
+              }
+              //menu pohon tree2
+              else if ($kode == 'pohon_tree') {
+                include 'pohon_tree.php';
+              }
+              //menu uji pohon keputusan atau rule
+              else if ($kode == 'uji_rule') {
+                include 'uji_rule.php';
+              }
+              //menu hasil prediksi
+              else if ($kode == 'hasil') {
+                include 'hasil_prediksi.php';
+              }
+              //menu data user
+              else if ($kode == 'user') {
+                include 'data_user.php';
+              }
+              //menu prediksi
+              else if ($kode == 'prediksi') {
+                include 'prediksi.php';
+              }
+              //menu ubah password
+              else if ($kode == 'ubah_password') {
+                include 'ubah_password.php';
+              }
+            } else {
+              // echo '<pre>';
+              // print_r($_SESSION);
+              // echo '</pre>';
+            }
             ?>
           </div>
           <div class="col-lg-3 m-0"></div>
         </div>
-
       </div>
     </section>
   </div>
