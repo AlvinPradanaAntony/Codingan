@@ -1,11 +1,23 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['usr'])){
+        header("location:login.php");
+    }
+    $sesName = $_SESSION['nama'];
+
+    if($_SESSION['lvl'] == 0){
+      $status = "Admin";
+    } else{
+      $status = "User";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ithesis - Dashboard</title>
+  <title>IThesis - Dashboard</title>
   <link rel="shortcut icon" type="image/png" href="Assets/Private/img/logoLtW.png">
   <link rel="stylesheet" href="Assets/Private/css/Dashboard.css" />
   <link rel="stylesheet" href="Assets/css/bootstrap.min.css" />
@@ -21,6 +33,10 @@
         <img src="Assets/Private/img/logo.png" width="135" alt="Logo" id="logo_sidebar" />
       </div>
       <ul class="nav-links m-0" id="main">
+      <?php
+				$level=$_SESSION['lvl'];
+				//jika user kaprodi
+        ?>
         <li class="nav-item">
           <a href="#" class="nav-link active">
             <i class="uil-apps"></i>
@@ -30,6 +46,7 @@
             <li><a class="link_name" href="#">Beranda</a></li>
           </ul>
         </li>
+        <?php if ($level=="0"): ?>
         <li class="nav-item">
           <a data-bs-toggle="collapse" href="#data" aria-expanded="false" aria-controls="data" class="nav-link">
             <i class="uil uil-database"></i>
@@ -48,6 +65,7 @@
             </ul>
           </div>
         </li>
+        <?php endif ?>
         <li class="nav-item">
           <a data-bs-toggle="collapse" href="#proses" aria-expanded="false" aria-controls="proses" class="nav-link">
             <i class="uil uil-atom"></i>
@@ -57,18 +75,22 @@
           <div class="collapse" id="proses">
             <ul class="sub-menu">
               <li><a class="link_name" href="#">PROSES</a></li>
+              <?php if ($level=="0"): ?>
               <li>
                 <a href="#">ID3</a>
               </li>
+              <?php endif ?>
               <li>
                 <a href="#">Lihat Rules</a>
               </li>
               <li>
                 <a href="#">Pohon Keputusan</a>
               </li>
+              <?php if ($level=="0"): ?>
               <li>
                 <a href="#">Cek Akurasi</a>
               </li>
+              <?php endif ?>
             </ul>
           </div>
         </li>
@@ -84,12 +106,12 @@
         <div class="setting mt-5">
           <hr class="sidebar-divider">
           <li class="nav-item">
-            <a href="#" class="nav-link sign-out">
+            <a href="logout.php" class="nav-link sign-out" onClick="return confirm('Anda yakin akan keluar?')">
               <i class="uil uil-sign-out-alt"></i>
               <span style="vertical-align: middle" class="link_name">Logout</span>
             </a>
             <ul class="sub-menu blank">
-              <li><a class="link_name" href="#">Logout</a></li>
+              <li><a class="link_name" href="logout.php" onClick="return confirm('Anda yakin akan keluar?')">Logout</a></li>
             </ul>
           </li>
         </div>
@@ -115,7 +137,7 @@
                 <li class="nav-item dropdown frameProfile">
                   <a class="nav-link dropdown-toggle nav-user" href="/#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <span class="account-user-avatar d-inline-block"><img src="Assets/Private/img/images.png" class="cust-avatar img-fluid rounded-circle" /></span>
-                    <span class="account-user-name">Alvin Pradana Antony</span><span class="account-position">Student</span>
+                    <span class="account-user-name"><?php echo $sesName; ?></span><span class="account-position"><?php echo $status; ?></span>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end me-1 border border-0 custom-rounded" aria-labelledby="navbarDropdown" style="">
                     <li>
@@ -127,7 +149,7 @@
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item custom-item-dropdown d-flex align-items-center" href="/#">
+                      <a class="dropdown-item custom-item-dropdown d-flex align-items-center" href="logout.php" onClick="return confirm('Anda yakin akan keluar?')">
                         <i class="uil uil-sign-out-alt me-2"></i>
                         <span class="nameItem">Sign Out</span>
                       </a>
@@ -217,7 +239,11 @@
         </div>
         <div class="row gx-4 pt-4">
           <div class="col-lg-9">
-            
+            <?php
+                  echo '<pre>';
+                  print_r($_SESSION);
+                  echo '</pre>';
+            ?>
           </div>
           <div class="col-lg-3 m-0"></div>
         </div>
