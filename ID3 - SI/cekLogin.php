@@ -1,7 +1,7 @@
 <?php
 	include "koneksi.php";
     $userID=$_POST['user'];
-    $password=$_POST['pass'];
+    $password=$_POST['passInput'];
     $query=mysql_query("select * from user where user_id='$userID' and password='$password'");    
     if (mysql_num_rows($query)==0){
         ?>
