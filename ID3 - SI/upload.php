@@ -14,16 +14,14 @@
 		$gagal = 0;
 		//import data excel dari baris kedua, karena baris pertama adalah nama kolom
 		for ($i=2; $i<=$baris; $i++) {			
-			$instansi = $data->val($i,2);
-			$status = $data->val($i,3); 
-			$jurusan = $data->val($i,4);
-			$rataUN = $data->val($i,5);
-			$kerja = $data->val($i,6);
-			$motivasi = $data->val($i,7);
-			$ipk = $data->val($i,8);
+			$PROPOSAL = $data->val($i,2);		
+			$MKD = $data->val($i,3);
+			$MKI = $data->val($i,4);
+			$MKP = $data->val($i,5); 
+			$KEPUTUSAN = $data->val($i,6);
 			//setelah data dibaca, sisipkan ke dalam tabel 
-			$query = "INSERT INTO data_training (instansi,status,jurusan,rata_un,kerja,motivasi,ipk) 
-			VALUES ('$instansi','$status','$jurusan','$rataUN','$kerja','$motivasi','$ipk')";
+			$query = "INSERT INTO data_training (PROPOSAL,MKD,MKI,MKP,KEPUTUSAN) 
+			VALUES ('$PROPOSAL','$MKD','$MKI','$MKP','$KEPUTUSAN')";
 			$hasil = mysql_query($query);
 			//menambah counter jika berhasil atau gagal
 			if($hasil) $sukses++;
@@ -39,17 +37,15 @@
 		$sukses = 0;
 		$gagal = 0;
 		//import data excel dari baris kedua, karena baris pertama adalah nama kolom
-		for ($i=2; $i<=$baris; $i++) {			
-			$instansi = $data->val($i,2);
-			$status = $data->val($i,3); 
-			$jurusan = $data->val($i,4);
-			$rataUN = $data->val($i,5);
-			$kerja = $data->val($i,6);
-			$motivasi = $data->val($i,7);
-			$ipk = $data->val($i,8);
+		for ($i=2; $i<=$baris; $i++) {	
+			$PROPOSAL = $data->val($i,2);		
+			$MKD = $data->val($i,3);
+			$MKI = $data->val($i,4);
+			$MKP = $data->val($i,5); 
+			$KEPUTUSAN = $data->val($i,6);
 			//setelah data dibaca, sisipkan ke dalam tabel 
-			$query = "INSERT INTO data_uji (instansi,status,jurusan,rata_un,kerja,motivasi,ipk_asli) 
-			VALUES ('$instansi','$status','$jurusan','$rataUN','$kerja','$motivasi','$ipk')";
+			$query = "INSERT INTO data_uji (PROPOSAL,MKD,MKI,MKP,KEPUTUSAN) 
+			VALUES ('$PROPOSAL','$MKD','$MKI','$MKP','$KEPUTUSAN')";
 			$hasil = mysql_query($query);
 			//menambah counter jika berhasil atau gagal
 			if($hasil) $sukses++;

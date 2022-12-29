@@ -22,7 +22,11 @@
 			?>
 			<table bgcolor='#7c96ba' border='1' cellspacing='0' cellspading='0' align='center' width=900>
 				<tr>
-					<th>No</th><th>Instansi</th><th>Status</th><th>Jurusan</th><th>Rata-rata UN</th><th>Status Kerja</th><th>Motivasi</th><th>IPK</th>	
+				<th>Mata Kuliah Dasar</th>
+                            <th>Mata Kuliah Pendukung</th>
+                            <th>Mata Kuliah Inti</th>
+                            <th>PROPOSAL</th>
+                            <th>KEPUTUSAN</th>	
 				</tr>
 			<?php
 				$warna1 = '#ffffff';
@@ -37,14 +41,11 @@
 					} 		
 				?>
 					<tr bgcolor=<?php echo $warna; ?> align=center>
-						<td><?php echo $row['id'];?></td>			
-						<td><?php echo $row['instansi'];?></td>
-						<td><?php echo $row['status'];?></td>
-						<td><?php echo $row['jurusan'];?></td>
-						<td><?php echo $row['rata_un'];?></td>
-						<td><?php echo $row['kerja'];?></td>
-						<td><?php echo $row['motivasi'];?></td>
-						<td><?php echo $row['ipk'];?></td>			
+						<td><?php echo $row['MKD'];?></td>
+						<td><?php echo $row['MKP'];?></td>
+						<td><?php echo $row['MKI'];?></td>
+						<td><?php echo $row['PROPOSAL'];?></td>
+						<td><?php echo $row['KEPUTUSAN'];?></td>			
 					</tr>
 				<?php
 					$no++;

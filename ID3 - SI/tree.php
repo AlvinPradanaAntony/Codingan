@@ -56,7 +56,7 @@
 						if($row['parent']!=''){
 							echo $row['parent']." AND ";
 						}
-						echo $row['akar']." THEN Prestasi = ".$row['keputusan'];?>
+						echo $row['akar']." THEN KEPUTUSAN DOSEN = ".$row['keputusan'];?>
 					</td>								
 				</tr>
 			<?php

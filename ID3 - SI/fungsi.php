@@ -51,84 +51,101 @@
 		}
 		//untuk atribut 2 nilai atribut	
 		if($kondisi3==''){
-			$j_tinggi1 = jumlah_data("$data_kasus ipk='tinggi' AND $kondisi1");
-			$j_rendah1 = jumlah_data("$data_kasus ipk='rendah' AND $kondisi1");
-			$jml1 = $j_tinggi1 + $j_rendah1;
-			$j_tinggi2 = jumlah_data("$data_kasus ipk='tinggi' AND $kondisi2");
-			$j_rendah2 = jumlah_data("$data_kasus ipk='rendah' AND $kondisi2");
-			$jml2 = $j_tinggi2 + $j_rendah2;
+			$j_Ditolak1 = jumlah_data("$data_kasus KEPUTUSAN='Ditolak' AND $kondisi1");
+			$j_DDV1 = jumlah_data("$data_kasus KEPUTUSAN='Revisi' AND $kondisi1");
+			$j_Diterima1 = jumlah_data("$data_kasus KEPUTUSAN='Diterima' AND $kondisi1");
+			$jml1 = $j_Ditolak1 + $j_DDV1 + $j_Diterima1;
+			$j_Ditolak2 = jumlah_data("$data_kasus KEPUTUSAN='Ditolak' AND $kondisi2");
+			$j_DDV2 = jumlah_data("$data_kasus KEPUTUSAN='Revisi' AND $kondisi2");
+			$j_Diterima2 = jumlah_data("$data_kasus KEPUTUSAN='Diterima' AND $kondisi2");
+			$jml2 = $j_Ditolak2 + $j_DDV2 + $j_Diterima2;
 			//hitung entropy masing-masing kondisi
 			$jml_total = $jml1 + $jml2;
-			$ent1 = hitung_entropy($j_tinggi1 , $j_rendah1);
-			$ent2 = hitung_entropy($j_tinggi2 , $j_rendah2);
+			$ent1 = hitung_entropy($j_Ditolak1 , $j_DDV1,$j_Diterima1);
+			$ent2 = hitung_entropy($j_Ditolak2 , $j_DDV2,$j_Diterima2);
 			$gain = $ent_all - ((($jml1/$jml_total)*$ent1) + (($jml2/$jml_total)*$ent2));
 		}
 		//untuk atribut 3 nilai atribut
 		else if($kondisi4==''){
-			$j_tinggi1 = jumlah_data("$data_kasus ipk='tinggi' AND $kondisi1");
-			$j_rendah1 = jumlah_data("$data_kasus ipk='rendah' AND $kondisi1");
-			$jml1 = $j_tinggi1 + $j_rendah1;
-			$j_tinggi2 = jumlah_data("$data_kasus ipk='tinggi' AND $kondisi2");
-			$j_rendah2 = jumlah_data("$data_kasus ipk='rendah' AND $kondisi2");
-			$jml2 = $j_tinggi2 + $j_rendah2;
-			$j_tinggi3 = jumlah_data("$data_kasus ipk='tinggi' AND $kondisi3");
-			$j_rendah3 = jumlah_data("$data_kasus ipk='rendah' AND $kondisi3");
-			$jml3 = $j_tinggi3 + $j_rendah3;
+			$j_Ditolak1 = jumlah_data("$data_kasus KEPUTUSAN='Ditolak' AND $kondisi1");
+			$j_DDV1 = jumlah_data("$data_kasus KEPUTUSAN='Revisi' AND $kondisi1");
+			$j_Diterima1 = jumlah_data("$data_kasus KEPUTUSAN='Diterima' AND $kondisi1");
+			$jml1 = $j_Ditolak1 + $j_DDV1 + $j_Diterima1;
+			$j_Ditolak2 = jumlah_data("$data_kasus KEPUTUSAN='Ditolak' AND $kondisi2");
+			$j_DDV2 = jumlah_data("$data_kasus KEPUTUSAN='Revisi' AND $kondisi2");
+			$j_Diterima2 = jumlah_data("$data_kasus KEPUTUSAN='Diterima' AND $kondisi1");
+			$jml2 = $j_Ditolak2 + $j_DDV2 + $j_Diterima2;
+			$j_Ditolak3 = jumlah_data("$data_kasus KEPUTUSAN='Ditolak' AND $kondisi3");
+			$j_DDV3 = jumlah_data("$data_kasus KEPUTUSAN='Revisi' AND $kondisi3");
+			$j_Diterima3 = jumlah_data("$data_kasus KEPUTUSAN='Diterima' AND $kondisi3");
+			$jml3 = $j_Ditolak3 + $j_DDV3 + $j_Diterima3;
 			//hitung entropy masing-masing kondisi
 			$jml_total = $jml1 + $jml2 + $jml3;
-			$ent1 = hitung_entropy($j_tinggi1 , $j_rendah1);
-			$ent2 = hitung_entropy($j_tinggi2 , $j_rendah2);
-			$ent3 = hitung_entropy($j_tinggi3 , $j_rendah3);			
+			$ent1 = hitung_entropy($j_Ditolak1 , $j_DDV1,$j_Diterima1);
+			$ent2 = hitung_entropy($j_Ditolak2 , $j_DDV2,$j_Diterima2);
+			$ent3 = hitung_entropy($j_Ditolak3 , $j_DDV3,$j_Diterima3);	
 			$gain = $ent_all - ((($jml1/$jml_total)*$ent1) + (($jml2/$jml_total)*$ent2) 
 						+ (($jml3/$jml_total)*$ent3));				
 		}
 		//untuk atribut 4 nilai atribut
 		else if($kondisi5==''){
-			$j_tinggi1 = jumlah_data("$data_kasus ipk='tinggi' AND $kondisi1");
-			$j_rendah1 = jumlah_data("$data_kasus ipk='rendah' AND $kondisi1");
-			$jml1 = $j_tinggi1 + $j_rendah1;
-			$j_tinggi2 = jumlah_data("$data_kasus ipk='tinggi' AND $kondisi2");
-			$j_rendah2 = jumlah_data("$data_kasus ipk='rendah' AND $kondisi2");
-			$jml2 = $j_tinggi2 + $j_rendah2;
-			$j_tinggi3 = jumlah_data("$data_kasus ipk='tinggi' AND $kondisi3");
-			$j_rendah3 = jumlah_data("$data_kasus ipk='rendah' AND $kondisi3");
-			$jml3 = $j_tinggi3 + $j_rendah3;
-			$j_tinggi4 = jumlah_data("$data_kasus ipk='tinggi' AND $kondisi4");
-			$j_rendah4 = jumlah_data("$data_kasus ipk='rendah' AND $kondisi4");
-			$jml4 = $j_tinggi4 + $j_rendah4;
+			$j_Ditolak1 = jumlah_data("$data_kasus KEPUTUSAN='Ditolak' AND $kondisi1");
+			$j_DDV1 = jumlah_data("$data_kasus KEPUTUSAN='Revisi' AND $kondisi1");
+			$j_Diterima1 = jumlah_data("$data_kasus KEPUTUSAN='Diterima' AND $kondisi1");
+			$jml1 = $j_Ditolak1 + $j_DDV1 + $j_Diterima1;
+			$j_Ditolak2 = jumlah_data("$data_kasus KEPUTUSAN='Ditolak' AND $kondisi2");
+			$j_DDV2 = jumlah_data("$data_kasus KEPUTUSAN='Revisi' AND $kondisi2");
+			$j_Diterima2 = jumlah_data("$data_kasus KEPUTUSAN='Diterima' AND $kondisi1");
+			$jml2 = $j_Ditolak2 + $j_DDV2 + $j_Diterima2;
+			$j_Ditolak3 = jumlah_data("$data_kasus KEPUTUSAN='Ditolak' AND $kondisi3");
+			$j_DDV3 = jumlah_data("$data_kasus KEPUTUSAN='Revisi' AND $kondisi3");
+			$j_Diterima3 = jumlah_data("$data_kasus KEPUTUSAN='Diterima' AND $kondisi3");
+			$jml3 = $j_Ditolak3 + $j_DDV3 + $j_Diterima3;
+			$j_Ditolak4 = jumlah_data("$data_kasus KEPUTUSAN='Ditolak' AND $kondisi4");
+			$j_DDV4 = jumlah_data("$data_kasus KEPUTUSAN='Revisi' AND $kondisi4");
+			$j_Diterima4 = jumlah_data("$data_kasus KEPUTUSAN='Diterima' AND $kondisi4");
+			$jml4 = $j_Ditolak4 + $j_DDV4 + $j_Diterima4;
 			//hitung entropy masing-masing kondisi
-			$jml_total = $jml1 + $jml2 + $jml3+$jml4;
-			$ent1 = hitung_entropy($j_tinggi1 , $j_rendah1);
-			$ent2 = hitung_entropy($j_tinggi2 , $j_rendah2);
-			$ent3 = hitung_entropy($j_tinggi3 , $j_rendah3);
-			$ent4 = hitung_entropy($j_tinggi4 , $j_rendah4);
+			$jml_total = $jml1 + $jml2 + $jml3 + $jml4;
+			$ent1 = hitung_entropy($j_Ditolak1 , $j_DDV1,$j_Diterima1);
+			
+			$ent2 = hitung_entropy($j_Ditolak2 , $j_DDV2,$j_Diterima2);
+			
+			$ent3 = hitung_entropy($j_Ditolak3 , $j_DDV3,$j_Diterima3);	
+			
+			$ent4 = hitung_entropy($j_Ditolak4 , $j_DDV4,$j_Diterima4);	
 			$gain = $ent_all - ((($jml1/$jml_total)*$ent1) + (($jml2/$jml_total)*$ent2)
 						+ (($jml3/$jml_total)*$ent3) + (($jml4/$jml_total)*$ent4));				
 		}
 		//untuk atribut 5 nilai atribut	
 		else{
-			$j_tinggi1 = jumlah_data("$data_kasus ipk='tinggi' AND $kondisi1");
-			$j_rendah1 = jumlah_data("$data_kasus ipk='rendah' AND $kondisi1");
-			$jml1 = $j_tinggi1 + $j_rendah1;
-			$j_tinggi2 = jumlah_data("$data_kasus ipk='tinggi' AND $kondisi2");
-			$j_rendah2 = jumlah_data("$data_kasus ipk='rendah' AND $kondisi2");
-			$jml2 = $j_tinggi2 + $j_rendah2;
-			$j_tinggi3 = jumlah_data("$data_kasus ipk='tinggi' AND $kondisi3");
-			$j_rendah3 = jumlah_data("$data_kasus ipk='rendah' AND $kondisi3");
-			$jml3 = $j_tinggi3 + $j_rendah3;
-			$j_tinggi4 = jumlah_data("$data_kasus ipk='tinggi' AND $kondisi4");
-			$j_rendah4 = jumlah_data("$data_kasus ipk='rendah' AND $kondisi4");
-			$jml4 = $j_tinggi4 + $j_rendah4;
-			$j_tinggi5 = jumlah_data("$data_kasus ipk='tinggi' AND $kondisi5");
-			$j_rendah5 = jumlah_data("$data_kasus ipk='rendah' AND $kondisi5");
-			$jml5 = $j_tinggi5 + $j_rendah5;
+			$j_Ditolak1 = jumlah_data("$data_kasus KEPUTUSAN='Ditolak' AND $kondisi1");
+			$j_DDV1 = jumlah_data("$data_kasus KEPUTUSAN='Revisi' AND $kondisi1");
+			$j_Diterima1 = jumlah_data("$data_kasus KEPUTUSAN='Diterima' AND $kondisi1");
+			$jml1 = $j_Ditolak1 + $j_DDV1 + $j_Diterima1;
+			$j_Ditolak2 = jumlah_data("$data_kasus KEPUTUSAN='Ditolak' AND $kondisi2");
+			$j_DDV2 = jumlah_data("$data_kasus KEPUTUSAN='Revisi' AND $kondisi2");
+			$j_Diterima2 = jumlah_data("$data_kasus KEPUTUSAN='Diterima' AND $kondisi1");
+			$jml2 = $j_Ditolak2 + $j_DDV2 + $j_Diterima2;
+			$j_Ditolak3 = jumlah_data("$data_kasus KEPUTUSAN='Ditolak' AND $kondisi3");
+			$j_DDV3 = jumlah_data("$data_kasus KEPUTUSAN='Revisi' AND $kondisi3");
+			$j_Diterima3 = jumlah_data("$data_kasus KEPUTUSAN='Diterima' AND $kondisi3");
+			$jml3 = $j_Ditolak3 + $j_DDV3 + $j_Diterima3;
+			$j_Ditolak4 = jumlah_data("$data_kasus KEPUTUSAN='Ditolak' AND $kondisi4");
+			$j_DDV4 = jumlah_data("$data_kasus KEPUTUSAN='Revisi' AND $kondisi4");
+			$j_Diterima4 = jumlah_data("$data_kasus KEPUTUSAN='Diterima' AND $kondisi4");
+			$jml4 = $j_Ditolak4 + $j_DDV4 + $j_Diterima4;
+			$j_Ditolak5 = jumlah_data("$data_kasus KEPUTUSAN='Ditolak' AND $kondisi5");
+			$j_DDV5 = jumlah_data("$data_kasus KEPUTUSAN='Revisi' AND $kondisi5");
+			$j_Diterima5 = jumlah_data("$data_kasus KEPUTUSAN='Diterima' AND $kondisi5");
+			$jml5 = $j_Ditolak5 + $j_DDV5 + $j_Diterima5;
 			//hitung entropy masing-masing kondisi
 			$jml_total = $jml1 + $jml2 + $jml3 + $jml4 + $jml5;
-			$ent1 = hitung_entropy($j_tinggi1 , $j_rendah1);
-			$ent2 = hitung_entropy($j_tinggi2 , $j_rendah2);
-			$ent3 = hitung_entropy($j_tinggi3 , $j_rendah3);
-			$ent4 = hitung_entropy($j_tinggi4 , $j_rendah4);
-			$ent5 = hitung_entropy($j_tinggi5 , $j_rendah5);
+			$ent1 = hitung_entropy($j_Ditolak1 , $j_DDV1,$j_Diterima1);
+			$ent2 = hitung_entropy($j_Ditolak2 , $j_DDV2,$j_Diterima2);
+			$ent3 = hitung_entropy($j_Ditolak3 , $j_DDV3,$j_Diterima3);	
+			$ent4 = hitung_entropy($j_Ditolak4 , $j_DDV4,$j_Diterima4);	
+			$ent5 = hitung_entropy($j_Ditolak5 , $j_DDV5,$j_Diterima5);
 			$gain = $ent_all - ((($jml1/$jml_total)*$ent1) + (($jml2/$jml_total)*$ent2) 
 						+ (($jml3/$jml_total)*$ent3) + (($jml4/$jml_total)*$ent4) + (($jml5/$jml_total)*$ent5));			
 		}
@@ -140,13 +157,13 @@
 		mysql_query("INSERT INTO gain VALUES ('','$atribut','$gain')");
 	}
 	//fungsi menghitung entropy
-	function hitung_entropy($nilai1 , $nilai2){
-		$total = $nilai1 + $nilai2;
+	function hitung_entropy($nilai1 , $nilai2,$nilai3){
+		$total = $nilai1 + $nilai2 + $nilai3;
 		//jika salah satu nilai 0, maka entropy 0
-		if($nilai1==0 or $nilai2==0){
+		if($nilai1==0 or $nilai2==0 	){
 			$entropy = 0;
 		}else{
-			$entropy = (-($nilai1/$total)*(log(($nilai1/$total),2))) + (-($nilai2/$total)*(log(($nilai2/$total),2)));
+			$entropy = (-($nilai1/$total)*(log(($nilai1/$total))/log(2))) + (-($nilai2/$total)*(log(($nilai2/$total))/log(2)))  + (-($nilai3/$total)*(log(($nilai3/$total))/log(2)));
 		}		
 		//desimal 3 angka dibelakang koma
 		$entropy = round($entropy, 3);	

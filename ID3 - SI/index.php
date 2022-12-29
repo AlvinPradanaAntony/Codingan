@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "koneksi.php";
 if (!isset($_SESSION['usr'])) {
   header("location:login.php");
 }
@@ -60,7 +61,7 @@ if ($_SESSION['lvl'] == 0) {
                   <a href='?menu=data' accesskey='1'>Lihat Dataset</a>
                 </li>
                 <li>
-                  <a href='?menu=dataImport' accesskey='6'>Import Dataset</a>
+                  <a href='?menu=user' accesskey='5'>Data Mahasiswa</a>
                 </li>
               </ul>
             </div>
@@ -164,78 +165,91 @@ if ($_SESSION['lvl'] == 0) {
 
       <div class="content">
         <div class="row pt-4">
-
-          <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card" id="data1">
-              <div class="card-body p-4">
-                <div class="d-flex align-items-center">
-                  <div class="card-icon text-white">
-                    <i class="uil uil-users-alt"></i>
-                  </div>
-                  <div class=" ms-auto card-detail">
-                    <p class="mb-0 card-detail_text">Data Mahasiswa</p>
-                    <h4 class="my-1 card-detail_data">0</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="abstract1"></div>
-              <div class="abstract2"></div>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card" id="data2">
-              <div class="card-body p-4">
-                <div class="d-flex align-items-center">
-                  <div class="card-icon text-white">
-                    <i class="uil uil-database"></i>
-                  </div>
-                  <div class=" ms-auto card-detail">
-                    <p class="mb-0 card-detail_text">Data Latih</p>
-                    <h4 class="my-1 card-detail_data">0</h4>
+          <?php
+          if (isset($_GET['act'])) {
+            $action = $_GET['act'];
+            // $id = $_GET['id'];
+          } else {
+            $query1 = mysql_query("select * from mahasiswa ORDER BY(nim)");
+            $query2 = mysql_query("select * from data_training order by(id)");
+            $jumlahMahasiswa = mysql_num_rows($query1);
+            $jumlahDataLatih = mysql_num_rows($query2);
+          ?>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card" id="data1">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon text-white">
+                      <i class="uil uil-users-alt"></i>
+                    </div>
+                    <div class=" ms-auto card-detail">
+                      <p class="mb-0 card-detail_text">Data Mahasiswa</p>
+                      <h4 class="my-1 card-detail_data"></h4>
+                    </div>
                   </div>
                 </div>
+                <div class="abstract1"></div>
+                <div class="abstract2"></div>
               </div>
-              <div class="abstract1"></div>
-              <div class="abstract2"></div>
             </div>
-          </div>
 
-          <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card" id="data3">
-              <div class="card-body p-4">
-                <div class="d-flex align-items-center">
-                  <div class="card-icon text-white">
-                    <i class="uil uil-server-connection"></i>
-                  </div>
-                  <div class=" ms-auto card-detail">
-                    <p class="mb-0 card-detail_text">Data Uji</p>
-                    <h4 class="my-1 card-detail_data">0</h4>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card" id="data2">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon text-white">
+                      <i class="uil uil-database"></i>
+                    </div>
+                    <div class=" ms-auto card-detail">
+                      <p class="mb-0 card-detail_text">Data Latih</p>
+                      <h4 class="my-1 card-detail_data">0</h4>
+                    </div>
                   </div>
                 </div>
+                <div class="abstract1"></div>
+                <div class="abstract2"></div>
               </div>
-              <div class="abstract1"></div>
-              <div class="abstract2"></div>
             </div>
-          </div>
 
-          <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card" id="data4">
-              <div class="card-body p-4">
-                <div class="d-flex align-items-center">
-                  <div class="card-icon text-white">
-                    <i class="uil uil-percentage"></i>
-                  </div>
-                  <div class=" ms-auto card-detail">
-                    <p class="mb-0 card-detail_text">Akurasi</p>
-                    <h4 class="my-1 card-detail_data">0 <span>%</span></h4>
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card" id="data3">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon text-white">
+                      <i class="uil uil-server-connection"></i>
+                    </div>
+                    <div class=" ms-auto card-detail">
+                      <p class="mb-0 card-detail_text">Data Uji</p>
+                      <h4 class="my-1 card-detail_data">0</h4>
+                    </div>
                   </div>
                 </div>
+                <div class="abstract1"></div>
+                <div class="abstract2"></div>
               </div>
-              <div class="abstract1"></div>
-              <div class="abstract2"></div>
             </div>
-          </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card" id="data4">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon text-white">
+                      <i class="uil uil-percentage"></i>
+                    </div>
+                    <div class=" ms-auto card-detail">
+                      <p class="mb-0 card-detail_text">Akurasi</p>
+                      <h4 class="my-1 card-detail_data">0 <span>%</span></h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="abstract1"></div>
+                <div class="abstract2"></div>
+              </div>
+            </div>
+          <?php
+
+          }
+          ?>
         </div>
         <div class="row gx-4 pt-4">
           <div class="col-lg-9">
@@ -295,6 +309,7 @@ if ($_SESSION['lvl'] == 0) {
           <div class="col-lg-3 m-0"></div>
         </div>
       </div>
+
     </section>
   </div>
 </body>

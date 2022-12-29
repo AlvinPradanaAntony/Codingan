@@ -54,9 +54,9 @@ while($bar=mysql_fetch_array($query)){
 			$sql_que=mysql_query("SELECT keputusan FROM pohon_keputusan WHERE id=$id[$ll]");
 			$row_bar=mysql_fetch_array($sql_que);
 			if($exRule[$i-1]=="---- "){
-				echo "<font color='#336699'><b>".$exRule[$i]."</b></font> <i>Maka prestasi = </i><strong>".$row_bar[0]." (".$id[$ll].")</strong>";
+				echo "<font color='#336699'><b>".$exRule[$i]."</b></font> <i>Maka KEPUTUSAN = </i><strong>".$row_bar[0]." (".$id[$ll].")</strong>";
 			}else if($exRule[$i-1]!="---- "){
-				echo "<br>".$strip."<font color='#336699'><b>".$exRule[$i]."</b></font> <i>Maka prestasi = </i><strong>".$row_bar[0]."  (".$id[$ll].")</strong>";
+				echo "<br>".$strip."<font color='#336699'><b>".$exRule[$i]."</b></font> <i>Maka KEPUTUSAN = </i><strong>".$row_bar[0]."  (".$id[$ll].")</strong>";
 			}
 		}
 		//jika pertama
