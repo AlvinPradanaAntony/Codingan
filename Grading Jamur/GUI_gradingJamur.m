@@ -256,7 +256,7 @@ set(gca,'XTick',[]);
 set(gca,'YTick',[]);
 set(gca,'color','#28293d');
 set(handles.edit1, 'String', '');
-set(handles.edit3, 'String', '');
+set(handles.edit2, 'String', '');
 set(handles.edit3, 'String', '');
 set(handles.edit4, 'String', '');
 set(handles.pushbutton9,'Visible', 'Off');
