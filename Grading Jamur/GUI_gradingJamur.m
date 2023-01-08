@@ -120,7 +120,7 @@ if ~isequal(filename,0)
     cla('reset');
     set(gca,'XTick',[]);
     set(gca,'YTick',[]);
-    set(gca,'color','#28293d');
+    %     set(gca,'color','#28293d');
     guidata(hObject,handles);
     % set(handles.pushbutton2,'Enable','on')
 else
@@ -239,26 +239,27 @@ axes(handles.axes1)
 cla('reset')
 set(gca,'XTick',[])
 set(gca,'YTick',[])
-set(gca, 'Color', '#28293d');
+% set(gca, 'Color', '#28293d');
 axes(handles.axes2);
 cla('reset');
 set(gca,'XTick',[]);
 set(gca,'YTick',[]);
-set(gca,'color','#28293d');
+% set(gca,'color','#28293d');
 axes(handles.axes3);
 cla('reset');
 set(gca,'XTick',[]);
 set(gca,'YTick',[]);
-set(gca,'color','#28293d');
+% set(gca,'color','#28293d');
 axes(handles.axes4);
 cla('reset');
 set(gca,'XTick',[]);
 set(gca,'YTick',[]);
-set(gca,'color','#28293d');
+% set(gca,'color','#28293d');
 set(handles.edit1, 'String', '');
 set(handles.edit2, 'String', '-');
 set(handles.edit3, 'String', '');
 set(handles.edit4, 'String', '');
+set(handles.edit5, 'String', '');
 set(handles.pushbutton9,'Visible', 'Off');
 
 function edit1_Callback(hObject, eventdata, handles)
