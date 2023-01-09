@@ -17,6 +17,14 @@ level = graythresh(BW);
 BW = imbinarize(BW, level);
 % figure, imshow(BW);
 
+    %melakukan operasi morfologi untuk menyempurnakan hasil segmentasi
+    %1. filling holes
+    bw = imfill(BW,'holes');
+    figure, imshow(bw)
+    %2. area opening
+%     bw = bwareaopen(bw,1000);
+%     figure, imshow(bw)
+
 % Label setiap regio dengan bwlabel
 [L, num] = bwlabel(BW);
 

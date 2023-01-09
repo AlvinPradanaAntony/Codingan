@@ -1,5 +1,5 @@
 % Baca gambar dan ubah ke skala abu-abu
-I = imread('B1_6.7024 cm.jpg');
+I = imread('A1_12.4442 cm.jpg');
 I = rgb2gray(I);
 
 % Hilangkan noise dengan median filter dan tingkatkan kontras dengan imadjust
@@ -9,6 +9,7 @@ I = imadjust(I);
 % Terapkan thresholding dengan graythresh
 level = graythresh(I);
 BW = imbinarize(I,level);
+imshow(BW)
 
 % Label setiap regio dengan bwlabel
 [L, num] = bwlabel(BW);
