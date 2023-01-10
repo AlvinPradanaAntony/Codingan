@@ -52,7 +52,7 @@ if ~isequal(nama_file,0)
     end
     area_bw = hasil;
     diameter_bw = sqrt(4 * area_bw / pi);
-    res = 2.712;
+    res = 2.715;
     area = area_bw/(res^2)/100;
     diameterr = diameter_bw/res/10;
 
