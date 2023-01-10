@@ -81,3 +81,167 @@ for n = 1:jumlah_file
 
     target_gradeA(n,1) = 1;
 end
+
+%Grade B
+%menetapkan nama folder
+nama_folder = 'data_training/Grade B';
+%membaca file berekstensi .jpg
+nama_file = dir(fullfile(nama_folder,'*.jpg'));
+%membaca jumlah file berekstensi .jpg
+jumlah_file = numel(nama_file);
+
+%melakukan inisialisasi variabel ciri buruk dan target buruk
+ciri_gradeB = zeros(jumlah_file,2);
+target_gradeB = zeros(jumlah_file,1);
+
+%melakukan pengolahan citra terhadap seluruh file
+for n = 1:jumlah_file
+    %     membaca file citra rgb
+    Img = imread(fullfile(nama_folder,nama_file(n).name));
+    % figure,imshow(Img);
+
+    %konversi citra RGB menjadi citra Grayscale
+    Img_gray = rgb2gray(Img);
+    %figure, imshow(Img_gray)
+
+    %Deteksi Tepi
+    [output] = edge_canny(Img_gray);
+    edge_final = output;
+
+    % Buat inisial masking
+    %     m = zeros(480, 640);
+
+    % Tentukan nilai tengah baris dan kolom
+    center_row = (480 + 1) / 2;
+    center_col = (640 + 1) / 2;
+
+    % Tentukan ukuran masking
+    %     mask_size = 350;
+
+    % Tentukan koordinat baris dan kolom untuk masking
+    %     row1 = center_row - mask_size / 2;
+    %     row2 = center_row + mask_size / 2;
+    %     col1 = center_col - mask_size / 2;
+    %     col2 = center_col + mask_size / 2;
+
+    % Isi masking dengan nilai 1
+    %     m(row1:row2, col1:col2) = 1;
+
+    figure, imshow(edge_final)
+    h = drawellipse('Center',[center_col,center_row],'SemiAxes',[220,220], ...
+        'RotationAngle',0,'StripeColor','m');
+    mask = createMask(h);
+    image = imresize(edge_final,.5);  %-- make image smaller
+    m = imresize(mask,.5);  %     for fast computation
+    bw = region_seg(image, m, 1500); %-- Run segmentation
+    bw = imfill(bw,'holes');
+    bw = bwareaopen(bw,1000);
+    bw = imclearborder(bw);
+
+    figure, imshow(bw)
+    hold on
+    contour(bw, 'y','LineWidth',2);
+    hold off
+
+    [tinggi, lebar] = size(bw);
+    hasil = 0;
+    for p = 1 : tinggi
+        for q = 1 : lebar
+            if bw(p, q) == 1
+                hasil = hasil + 1;
+            end
+        end
+    end
+    area_bw = hasil;
+    diameter_bw = sqrt(4 * area_bw / pi);
+    res = 1.362;
+    area = area_bw/(res^2)/100;
+    diameterr = diameter_bw/res/10;
+
+    ciri_gradeB(n,1) = area;
+    ciri_gradeB(n,2) = diameterr;
+
+    target_gradeB(n,1) = 2;
+end
+
+%Grade B
+%menetapkan nama folder
+nama_folder = 'data_training/Grade C';
+%membaca file berekstensi .jpg
+nama_file = dir(fullfile(nama_folder,'*.jpg'));
+%membaca jumlah file berekstensi .jpg
+jumlah_file = numel(nama_file);
+
+%melakukan inisialisasi variabel ciri buruk dan target buruk
+ciri_gradeC = zeros(jumlah_file,2);
+target_gradeC = zeros(jumlah_file,1);
+
+%melakukan pengolahan citra terhadap seluruh file
+for n = 1:jumlah_file
+    %     membaca file citra rgb
+    Img = imread(fullfile(nama_folder,nama_file(n).name));
+    % figure,imshow(Img);
+
+    %konversi citra RGB menjadi citra Grayscale
+    Img_gray = rgb2gray(Img);
+    %figure, imshow(Img_gray)
+
+    %Deteksi Tepi
+    [output] = edge_canny(Img_gray);
+    edge_final = output;
+
+    % Buat inisial masking
+    %     m = zeros(480, 640);
+
+    % Tentukan nilai tengah baris dan kolom
+    center_row = (480 + 1) / 2;
+    center_col = (640 + 1) / 2;
+
+    % Tentukan ukuran masking
+    %     mask_size = 350;
+
+    % Tentukan koordinat baris dan kolom untuk masking
+    %     row1 = center_row - mask_size / 2;
+    %     row2 = center_row + mask_size / 2;
+    %     col1 = center_col - mask_size / 2;
+    %     col2 = center_col + mask_size / 2;
+
+    % Isi masking dengan nilai 1
+    %     m(row1:row2, col1:col2) = 1;
+
+    figure, imshow(edge_final)
+    h = drawellipse('Center',[center_col,center_row],'SemiAxes',[220,220], ...
+        'RotationAngle',0,'StripeColor','m');
+    mask = createMask(h);
+    image = imresize(edge_final,.5);  %-- make image smaller
+    m = imresize(mask,.5);  %     for fast computation
+    bw = region_seg(image, m, 1500); %-- Run segmentation
+    bw = imfill(bw,'holes');
+    bw = bwareaopen(bw,1000);
+    bw = imclearborder(bw);
+
+    figure, imshow(bw)
+    hold on
+    contour(bw, 'y','LineWidth',2);
+    hold off
+
+    [tinggi, lebar] = size(bw);
+    hasil = 0;
+    for p = 1 : tinggi
+        for q = 1 : lebar
+            if bw(p, q) == 1
+                hasil = hasil + 1;
+            end
+        end
+    end
+    area_bw = hasil;
+    diameter_bw = sqrt(4 * area_bw / pi);
+    res = 1.362;
+    area = area_bw/(res^2)/100;
+    diameterr = diameter_bw/res/10;
+
+    ciri_gradeC(n,1) = area;
+    ciri_gradeC(n,2) = diameterr;
+
+    target_gradeC(n,1) = 3;
+end
