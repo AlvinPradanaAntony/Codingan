@@ -1,7 +1,7 @@
 clc; clear; close all;
 
 % membaca citra rgb
-I = imread('C5_4.7106 cm.jpg');
+I = imread('A3_12.0644 cm.jpg');
 
 % mengkonversi citra rgb menjadi grayscale
 J = rgb2gray(I);
@@ -45,46 +45,16 @@ R(~seg) = 0;
 G(~seg) = 0;
 B(~seg) = 0;
 RGB = cat(3,R,G,B);
+figure, imshow(RGB)
 
-bw = seg;
-[tinggi, lebar] = size(bw);
-hasil = 0;
-for p = 1 : tinggi
-    for q = 1 : lebar
-        if bw(p, q) == 1
-            hasil = hasil + 1;
-        end
-    end
-end
-area_bw = hasil;
-% s  = regionprops(bw, 'area', 'EquivDiameter');
-% area_bw = s.Area;
-%perim_bw = s.Perimeter;
-diameter_bw = sqrt(4 * area_bw / pi);
-% diameter_bww = s.EquivDiameter;
-
-res = 2.582; % resolusi spasial 1.362 pixel/mm
-area = area_bw/(res^2)/100;
-%perimeter = perim_bw/res/10;
-diameterr = diameter_bw/res/10;
-% diameterrr = diameter_bww/res/10;
-% handles.diameter = diameterr;
-% guidata(hObject, handles)
-
-disp(['Luas objek: ', num2str(area), ' cm2']);
-disp(['Diameter objek: ', num2str(diameterr), ' cm']);
-% set(handles.edit3,'String',[num2str(area),' cm2']);
-% set(handles.edit4,'String',[num2str(diameterr),' cm']);
-
-% figure, imshow(RGB)
-% figure,
-% subplot(2,2,1);imshow(I);title('Citra rgb asli');
-% subplot(2,2,2);imshow(m);title('Inisial masking');
-% subplot(2,2,3);imshow(seg);title('Citra biner hasil segmentasi');
-% hold on
-% contour(seg, 'y','LineWidth',2);
-% hold off
-% subplot(2,2,4);imshow(I);title('Citra rgb hasil segmentasi');
+figure,
+subplot(2,2,1);imshow(I);title('Citra rgb asli');
+subplot(2,2,2);imshow(m);title('Inisial masking');
+subplot(2,2,3);imshow(seg);title('Citra biner hasil segmentasi');
+hold on
+contour(seg, 'y','LineWidth',2);
+hold off
+subplot(2,2,4);imshow(I);title('Citra rgb hasil segmentasi');
 
 % % Tentukan faktor skala piksel ke cm
 % scale_factor = 0.038;
