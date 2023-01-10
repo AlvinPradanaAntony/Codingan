@@ -26,35 +26,41 @@ for n = 1:jumlah_file
     [output] = edge_canny(Img_gray);
     edge_final = output;
 
-    % Buat inisial masking
-    m = zeros(480, 640);
-
+    %     % Buat inisial masking
+    %     m = zeros(480, 640);
+    %
     % Tentukan nilai tengah baris dan kolom
     center_row = (480 + 1) / 2;
     center_col = (640 + 1) / 2;
 
-    % Tentukan ukuran masking
-    mask_size = 420;
+    %     % Tentukan ukuran masking
+    %     mask_size = 420;
+    %
+    %     % Tentukan koordinat baris dan kolom untuk masking
+    %     row1 = center_row - mask_size / 2;
+    %     row2 = center_row + mask_size / 2;
+    %     col1 = center_col - mask_size / 2;
+    %     col2 = center_col + mask_size / 2;
+    %
+    %     % Isi masking dengan nilai 1
+    %     m(row1:row2, col1:col2) = 1;
 
-    % Tentukan koordinat baris dan kolom untuk masking
-    row1 = center_row - mask_size / 2;
-    row2 = center_row + mask_size / 2;
-    col1 = center_col - mask_size / 2;
-    col2 = center_col + mask_size / 2;
-
-    % Isi masking dengan nilai 1
-    m(row1:row2, col1:col2) = 1;
-
-    %     figure, imshow(edge_final)
-    %     h = drawellipse('Center',[center_col,center_row],'SemiAxes',[220,220], ...
-    %         'RotationAngle',0,'StripeColor','m');
-    %     mask = createMask(h);
+    figure, imshow(edge_final)
+    h = drawellipse('Center',[center_col,center_row],'SemiAxes',[220,220], ...
+        'RotationAngle',0,'StripeColor','m');
+    mask = createMask(h);
     image = imresize(edge_final,.5);  %-- make image smaller
-    m = imresize(m,.5);  %     for fast computation
+    m = imresize(mask,.5);  %     for fast computation
     bw = region_seg(image, m, 1500); %-- Run segmentation
+    title(nama_file(n).name, "Color","m")
     bw = imfill(bw,'holes');
     bw = bwareaopen(bw,1000);
     bw = imclearborder(bw);
+
+    %     figure, imshow(bw)
+    %     hold on
+    %     contour(bw, 'y','LineWidth',2);
+    %     hold off
 
     [tinggi, lebar] = size(bw);
     hasil = 0;
@@ -67,12 +73,14 @@ for n = 1:jumlah_file
     end
     area_bw = hasil;
     diameter_bw = sqrt(4 * area_bw / pi);
-    res = 2.715;
+    res = 1.362;
     area = area_bw/(res^2)/100;
     diameterr = diameter_bw/res/10;
 
     ciri_gradeA(n,1) = area;
     ciri_gradeA(n,2) = diameterr;
+
+    target_gradeA(n,1) = 1;
 end
 
 %Grade B
@@ -101,37 +109,42 @@ for n = 1:jumlah_file
     [output] = edge_canny(Img_gray);
     edge_final = output;
 
-    % Buat inisial masking
-    m = zeros(480, 640);
-
+    % % Buat inisial masking
+    %     m = zeros(480, 640);
+    %
     % Tentukan nilai tengah baris dan kolom
     center_row = (480 + 1) / 2;
     center_col = (640 + 1) / 2;
+    %
+    %     % Tentukan ukuran masking
+    %     mask_size = 420;
+    %
+    %     % Tentukan koordinat baris dan kolom untuk masking
+    %     row1 = center_row - mask_size / 2;
+    %     row2 = center_row + mask_size / 2;
+    %     col1 = center_col - mask_size / 2;
+    %     col2 = center_col + mask_size / 2;
+    %
+    %     % Isi masking dengan nilai 1
+    %     m(row1:row2, col1:col2) = 1;
 
-    % Tentukan ukuran masking
-    mask_size = 420;
-
-    % Tentukan koordinat baris dan kolom untuk masking
-    row1 = center_row - mask_size / 2;
-    row2 = center_row + mask_size / 2;
-    col1 = center_col - mask_size / 2;
-    col2 = center_col + mask_size / 2;
-
-    % Isi masking dengan nilai 1
-    m(row1:row2, col1:col2) = 1;
-
-    %     figure, imshow(edge_final)
-    %     h = drawellipse('Center',[center_col,center_row],'SemiAxes',[220,220], ...
-    %         'RotationAngle',0,'StripeColor','m');
-    %     mask = createMask(h);
+    figure, imshow(edge_final)
+    h = drawellipse('Center',[center_col,center_row],'SemiAxes',[220,220], ...
+        'RotationAngle',0,'StripeColor','m');
+    mask = createMask(h);
     image = imresize(edge_final,.5);  %-- make image smaller
-    m = imresize(m,.5);  %     for fast computation
+    m = imresize(mask,.5);  %     for fast computation
     bw = region_seg(image, m, 1500); %-- Run segmentation
+    title(nama_file(n).name, "Color","m")
     bw = imfill(bw,'holes');
     bw = bwareaopen(bw,1000);
     bw = imclearborder(bw);
 
-   
+    %     figure, imshow(bw)
+    %     hold on
+    %     contour(bw, 'y','LineWidth',2);
+    %     hold off
+
     [tinggi, lebar] = size(bw);
     hasil = 0;
     for p = 1 : tinggi
@@ -143,14 +156,13 @@ for n = 1:jumlah_file
     end
     area_bw = hasil;
     diameter_bw = sqrt(4 * area_bw / pi);
-    res = 2.715;
+    res = 1.362;
     area = area_bw/(res^2)/100;
     diameterr = diameter_bw/res/10;
 
     ciri_gradeB(n,1) = area;
     ciri_gradeB(n,2) = diameterr;
 
-     %mengisi variabel target_buruk
     target_gradeB(n,1) = 2;
 end
 
@@ -180,36 +192,41 @@ for n = 1:jumlah_file
     [output] = edge_canny(Img_gray);
     edge_final = output;
 
-    % Buat inisial masking
-    m = zeros(480, 640);
-
+    %     % Buat inisial masking
+    %     m = zeros(480, 640);
+    %
     % Tentukan nilai tengah baris dan kolom
     center_row = (480 + 1) / 2;
     center_col = (640 + 1) / 2;
+    %
+    %     % Tentukan ukuran masking
+    %     mask_size = 420;
+    %
+    %     % Tentukan koordinat baris dan kolom untuk masking
+    %     row1 = center_row - mask_size / 2;
+    %     row2 = center_row + mask_size / 2;
+    %     col1 = center_col - mask_size / 2;
+    %     col2 = center_col + mask_size / 2;
+    %
+    %     % Isi masking dengan nilai 1
+    %     m(row1:row2, col1:col2) = 1;
 
-    % Tentukan ukuran masking
-    mask_size = 350;
-
-    % Tentukan koordinat baris dan kolom untuk masking
-    row1 = center_row - mask_size / 2;
-    row2 = center_row + mask_size / 2;
-    col1 = center_col - mask_size / 2;
-    col2 = center_col + mask_size / 2;
-
-    % Isi masking dengan nilai 1
-    m(row1:row2, col1:col2) = 1;
-
-    %     figure, imshow(edge_final)
-    %     h = drawellipse('Center',[center_col,center_row],'SemiAxes',[220,220], ...
-    %         'RotationAngle',0,'StripeColor','m');
-    %     mask = createMask(h);
+    figure, imshow(edge_final)
+    h = drawellipse('Center',[center_col,center_row],'SemiAxes',[220,220], ...
+        'RotationAngle',0,'StripeColor','m');
+    mask = createMask(h);
     image = imresize(edge_final,.5);  %-- make image smaller
-    m = imresize(m,.5);  %     for fast computation
+    m = imresize(mask,.5);  %     for fast computation
     bw = region_seg(image, m, 1500); %-- Run segmentation
+    title(nama_file(n).name, "Color","m")
     bw = imfill(bw,'holes');
     bw = bwareaopen(bw,1000);
     bw = imclearborder(bw);
 
+    %     figure, imshow(bw)
+    %     hold on
+    %     contour(bw, 'y','LineWidth',2);
+    %     hold off
 
     [tinggi, lebar] = size(bw);
     hasil = 0;
@@ -222,10 +239,36 @@ for n = 1:jumlah_file
     end
     area_bw = hasil;
     diameter_bw = sqrt(4 * area_bw / pi);
-    res = 2.715;
+    res = 1.362;
     area = area_bw/(res^2)/100;
     diameterr = diameter_bw/res/10;
 
     ciri_gradeC(n,1) = area;
     ciri_gradeC(n,2) = diameterr;
+
+    target_gradeC(n,1) = 3;
 end
+save ciriC ciri_gradeA
+save ciriC ciri_gradeB
+save ciriC ciri_gradeC
+save targetC target_gradeA
+save targetB target_gradeB
+save targetC target_gradeC
+%menyusun variabel target_latih
+target_latih = [target_gradeA;target_gradeB;target_gradeC];
+data_latih = [ciri_gradeA;ciri_gradeB;ciri_gradeC];
+save targetLatih target_gradeC
+save targetC target_gradeC
+
+%melakukan pelatihan menggunakan algoritma SVM
+Mdl = fitcsvm(data_latih,target_latih) %mdl, model
+
+%membaca kelas keluaran
+kelas_keluaran = predict(Mdl,data_latih);
+
+%menghitung nilai akurasi
+akurasi = (sum(target_latih==kelas_keluaran)/numel(target_latih))*100;
+disp(['Akurasi Pelatihan = ', num2str(akurasi), '%'])
+
+%menyimpan variabel Mdl hasil pelatihan
+save Mdl Mdl

@@ -26,23 +26,23 @@ for n = 1:jumlah_file
     [output] = edge_canny(Img_gray);
     edge_final = output;
 
-    % Buat inisial masking
+    %     % Buat inisial masking
     %     m = zeros(480, 640);
-
+    %
     % Tentukan nilai tengah baris dan kolom
     center_row = (480 + 1) / 2;
     center_col = (640 + 1) / 2;
 
-    % Tentukan ukuran masking
-    %     mask_size = 350;
-
-    % Tentukan koordinat baris dan kolom untuk masking
+    %     % Tentukan ukuran masking
+    %     mask_size = 420;
+    %
+    %     % Tentukan koordinat baris dan kolom untuk masking
     %     row1 = center_row - mask_size / 2;
     %     row2 = center_row + mask_size / 2;
     %     col1 = center_col - mask_size / 2;
     %     col2 = center_col + mask_size / 2;
-
-    % Isi masking dengan nilai 1
+    %
+    %     % Isi masking dengan nilai 1
     %     m(row1:row2, col1:col2) = 1;
 
     figure, imshow(edge_final)
@@ -52,14 +52,15 @@ for n = 1:jumlah_file
     image = imresize(edge_final,.5);  %-- make image smaller
     m = imresize(mask,.5);  %     for fast computation
     bw = region_seg(image, m, 1500); %-- Run segmentation
+    title(nama_file(n).name, "Color","m")
     bw = imfill(bw,'holes');
     bw = bwareaopen(bw,1000);
     bw = imclearborder(bw);
 
-    figure, imshow(bw)
-    hold on
-    contour(bw, 'y','LineWidth',2);
-    hold off
+    %     figure, imshow(bw)
+    %     hold on
+    %     contour(bw, 'y','LineWidth',2);
+    %     hold off
 
     [tinggi, lebar] = size(bw);
     hasil = 0;
@@ -108,23 +109,23 @@ for n = 1:jumlah_file
     [output] = edge_canny(Img_gray);
     edge_final = output;
 
-    % Buat inisial masking
+    % % Buat inisial masking
     %     m = zeros(480, 640);
-
+    %
     % Tentukan nilai tengah baris dan kolom
     center_row = (480 + 1) / 2;
     center_col = (640 + 1) / 2;
-
-    % Tentukan ukuran masking
-    %     mask_size = 350;
-
-    % Tentukan koordinat baris dan kolom untuk masking
+    %
+    %     % Tentukan ukuran masking
+    %     mask_size = 420;
+    %
+    %     % Tentukan koordinat baris dan kolom untuk masking
     %     row1 = center_row - mask_size / 2;
     %     row2 = center_row + mask_size / 2;
     %     col1 = center_col - mask_size / 2;
     %     col2 = center_col + mask_size / 2;
-
-    % Isi masking dengan nilai 1
+    %
+    %     % Isi masking dengan nilai 1
     %     m(row1:row2, col1:col2) = 1;
 
     figure, imshow(edge_final)
@@ -134,14 +135,15 @@ for n = 1:jumlah_file
     image = imresize(edge_final,.5);  %-- make image smaller
     m = imresize(mask,.5);  %     for fast computation
     bw = region_seg(image, m, 1500); %-- Run segmentation
+    title(nama_file(n).name, "Color","m")
     bw = imfill(bw,'holes');
     bw = bwareaopen(bw,1000);
     bw = imclearborder(bw);
 
-    figure, imshow(bw)
-    hold on
-    contour(bw, 'y','LineWidth',2);
-    hold off
+    %     figure, imshow(bw)
+    %     hold on
+    %     contour(bw, 'y','LineWidth',2);
+    %     hold off
 
     [tinggi, lebar] = size(bw);
     hasil = 0;
@@ -164,7 +166,7 @@ for n = 1:jumlah_file
     target_gradeB(n,1) = 2;
 end
 
-%Grade B
+%Grade C
 %menetapkan nama folder
 nama_folder = 'data_training/Grade C';
 %membaca file berekstensi .jpg
@@ -190,23 +192,23 @@ for n = 1:jumlah_file
     [output] = edge_canny(Img_gray);
     edge_final = output;
 
-    % Buat inisial masking
+    %     % Buat inisial masking
     %     m = zeros(480, 640);
-
+    %
     % Tentukan nilai tengah baris dan kolom
     center_row = (480 + 1) / 2;
     center_col = (640 + 1) / 2;
-
-    % Tentukan ukuran masking
-    %     mask_size = 350;
-
-    % Tentukan koordinat baris dan kolom untuk masking
+    %
+    %     % Tentukan ukuran masking
+    %     mask_size = 420;
+    %
+    %     % Tentukan koordinat baris dan kolom untuk masking
     %     row1 = center_row - mask_size / 2;
     %     row2 = center_row + mask_size / 2;
     %     col1 = center_col - mask_size / 2;
     %     col2 = center_col + mask_size / 2;
-
-    % Isi masking dengan nilai 1
+    %
+    %     % Isi masking dengan nilai 1
     %     m(row1:row2, col1:col2) = 1;
 
     figure, imshow(edge_final)
@@ -216,14 +218,15 @@ for n = 1:jumlah_file
     image = imresize(edge_final,.5);  %-- make image smaller
     m = imresize(mask,.5);  %     for fast computation
     bw = region_seg(image, m, 1500); %-- Run segmentation
+    title(nama_file(n).name, "Color","m")
     bw = imfill(bw,'holes');
     bw = bwareaopen(bw,1000);
     bw = imclearborder(bw);
 
-    figure, imshow(bw)
-    hold on
-    contour(bw, 'y','LineWidth',2);
-    hold off
+    %     figure, imshow(bw)
+    %     hold on
+    %     contour(bw, 'y','LineWidth',2);
+    %     hold off
 
     [tinggi, lebar] = size(bw);
     hasil = 0;
@@ -245,3 +248,27 @@ for n = 1:jumlah_file
 
     target_gradeC(n,1) = 3;
 end
+save ciriC ciri_gradeA
+save ciriC ciri_gradeB
+save ciriC ciri_gradeC
+save targetC target_gradeA
+save targetB target_gradeB
+save targetC target_gradeC
+%menyusun variabel target_latih
+target_latih = [target_gradeA;target_gradeB;target_gradeC];
+data_latih = [ciri_gradeA;ciri_gradeB;ciri_gradeC];
+save targetLatih target_latih
+save dataLatih data_latih
+
+%melakukan pelatihan menggunakan algoritma SVM
+Mdl = multisvm(data_latih,target_latih) %mdl, model
+
+%membaca kelas keluaran
+kelas_keluaran = predict(Mdl,data_latih);
+
+%menghitung nilai akurasi
+akurasi = (sum(target_latih==kelas_keluaran)/numel(target_latih))*100;
+disp(['Akurasi Pelatihan = ', num2str(akurasi), '%'])
+
+%menyimpan variabel Mdl hasil pelatihan
+save Mdl Mdl
