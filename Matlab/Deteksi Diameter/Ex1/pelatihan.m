@@ -248,20 +248,19 @@ for n = 1:jumlah_file
 
     target_gradeC(n,1) = 3;
 end
-save ciriC ciri_gradeA
-save ciriC ciri_gradeB
-save ciriC ciri_gradeC
-save targetC target_gradeA
-save targetB target_gradeB
-save targetC target_gradeC
+
 %menyusun variabel target_latih
 target_latih = [target_gradeA;target_gradeB;target_gradeC];
 data_latih = [ciri_gradeA;ciri_gradeB;ciri_gradeC];
-save targetLatih target_latih
-save dataLatih data_latih
 
 %melakukan pelatihan menggunakan algoritma SVM
-Mdl = multisvm(data_latih,target_latih) %mdl, model
+Mdl = fitcecoc(data_latih,target_latih) %mdl, model
+
+% Melakukan cross validation pada kelasifier yang sudah dilatih
+cv = crossval(Mdl);
+% Menghitung error klasifikasi cross validation
+classError = kfoldLoss(cv);
+fprintf('Kesalahan klasifikasi = %f\n', classError);
 
 %membaca kelas keluaran
 kelas_keluaran = predict(Mdl,data_latih);
@@ -271,4 +270,12 @@ akurasi = (sum(target_latih==kelas_keluaran)/numel(target_latih))*100;
 disp(['Akurasi Pelatihan = ', num2str(akurasi), '%'])
 
 %menyimpan variabel Mdl hasil pelatihan
+save ciriC ciri_gradeA
+save ciriC ciri_gradeB
+save ciriC ciri_gradeC
+save targetLatih target_latih
+save dataLatih data_latih
+save targetC target_gradeA
+save targetB target_gradeB
+save targetC target_gradeC
 save Mdl Mdl
