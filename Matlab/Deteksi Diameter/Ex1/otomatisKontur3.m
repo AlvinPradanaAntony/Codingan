@@ -1,7 +1,7 @@
 clc; clear; close all;
 
 % membaca citra rgb
-I = imread('C5_4.7106 cm.jpg');
+I = imread('A1_12.4442 cm.jpg');
 
 % mengkonversi citra rgb menjadi grayscale
 J = rgb2gray(I);
@@ -14,7 +14,7 @@ center_row = (480 + 1) / 2;
 center_col = (640 + 1) / 2;
 
 % Tentukan ukuran masking
-mask_size = 250;
+mask_size = 150;
 
 % Tentukan koordinat baris dan kolom untuk masking
 row1 = center_row - mask_size / 2;
