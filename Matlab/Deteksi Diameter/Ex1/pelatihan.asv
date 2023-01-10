@@ -49,23 +49,12 @@ for n = 1:jumlah_file
     %     h = drawellipse('Center',[center_col,center_row],'SemiAxes',[220,220], ...
     %         'RotationAngle',0,'StripeColor','m');
     %     mask = createMask(h);
-    image = imresize(edge_final,.4);  %-- make image smaller
-    m = imresize(m,.4);  %     for fast computation
+    image = imresize(edge_final,.5);  %-- make image smaller
+    m = imresize(m,.5);  %     for fast computation
     bw = region_seg(image, m, 1500); %-- Run segmentation
-    bw = imresize(bw, [size(Img,1) size(Img,2)]);
     bw = imfill(bw,'holes');
     bw = bwareaopen(bw,1000);
     bw = imclearborder(bw);
-
-    %melakukan ekstraksi ciri warna RGB
-    R = Img(:,:,1); %red
-    G = Img(:,:,2); %green
-    B = Img(:,:,3); %blue
-    R(~bw) = 0;
-    G(~bw) = 0;
-    B(~bw) = 0;
-    RGB = cat(3,R,G,B);
-    %     imshow(RGB);
 
     [tinggi, lebar] = size(bw);
     hasil = 0;
@@ -78,7 +67,7 @@ for n = 1:jumlah_file
     end
     area_bw = hasil;
     diameter_bw = sqrt(4 * area_bw / pi);
-    res = 2.682;
+    res = 2.715;
     area = area_bw/(res^2)/100;
     diameterr = diameter_bw/res/10;
 
@@ -135,24 +124,14 @@ for n = 1:jumlah_file
     %     h = drawellipse('Center',[center_col,center_row],'SemiAxes',[220,220], ...
     %         'RotationAngle',0,'StripeColor','m');
     %     mask = createMask(h);
-    image = imresize(edge_final,.4);  %-- make image smaller
-    m = imresize(m,.4);  %     for fast computation
+    image = imresize(edge_final,.5);  %-- make image smaller
+    m = imresize(m,.5);  %     for fast computation
     bw = region_seg(image, m, 1500); %-- Run segmentation
-    bw = imresize(bw, [size(Img,1) size(Img,2)]);
     bw = imfill(bw,'holes');
     bw = bwareaopen(bw,1000);
     bw = imclearborder(bw);
 
-    %melakukan ekstraksi ciri warna RGB
-    R = Img(:,:,1); %red
-    G = Img(:,:,2); %green
-    B = Img(:,:,3); %blue
-    R(~bw) = 0;
-    G(~bw) = 0;
-    B(~bw) = 0;
-    RGB = cat(3,R,G,B);
-    %     imshow(RGB);
-
+   
     [tinggi, lebar] = size(bw);
     hasil = 0;
     for p = 1 : tinggi
@@ -164,7 +143,7 @@ for n = 1:jumlah_file
     end
     area_bw = hasil;
     diameter_bw = sqrt(4 * area_bw / pi);
-    res = 2.682;
+    res = 2.715;
     area = area_bw/(res^2)/100;
     diameterr = diameter_bw/res/10;
 
@@ -172,7 +151,7 @@ for n = 1:jumlah_file
     ciri_gradeB(n,2) = diameterr;
 
      %mengisi variabel target_buruk
-    target_buruk(n,1) = 1;
+    target_gradeB(n,1) = 2;
 end
 
 %Grade C
@@ -209,7 +188,7 @@ for n = 1:jumlah_file
     center_col = (640 + 1) / 2;
 
     % Tentukan ukuran masking
-    mask_size = 420;
+    mask_size = 350;
 
     % Tentukan koordinat baris dan kolom untuk masking
     row1 = center_row - mask_size / 2;
@@ -224,23 +203,13 @@ for n = 1:jumlah_file
     %     h = drawellipse('Center',[center_col,center_row],'SemiAxes',[220,220], ...
     %         'RotationAngle',0,'StripeColor','m');
     %     mask = createMask(h);
-    image = imresize(edge_final,.4);  %-- make image smaller
-    m = imresize(m,.4);  %     for fast computation
+    image = imresize(edge_final,.5);  %-- make image smaller
+    m = imresize(m,.5);  %     for fast computation
     bw = region_seg(image, m, 1500); %-- Run segmentation
-    bw = imresize(bw, [size(Img,1) size(Img,2)]);
     bw = imfill(bw,'holes');
     bw = bwareaopen(bw,1000);
     bw = imclearborder(bw);
 
-    %melakukan ekstraksi ciri warna RGB
-    R = Img(:,:,1); %red
-    G = Img(:,:,2); %green
-    B = Img(:,:,3); %blue
-    R(~bw) = 0;
-    G(~bw) = 0;
-    B(~bw) = 0;
-    RGB = cat(3,R,G,B);
-    %     imshow(RGB);
 
     [tinggi, lebar] = size(bw);
     hasil = 0;
@@ -253,7 +222,7 @@ for n = 1:jumlah_file
     end
     area_bw = hasil;
     diameter_bw = sqrt(4 * area_bw / pi);
-    res = 2.712;
+    res = 2.715;
     area = area_bw/(res^2)/100;
     diameterr = diameter_bw/res/10;
 
