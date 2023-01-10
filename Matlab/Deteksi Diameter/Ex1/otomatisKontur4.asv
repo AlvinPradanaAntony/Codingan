@@ -109,36 +109,33 @@ end
 edge_final = uint8(T_res.*255);
 % figure, imshow(edge_final);
 
+
 % Tentukan nilai tengah baris dan kolom
 center_row = (480 + 1) / 2;
 center_col = (640 + 1) / 2;
 
 Img = edge_final;
 figure, imshow(Img)
-title('Deteksi Tepi','Color','w');
 h = drawellipse('Center',[center_col,center_row],'SemiAxes',[220,220], ...
-    'RotationAngle',287,'StripeColor','m');
+    'RotationAngle',0,'StripeColor','m');
 mask = createMask(h);
-
-% % segmentasi citra menggunakan active contour
-% seg = activecontour(edge_final,m,800);
 image = imresize(Img,.5);  %-- make image smaller
 m = imresize(mask,.5);  %     for fast computation
-seg = region_seg(image, m, 1200); %-- Run segmentation
-seg = imfill(seg,'holes');
-seg = bwareaopen(seg,1000);
-seg = imclearborder(seg);
+bw = region_seg(image, m, 1200); %-- Run segmentation
+bw = imresize(bw, [size(I,1) size(I,2)]);
+bw = imfill(bw,'holes');
+bw = bwareaopen(bw,1000);
+bw = imclearborder(bw);
 
 %melakukan ekstraksi ciri warna RGB
 R = I(:,:,1); %red
 G = I(:,:,2); %green
 B = I(:,:,3); %blue
-R(~seg) = 0;
-G(~seg) = 0;
-B(~seg) = 0;
+R(~bw) = 0;
+G(~bw) = 0;
+B(~bw) = 0;
 RGB = cat(3,R,G,B);
 
-bw = seg;
 [tinggi, lebar] = size(bw);
 hasil = 0;
 for p = 1 : tinggi
@@ -158,12 +155,11 @@ diameterr = diameter_bw/res/10;
 disp(['Luas objek: ', num2str(area), ' cm2']);
 disp(['Diameter objek: ', num2str(diameterr), ' cm']);
 
-figure, imshow(RGB)
 figure,
 subplot(2,2,1);imshow(I);title('Citra rgb asli');
-subplot(2,2,2);imshow(m);title('Inisial masking');
-subplot(2,2,3);imshow(seg);title('Citra biner hasil segmentasi');
+subplot(2,2,2);imshow(Img);title('Canny Detection');
+subplot(2,2,3);imshow(bw);title('Citra biner hasil segmentasi');
 hold on
 contour(seg, 'y','LineWidth',2);
 hold off
-subplot(2,2,4);imshow(I);title('Citra rgb hasil segmentasi');
+subplot(2,2,4);imshow(RGB);title('Citra rgb hasil segmentasi');

@@ -116,85 +116,49 @@ center_col = (640 + 1) / 2;
 
 Img = edge_final;
 figure, imshow(Img)
-title('Deteksi Tepi','Color','w');
 h = drawellipse('Center',[center_col,center_row],'SemiAxes',[220,220], ...
-    'RotationAngle',287,'StripeColor','m');
+    'RotationAngle',0,'StripeColor','m');
 mask = createMask(h);
-% bw = activecontour(Img,mask,1000);
 image = imresize(Img,.5);  %-- make image smaller
 m = imresize(mask,.5);  %     for fast computation
 bw = region_seg(image, m, 1200); %-- Run segmentation
+bw = imresize(bw, [size(I,1) size(I,2)]);
 bw = imfill(bw,'holes');
-bw = bwareaopen(bw,500);
+bw = bwareaopen(bw,1000);
 bw = imclearborder(bw);
 
-cla reset
-imshow(bw),title('Hasil');
-axis off
-hold on
-[c,~] = bwboundaries(bw,'noholes');
+%melakukan ekstraksi ciri warna RGB
+R = I(:,:,1); %red
+G = I(:,:,2); %green
+B = I(:,:,3); %blue
+R(~bw) = 0;
+G(~bw) = 0;
+B(~bw) = 0;
+RGB = cat(3,R,G,B);
 
-for k = 1:length(c)
-    boundary = c{k};
-    plot(boundary(:,2), boundary(:,1),'y','LineWidth',3)
+[tinggi, lebar] = size(bw);
+hasil = 0;
+for p = 1 : tinggi
+    for q = 1 : lebar
+        if bw(p, q) == 1
+            hasil = hasil + 1;
+        end
+    end
 end
+area_bw = hasil;
+diameter_bw = sqrt(4 * area_bw / pi);
+res = 2.682;
+area = area_bw/(res^2)/100;
+diameterr = diameter_bw/res/10;
+
+disp(['Luas objek: ', num2str(area), ' cm2']);
+disp(['Diameter objek: ', num2str(diameterr), ' cm']);
+
+figure,
+subplot(2,2,1);imshow(I);title('Citra rgb asli');
+subplot(2,2,2);imshow(Img);title('Canny Detection');
+subplot(2,2,3);imshow(bw);title('Citra biner hasil segmentasi');
+hold on
+contour(bw, 'y','LineWidth',2);
 hold off
-
-
-
-
-
-
-
-
-
-
-
-
-
-% % segmentasi citra menggunakan active contour
-% seg = activecontour(edge_final,m,800);
-% 
-% % Filling holes
-% N = imfill(seg,"holes");
-% % Opening
-% seg = bwareaopen(N,1000);
-% 
-% %melakukan ekstraksi ciri warna RGB
-% R = I(:,:,1); %red
-% G = I(:,:,2); %green
-% B = I(:,:,3); %blue
-% R(~seg) = 0;
-% G(~seg) = 0;
-% B(~seg) = 0;
-% RGB = cat(3,R,G,B);
-% 
-% bw = seg;
-% [tinggi, lebar] = size(bw);
-% hasil = 0;
-% for p = 1 : tinggi
-%     for q = 1 : lebar
-%         if bw(p, q) == 1
-%             hasil = hasil + 1;
-%         end
-%     end
-% end
-% area_bw = hasil;
-% diameter_bw = sqrt(4 * area_bw / pi);
-% res = 2.582;
-% area = area_bw/(res^2)/100;
-% diameterr = diameter_bw/res/10;
-% 
-% 
-% disp(['Luas objek: ', num2str(area), ' cm2']);
-% disp(['Diameter objek: ', num2str(diameterr), ' cm']);
-% 
-% figure, imshow(RGB)
-% figure,
-% subplot(2,2,1);imshow(I);title('Citra rgb asli');
-% subplot(2,2,2);imshow(m);title('Inisial masking');
-% subplot(2,2,3);imshow(seg);title('Citra biner hasil segmentasi');
-% hold on
-% contour(seg, 'y','LineWidth',2);
-% hold off
-% subplot(2,2,4);imshow(I);title('Citra rgb hasil segmentasi');
+subplot(2,2,4);imshow(RGB);title('Citra rgb hasil segmentasi');
