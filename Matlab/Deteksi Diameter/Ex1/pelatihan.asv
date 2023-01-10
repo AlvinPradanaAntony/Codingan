@@ -190,28 +190,3 @@ for n = 1:jumlah_file
 
     target_gradeC(n,1) = 3;
 end
-
-save ciriA ciri_gradeA
-save ciriB ciri_gradeB
-save ciriC ciri_gradeC
-save targetC target_gradeA
-save targetB target_gradeB
-save targetC target_gradeC
-%menyusun variabel target_latih
-target_latih = [target_gradeA;target_gradeB;target_gradeC];
-data_latih = [ciri_gradeA;ciri_gradeB;ciri_gradeC];
-save targetLatih target_gradeC
-save targetC target_gradeC
-
-%melakukan pelatihan menggunakan algoritma SVM
-Mdl = fitcecoc(data_latih,target_latih) %mdl, model
-
-%membaca kelas keluaran
-kelas_keluaran = predict(Mdl,data_latih);
-
-%menghitung nilai akurasi
-akurasi = (sum(target_latih==kelas_keluaran)/numel(target_latih))*100;
-disp(['Akurasi Pelatihan = ', num2str(akurasi), '%'])
-
-%menyimpan variabel Mdl hasil pelatihan
-save Mdl Mdl

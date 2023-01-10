@@ -9,7 +9,7 @@ nama_file = dir(fullfile(nama_folder,'*.jpg'));
 jumlah_file = numel(nama_file);
 
 %melakukan inisialisasi variabel ciri buruk dan target buruk
-ciri_buruk = zeros(jumlah_file,5);
+ciri_buruk = zeros(jumlah_file,10);
 target_buruk = zeros(jumlah_file,1);
 
 %melakukan pengolahan citra terhadap seluruh file
@@ -98,7 +98,7 @@ nama_file = dir(fullfile(nama_folder,'*.jpg'));
 jumlah_file = numel(nama_file);
 
 %melakukan inisialisasi variabel ciri baik dan target baik
-ciri_baik= zeros(jumlah_file,5);
+ciri_baik= zeros(jumlah_file,10);
 target_baik= zeros(jumlah_file,1);
 
 %melakukan pengolahan citra terhadap seluruh file
