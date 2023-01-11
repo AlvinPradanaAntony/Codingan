@@ -538,8 +538,11 @@ try
 catch
 end
 
+
 gray = rgb2gray(img);
 handles.img_gray = gray;
+handles.img = img;
+
 axes(handles.axes1);
 imshow(img)
 title('Citra Asli', 'Color','w');
