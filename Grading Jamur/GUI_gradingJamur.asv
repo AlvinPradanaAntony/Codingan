@@ -91,7 +91,7 @@ if ~isequal(filename,0)
         axes(handles.axes1);
         cla('reset');
         imshow(handles.img);
-        title('Citra Asli');
+        title('Citra Asli', 'Color','w');
 
         % 	Menyimpan nama file citra pada edit text
         set(handles.edit1, 'String', filename);
@@ -99,13 +99,13 @@ if ~isequal(filename,0)
         axes(handles.axes2);
         cla('reset');
         imshow(handles.img_gray);
-        title('Citra Grayscale');
+        title('Citra Grayscale', 'Color','w');
     else
         handles.img_gray = handles.img;
         axes(handles.axes1);
         cla('reset');
         imshow(handles.img);
-        title('Citra Asli');
+        title('Citra Asli', 'Color','w');
 
         % 	Menyimpan nama file citra pada edit text
         set(handles.edit1, 'String', filename);
@@ -114,7 +114,7 @@ if ~isequal(filename,0)
         axes(handles.axes2);
         cla('reset');
         imshow(handles.img);
-        title('Citra Grayscale');
+        title('Citra Grayscale', 'Color','w');
     end
     axes(handles.axes3);
     cla('reset');
@@ -155,7 +155,7 @@ Img = handles.img;
 axes(handles.axes3);
 cla reset
 imshow(edge_final)
-title('Deteksi Tepi');
+title('Deteksi Tepi','Color','w');
 
 % Tentukan nilai tengah baris dan kolom
 center_row = (480 + 1) / 2;
@@ -171,20 +171,10 @@ bw = imresize(bw, [size(Img,1) size(Img,2)]);
 bw = imfill(bw,'holes');
 bw = bwareaopen(bw,1000);
 bw = imclearborder(bw);
-
-%melakukan ekstraksi ciri warna RGB
-R = Img(:,:,1); %red
-G = Img(:,:,2); %green
-B = Img(:,:,3); %blue
-R(~bw) = 0;
-G(~bw) = 0;
-B(~bw) = 0;
-RGB = cat(3,R,G,B);
-
 axes(handles.axes3);
 cla reset
 imshow(bw)
-title('Hasil');
+title('Hasil','Color','w');
 axis off
 hold on
 [c,~] = bwboundaries(bw,'noholes');
@@ -195,6 +185,14 @@ for k = 1:length(c)
 end
 hold off
 
+%melakukan ekstraksi ciri warna RGB
+R = Img(:,:,1); %red
+G = Img(:,:,2); %green
+B = Img(:,:,3); %blue
+R(~bw) = 0;
+G(~bw) = 0;
+B(~bw) = 0;
+RGB = cat(3,R,G,B);
 axes(handles.axes4);
 cla reset
 imshow(RGB)
@@ -206,7 +204,6 @@ guidata(hObject, handles)
 % --- Executes on button press in pushbutton4.
 function pushbutton4_Callback(hObject, eventdata, handles)
 bw = handles.bw;
-bw = imresize(bw,.5);
 [tinggi, lebar] = size(bw);
 hasil = 0;
 for p = 1 : tinggi
@@ -218,7 +215,7 @@ for p = 1 : tinggi
 end
 area_bw = hasil;
 diameter_bw = sqrt(4 * area_bw / pi);
-res = 1.362;
+res = 2.715;
 area = area_bw/(res^2)/100;
 diameterr = diameter_bw/res/10;
 handles.diameter = diameterr;
@@ -424,7 +421,7 @@ axes(handles.axes3)
 cla('reset')
 imshow(edge_final)
 % title('Citra Hasil Deteksi Tepi','Color','white')
-title('Deteksi Tepi');
+title('Deteksi Tepi','Color','w');
 handles.edgesImg = edge_final;
 guidata(hObject, handles)
 
@@ -457,10 +454,10 @@ handles.img = img;
 
 axes(handles.axes1);
 imshow(img)
-title('Citra Asli');
+title('Citra Asli', 'Color','w');
 axes(handles.axes2);
 imshow(handles.img_gray)
-title('Citra Grayscale');
+title('Citra Grayscale', 'Color','w');
 set(handles.pushbutton9,'Visible', 'Off');
 guidata(hObject,handles);
 
@@ -570,7 +567,7 @@ Img_gray = handles.img_gray;
 
 
     %memanggil nilai bobot jaringan
-    load('Mdl1.mat')
+    load('Mdl.mat')
 
     %membaca kelas keluaran
     kelas_keluaran = predict(Mdl,ciri_uji);
