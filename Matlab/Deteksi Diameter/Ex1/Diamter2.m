@@ -1,5 +1,5 @@
 % Baca gambar dan ubah ke skala abu-abu
-I = imread('C2_3.9602 cm.jpg');
+I = imread('data_learning\A3_12.0644 cm.jpg');
 I = rgb2gray(I);
 
 % Hilangkan noise dengan median filter dan tingkatkan kontras dengan imadjust
