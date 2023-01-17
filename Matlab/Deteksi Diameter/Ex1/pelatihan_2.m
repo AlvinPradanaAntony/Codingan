@@ -90,5 +90,6 @@ end
 
 akurasi_pelatihan = jumlah_benar/jumlah_file*100
 
-% %menyimpan variabel Mdl hasil pelatihan
-% save Mdl Mdl
+%menyimpan variabel Mdl hasil pelatihan
+save dataLatih2 data_latih
+save Mdl_Pelatihan2 Mdl
