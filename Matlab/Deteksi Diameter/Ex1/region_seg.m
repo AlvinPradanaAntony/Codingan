@@ -69,7 +69,7 @@ function showCurveAndPhi(I, phi, i)
   imshow(I,'initialmagnification',200,'displayrange',[0 255]); hold on;
   contour(phi, [0 0], 'g','LineWidth',4);
   contour(phi, [0 0], 'k','LineWidth',2);
-  hold off; title([num2str(i) ' Iterations'],'Color','w'); drawnow;
+  hold off; title([num2str(i) ' Iterations']); drawnow;
   
 %-- converts a mask to a SDF
 function phi = mask2phi(init_a)
