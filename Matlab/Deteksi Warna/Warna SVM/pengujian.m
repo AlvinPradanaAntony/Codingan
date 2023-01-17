@@ -184,7 +184,7 @@ target_latih = [target_buruk; target_baik];
 data_latih = [ciri_buruk;ciri_baik];
 
 %memanggil nilai bobot jaringan
-load('Mdl.mat')
+load('Mdl1.mat')
 
 kelas_keluaran = predict(Mdl,data_latih);
 

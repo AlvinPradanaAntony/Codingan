@@ -384,16 +384,16 @@ akurasi = (sum(target_latih==kelas_keluaran)/numel(target_latih))*100;
 disp(['Akurasi Pelatihan = ', num2str(akurasi), '%'])
 
 %menyimpan variabel Mdl hasil pelatihan
-save ciriA ciri_diameterA
-save ciriB ciri_diameterB
-save ciriC ciri_diameterC
-save ciriWarnaPK ciri_warnaPutihKekuningan
-save ciriWarnaP ciri_warnaPutih
-save targetA target_diameterA
-save targetB target_diameterB
-save targetC target_diameterC
-save targetWarnaPK target_warnaPutihKekuningan
-save targetWarnaP target_warnaPutih
+% save ciriA ciri_diameterA
+% save ciriB ciri_diameterB
+% save ciriC ciri_diameterC
+% save ciriWarnaPK ciri_warnaPutihKekuningan
+% save ciriWarnaP ciri_warnaPutih
+% save targetA target_diameterA
+% save targetB target_diameterB
+% save targetC target_diameterC
+% save targetWarnaPK target_warnaPutihKekuningan
+% save targetWarnaP target_warnaPutih
 save targetLatih target_latih
 save dataLatih data_latih
 save Mdl Mdl

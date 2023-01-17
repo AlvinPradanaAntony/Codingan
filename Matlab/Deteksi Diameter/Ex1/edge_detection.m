@@ -12,15 +12,10 @@ filled_image = imfill(closed_image, 'holes');
 opened_image = imopen(filled_image, strel(ones(3,3)));
 mask_image = bwareaopen(opened_image, 1500);
 
-% mask_image=bwareaopen(imopen(imfill(imclose(edge(rgb2gray(x),'canny'),strel('line',3,0)),'holes'),strel(ones(3,3))),1500);
-
 red_processed=x(:,:,1).*uint8(mask_image);
 green_processed=x(:,:,2).*uint8(mask_image);
 blue_processed=x(:,:,3).*uint8(mask_image);
 op=cat(3,red_processed,green_processed,blue_processed);
-% figure;
-% imshow(op);
-% title('Output Image')
 
 figure(1), 
 subplot(1,3,1), imshow(x), title("Original Image"),

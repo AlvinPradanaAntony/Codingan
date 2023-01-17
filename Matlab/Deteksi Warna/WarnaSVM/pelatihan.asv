@@ -11,7 +11,7 @@ jumlah_file = numel(nama_file);
 data_latih = zeros(jumlah_file,10);
 
 %melakukan pengolahan citra terhadap seluruh file
-for n = 1:2
+for n = 1:jumlah_file
     %membaca file citra RGB
     Img = im2double(imread(fullfile(nama_folder,nama_file(n).name)));
     %figure, imshow(Img)
