@@ -39,8 +39,9 @@ for n = 1:jumlah_file
     R(~bw) = 0;
     G(~bw) = 0;
     B(~bw) = 0;
-    %RGB = cat(3,R,G,B);
-    %figure, imshow(RGB)
+    RGB = cat(3,R,G,B);
+    figure, imshow(RGB)
+    title({['Nama File: ',nama_file(n).name]})
 
     Red = sum(sum(R))/sum(sum(bw));
     Green = sum(sum(G))/sum(sum(bw));
@@ -87,11 +88,11 @@ end
 %menetapkan target latih
 target_latih = cell(jumlah_file, 1);
 for n = 1:16
-    target_latih{n} = 'Putih';
+    target_latih{n} = 'Putih Kekuningan';
 end
 
 for n = 17:32
-    target_latih{n} = 'Putih Kekuningan';
+    target_latih{n} = 'Putih';
 end
 
 %melakukan pelatihan menggunakan algoritma SVM

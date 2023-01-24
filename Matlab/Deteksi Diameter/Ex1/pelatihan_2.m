@@ -1,5 +1,6 @@
 clc; clear; close all; warning off all;
 
+% Train Diameter
 %menetapkan nama folder
 nama_folder = 'data_training2/Diameter';
 %membaca file berekstensi .jpg
@@ -61,6 +62,14 @@ for n = 1:jumlah_file
     data_latih(n,2) = diameterr;
     title({['Nama File: ',nama_file(n).name],['Diameter : ',num2str(diameterr), ' cm']}, "Color","m")
 end
+
+% Train Warna
+%menetapkan nama folder
+nama_folder = 'data_training2/Diameter';
+%membaca file berekstensi .jpg
+nama_file = dir(fullfile(nama_folder,'*.jpg'));
+%membaca jumlah file berekstensi .jpg
+jumlah_file = numel(nama_file);
 
 for n = 1:16
     target_latih{n} = 'Diameter +10cm';
