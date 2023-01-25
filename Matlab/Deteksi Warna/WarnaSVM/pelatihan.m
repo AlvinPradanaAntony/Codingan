@@ -39,9 +39,9 @@ for n = 1:jumlah_file
     R(~bw) = 0;
     G(~bw) = 0;
     B(~bw) = 0;
-    RGB = cat(3,R,G,B);
-    figure, imshow(RGB)
-    title({['Nama File: ',nama_file(n).name]})
+    %     RGB = cat(3,R,G,B);
+    %     figure, imshow(RGB)
+    %     title({['Nama File: ',nama_file(n).name]})
 
     Red = sum(sum(R))/sum(sum(bw));
     Green = sum(sum(G))/sum(sum(bw));

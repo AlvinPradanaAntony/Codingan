@@ -1,6 +1,6 @@
 clc; clear; close all; warning off all;
 
-%Grade A
+%% Grade A
 %menetapkan nama folder
 nama_folder = 'data_training/DiameterA';
 %membaca file berekstensi .jpg
@@ -65,7 +65,7 @@ for n = 1:jumlah_file
 end
 
 
-%Grade B
+%% Grade B
 %menetapkan nama folder
 nama_folder = 'data_training/DiameterB';
 %membaca file berekstensi .jpg
@@ -128,7 +128,7 @@ for n = 1:jumlah_file
     target_diameterB(n,1) = 2;
 end
 
-%Grade C
+%% Grade C
 %menetapkan nama folder
 nama_folder = 'data_training/DiameterC';
 %membaca file berekstensi .jpg
@@ -191,7 +191,7 @@ for n = 1:jumlah_file
     target_diameterC(n,1) = 3;
 end
 
-%Putih Kekuningan
+%% Putih Kekuningan
 %menetapkan nama folder
 nama_folder = 'data_training/PutihKekuningan';
 %membaca file berekstensi .jpg
@@ -280,7 +280,7 @@ for n = 1:jumlah_file
     target_warnaPutihKekuningan(n,1) = 4;
 end
 
-%Putih
+%% Putih
 %menetapkan nama folder
 nama_folder = 'data_training/Putih';
 %membaca file berekstensi .jpg
@@ -384,16 +384,6 @@ akurasi = (sum(target_latih==kelas_keluaran)/numel(target_latih))*100;
 disp(['Akurasi Pelatihan = ', num2str(akurasi), '%'])
 
 %menyimpan variabel Mdl hasil pelatihan
-% save ciriA ciri_diameterA
-% save ciriB ciri_diameterB
-% save ciriC ciri_diameterC
-% save ciriWarnaPK ciri_warnaPutihKekuningan
-% save ciriWarnaP ciri_warnaPutih
-% save targetA target_diameterA
-% save targetB target_diameterB
-% save targetC target_diameterC
-% save targetWarnaPK target_warnaPutihKekuningan
-% save targetWarnaP target_warnaPutih
 save targetLatih target_latih
 save dataLatih data_latih
 save Mdl Mdl

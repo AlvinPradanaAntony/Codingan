@@ -7,57 +7,106 @@ nama_file = dir(fullfile(nama_folder,'*.jpg'));
 %membaca jumlah file berekstensi .jpg
 jumlah_file = numel(nama_file);
 
-%melakukan inisialisasi variabel data uji
-data_uji = zeros(jumlah_file,2);
+%melakukan inisialisasi variabel data latih
+data_uji = zeros(jumlah_file,10);
 
 %melakukan pengolahan citra terhadap seluruh file
 for n = 1:jumlah_file
     %membaca file citra RGB
-    Img = imread(fullfile(nama_folder,nama_file(n).name));
+    Img = im2double(imread(fullfile(nama_folder,nama_file(n).name)));
     %figure, imshow(Img)
 
     %konversi citra RGB menjadi citra Grayscale
     Img_gray = rgb2gray(Img);
     %figure, imshow(Img_gray)
 
-    %melakukan ekstraksi ciri tekstur menggunakan metode GLCM
-    pixel_dist = 1;
+    %konversi citra Grayscale menjadi citra biner
+    bw = imbinarize(Img_gray);
+    %figure, imshow(bw)
+
+    %melakukan operasi morfologi untuk menyempurnakan hasil segmentasi
+    %1. filling holes
+    bw = imfill(bw,'holes');
+    %figure, imshow(bw)
+    %2. area opening
+    bw = bwareaopen(bw,1000);
+    %figure, imshow(bw)
+
+    %melakukan ekstraksi ciri warna RGB
+    R = Img(:,:,1); %red
+    G = Img(:,:,2); %green
+    B = Img(:,:,3); %blue
+    R(~bw) = 0;
+    G(~bw) = 0;
+    B(~bw) = 0;
+        RGB = cat(3,R,G,B);
+        figure, imshow(RGB)
+        title({['Nama File: ',nama_file(n).name]})
+
+    Red = sum(sum(R))/sum(sum(bw));
+    Green = sum(sum(G))/sum(sum(bw));
+    Blue = sum(sum(B))/sum(sum(bw));
+
+    %melakukan ekstraksi ciri warna HSV
+    HSV = rgb2hsv(Img);
+    %figure, imshow(HSV);
+
+    H = HSV(:,:,1); %hue
+    S = HSV(:,:,2); %saturation
+    V = HSV(:,:,3); %value
+    H(~bw) = 0;
+    S(~bw) = 0;
+    V(~bw) = 0;
+
+    Hue = sum(sum(H))/sum(sum(bw));
+    Saturation = sum(sum(S))/sum(sum(bw));
+    Value= sum(sum(V))/sum(sum(bw));
+
+    %melakukan ekstraksi ciri tekstur GLCM
+    Img_gray(~bw) = 0;
     %membentuk matriks kookurensi
-    GLCM = graycomatrix(Img_gray,'Offset',[0 pixel_dist; -pixel_dist pixel_dist; pixel_dist 0; -pixel_dist -pixel_dist]);
-    stats = graycoprops(GLCM,'Correlation','Energy');
-   
+    GLCM = graycomatrix(Img_gray,'Offset',[0 1; -1 1; -1 0; -1 -1]);
+    stats = graycoprops(GLCM,{'Contrast','Correlation','Energy','Homogeneity'});
+    Contrast = mean(stats.Contrast);
     Correlation = mean(stats.Correlation);
     Energy = mean(stats.Energy);
+    Homogeneity= mean(stats.Homogeneity);
 
-    %menyusun variabel data uji
-    data_uji(n,1) = Correlation;
-    data_uji(n,2) = Energy;
+    %mengisi variabel ciri baik dengan ciri hasil ekstraksi
+    data_uji(n,1) = Red;
+    data_uji(n,2) = Green;
+    data_uji(n,3) = Blue;
+    data_uji(n,4) = Hue;
+    data_uji(n,5) = Saturation;
+    data_uji(n,6) = Value;
+    data_uji(n,7) = Contrast;
+    data_uji(n,8) = Correlation;
+    data_uji(n,9) = Energy;
+    data_uji(n,10) = Homogeneity;
 end
 
-%menetapkan target uji
-target_uji = cell(jumlah_file, 1);
-for n = 1:3
-    target_uji{n} = 'baik';
+%menetapkan target latih
+target_latih = cell(jumlah_file, 1);
+for n = 1:5
+    target_latih{n} = 'Putih';
 end
 
-for n = 4:6
-    target_uji{n} = 'buruk';
+for n = 6:8
+    target_latih{n} = 'Putih Kekuningan';
 end
 
-%memanggil variabel mdl hasil pelatihan
+%Memanggil variabel Mdl hasil pelatihan
 load Mdl
 
-%membaca kelas keluaran hasil pengujian
+%membaca kelas keluaran
 kelas_keluaran = predict(Mdl,data_uji);
 
-%menghitung akurasi pengujian
+%menghitung akurasi pelatihan
 jumlah_benar = 0;
 for n = 1:jumlah_file
-    if isequal(kelas_keluaran{n},target_uji{n})
+    if isequal(kelas_keluaran{n},target_latih{n})
         jumlah_benar = jumlah_benar+1;
     end
 end
 
-akurasi_pengujian = jumlah_benar/jumlah_file*100
-
-    
+akurasi_pelatihan = jumlah_benar/jumlah_file*100
