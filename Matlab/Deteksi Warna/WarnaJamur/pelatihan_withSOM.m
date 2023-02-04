@@ -75,32 +75,58 @@ for n = 1:jumlah_file
 end
 
 %menetapkan target latih
-target_latih = cell(jumlah_file, 1);
+target_latih = zeros(jumlah_file, 1);
 for n = 1:16
-    target_latih{n} = 'Putih Kekuningan';
+    target_latih(n) = 1;
 end
 
 for n = 17:32
-    target_latih{n} = 'Putih';
+    target_latih(n) = 2;
 end
 
-%melakukan pelatihan menggunakan algoritma SVM
-Mdl = fitcsvm(data_latih,target_latih); %mdl, model
+%melakukan klasifikasi, membuat model SOM pada masing-masing kelas
+net1 = selforgmap([2 2],'topologyFcn','gridtop');
+net2 = selforgmap([2 2],'topologyFcn','gridtop');
 
-%membaca kelas keluaran
-kelas_keluaran = predict(Mdl,data_latih);
+%melakukan pelatihan jaringan
+net1 = train(net1,data_latih(1:16,:)');
+net2 = train(net2,data_latih(17:32,:)');
+
+%membaca nilai bobot jaringan
+wnet1 = net1.IW{1,1};
+wnet2 = net2.IW{1,1};
+
+%menyimpan nilai bobot jaringan
+save('train_withSOM','wnet1')
+save('train_withSOM2','wnet2')
+
+
+%menghitung jarak masing-masing kelas dg titik pusat masing2 model SOM
+pfn1 = dist(wnet1,data_latih');
+pfn2 = dist(wnet2,data_latih');
+
+%menghitung jarak terpendek
+Group = zeros(numel(target_latih),2);
+for i = 1:numel(target_latih)
+    Group(i,:) = [min(pfn1(:,i)), min(pfn2(:,i))];
+end
+
+%membaca nilai keluaran hasil pelatihan
+[~,kelas_keluaran] = min(Group,[],2);
 
 %menghitung akurasi pelatihan
 jumlah_benar = 0;
 for n = 1:jumlah_file
-    if isequal(kelas_keluaran{n},target_latih{n})
+    if kelas_keluaran == target_latih
         jumlah_benar = jumlah_benar+1;
     end
 end
 
-akurasi_pelatihan = jumlah_benar/jumlah_file*100
+akurasi_pelatihan = jumlah_benar/jumlah_file*100;
 
-%menyimpan variabel Mdl hasil pelatihan
-save Mdl Mdl
+%menghitung nilai akurasi
+% akurasi = (sum(target_latih==Groupmin)/numel(target_latih))*100;
+disp(['Jumlah Benar = ', num2str(jumlah_benar)])
+disp(['Akurasi Pelatihan = ', num2str(akurasi_pelatihan), '%'])
 
     

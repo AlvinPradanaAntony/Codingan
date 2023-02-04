@@ -38,7 +38,7 @@ if ~isequal(nama_file,0)
 
     % Mengubah citra dari RGB ke HSV
     HSV = rgb2hsv(Img);
-    
+
     %melakukan ekstraksi ciri warna HSV
     H = HSV(:,:,1); %hue
     S = HSV(:,:,2); %saturation
@@ -76,6 +76,35 @@ if ~isequal(nama_file,0)
     %menampilkan citra asli dan kelas keluaran hasil pengujian
     figure, imshow(Img)
     title({['Nama File: ',nama_file],['Kelas Keluaran : ',kelas_keluaran{1}]})
+
+
+
+
+    % %memanggil nilai bobot jaringan
+    %     load('wnet1.mat')
+    %     load('wnet2.mat')
+    %
+    %     %menghitung jarak masing-masing kelas dg titik pusat masing2 model SOM
+    %     pfn1 = dist(wnet1,ciri_uji');
+    %     pfn2 = dist(wnet2,ciri_uji');
+    %
+    %     %menghitung jarak terpendek
+    %     Group = [min(pfn1), min(pfn2)];
+    %
+    %     %membaca nilai keluaran hasil pengujian
+    %     [~,Groupmin] = min(Group,[],2);
+    %
+    %     %mengubah nilai keluaran menjadi kelas keluaran
+    %     switch Groupmin
+    %         case 1
+    %             kelas_keluaran = 'Putih Kekuningan';
+    %         case 2
+    %             kelas_keluaran = 'Putih';
+    %     end
+    %
+    %     %tampilkan citra asli dan kelas keluaran hasil pengujian
+    %     figure, imshow(Img)
+    %     title({['Nama File: ',nama_file],['Kelas Keluaran : ',kelas_keluaran]})
 else
     %jika tidak ada nama file yg dipilih maka akan kembali
     return
