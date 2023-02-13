@@ -1,14 +1,14 @@
 clc; clear; close all; warning off all;
 
 %menetapkan nama folder
-nama_folder = 'data_train';
+nama_folder = 'data_tests';
 %membaca file berekstensi .jpg
 nama_file = dir(fullfile(nama_folder,'*.jpg'));
 %membaca jumlah file berekstensi .jpg
 jumlah_file = numel(nama_file);
 
-%melakukan inisialisasi variabel data latih
-data_latih = zeros(jumlah_file,7);
+%melakukan inisialisasi variabel data uji
+data_uji = zeros(jumlah_file,7);
 
 %melakukan pengolahan citra terhadap seluruh file
 for n = 1:jumlah_file
@@ -65,34 +65,36 @@ for n = 1:jumlah_file
     hue_hist = mean(hue_hist(:));
 
     %mengisi variabel ciri baik dengan ciri hasil ekstraksi
-    data_latih(n,1) = Hue;
-    data_latih(n,2) = Saturation;
-    data_latih(n,3) = Value;
-    data_latih(n,4) = hue_hist;
-    data_latih(n,5) = Hue_std;
-    data_latih(n,6) = Saturation_std;
-    data_latih(n,7) = Value_std;
+    data_uji(n,1) = Hue;
+    data_uji(n,2) = Saturation;
+    data_uji(n,3) = Value;
+    data_uji(n,4) = hue_hist;
+    data_uji(n,5) = Hue_std;
+    data_uji(n,6) = Saturation_std;
+    data_uji(n,7) = Value_std;
 end
 
-%menetapkan target latih
-target_latih = zeros(jumlah_file, 1);
-target_latih(1:16) = 1; % Bougainvillea
-target_latih(17:32) = 2; % Geranium
+%menetapkan target uji
+target_uji = cell(jumlah_file, 1);
+for n = 1:8
+    target_uji{n} = 'Putih Kekuningan';
+end
 
-data_latih = data_latih';
-target_latih = target_latih';
+for n = 9:16
+    target_uji{n} = 'Putih';
+end
 
-% Membangun arsitektur jaringan saraf tiruan
-rng('default');
-net = newff(data_latih,target_latih,[10 5],{'logsig','logsig'},'trainlm');
-% Melakukan pelatihan jaringan
-net = train(net, data_latih, target_latih);
-output = round(sim(net,data_latih));
+load train_withKNN.mat
 
-% Menghitung akurasi pelatihan
+% Membaca kelas keluaran hasil pengujian
+hasil_latih = predict(Mdl, data_uji);
+
+% Menghitung akurasi pengujian
 jumlah_benar = 0;
-for k = 1:jumlah_file
-    if (output(k) == target_latih(k))
+jumlah_data = size(data_uji,1);
+
+for k = 1:jumlah_data
+    if isequal(hasil_latih{k},target_uji{k})
         jumlah_benar = jumlah_benar +1;
     end
 end
@@ -103,5 +105,3 @@ akurasi_pelatihan = jumlah_benar/jumlah_file*100;
 disp(['Jumlah Benar = ', num2str(jumlah_benar)])
 disp(['Akurasi Pelatihan = ', num2str(akurasi_pelatihan), '%'])
 
-% Menyimpan variabel Mdl hasil pelatihan
-save train_withJST net

@@ -128,5 +128,3 @@ akurasi_pelatihan = jumlah_benar/jumlah_file*100;
 % akurasi = (sum(target_latih==Groupmin)/numel(target_latih))*100;
 disp(['Jumlah Benar = ', num2str(jumlah_benar)])
 disp(['Akurasi Pelatihan = ', num2str(akurasi_pelatihan), '%'])
-
-    
