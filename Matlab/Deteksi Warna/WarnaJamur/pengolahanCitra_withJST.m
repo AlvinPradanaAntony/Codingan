@@ -67,44 +67,24 @@ if ~isequal(nama_file,0)
     ciri_uji(1,6) = Saturation_std;
     ciri_uji(1,7) = Value_std;
 
-    %memanggil nilai bobot jaringan
-    load('Mdl.mat')
+    ciri_uji = ciri_uji';
 
-    %membaca kelas keluaran
-    kelas_keluaran = predict(Mdl,ciri_uji);
+    % Membangun arsitektur jaringan saraf tiruan
+    load train_withJST.mat
+    output = round(sim(net,ciri_uji));
+
+    %mengubah nilai keluaran menjadi kelas keluaran
+    switch output
+        case 1
+            kelas_keluaran = 'Putih Kekuningan';
+        case 2
+            kelas_keluaran = 'Putih';
+    end
 
     %menampilkan citra asli dan kelas keluaran hasil pengujian
     figure, imshow(Img)
-    title({['Nama File: ',nama_file],['Kelas Keluaran : ',kelas_keluaran{1}]})
+    title({['Nama File: ',nama_file],['Kelas Keluaran : ',kelas_keluaran]})
 
-
-
-
-    % %memanggil nilai bobot jaringan
-    %     load('wnet1.mat')
-    %     load('wnet2.mat')
-    %
-    %     %menghitung jarak masing-masing kelas dg titik pusat masing2 model SOM
-    %     pfn1 = dist(wnet1,ciri_uji');
-    %     pfn2 = dist(wnet2,ciri_uji');
-    %
-    %     %menghitung jarak terpendek
-    %     Group = [min(pfn1), min(pfn2)];
-    %
-    %     %membaca nilai keluaran hasil pengujian
-    %     [~,Groupmin] = min(Group,[],2);
-    %
-    %     %mengubah nilai keluaran menjadi kelas keluaran
-    %     switch Groupmin
-    %         case 1
-    %             kelas_keluaran = 'Putih Kekuningan';
-    %         case 2
-    %             kelas_keluaran = 'Putih';
-    %     end
-    %
-    %     %tampilkan citra asli dan kelas keluaran hasil pengujian
-    %     figure, imshow(Img)
-    %     title({['Nama File: ',nama_file],['Kelas Keluaran : ',kelas_keluaran]})
 else
     %jika tidak ada nama file yg dipilih maka akan kembali
     return
