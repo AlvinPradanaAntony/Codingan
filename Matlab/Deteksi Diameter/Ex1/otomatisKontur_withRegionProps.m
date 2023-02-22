@@ -1,7 +1,7 @@
 clc; clear; close all;
 
 % membaca citra rgb
-I = imread('A1_12.4442 cm.jpg');
+I = imread('data_uji\A1_12.4442 cm.jpg');
 
 % mengkonversi citra rgb menjadi grayscale
 J = rgb2gray(I);
@@ -14,7 +14,7 @@ center_row = (480 + 1) / 2;
 center_col = (640 + 1) / 2;
 
 % Tentukan ukuran masking
-mask_size = 150;
+mask_size = 250;
 
 % Tentukan koordinat baris dan kolom untuk masking
 row1 = center_row - mask_size / 2;
@@ -27,11 +27,15 @@ m(row1:row2, col1:col2) = 1;
 
 % segmentasi citra menggunakan active contour
 seg = activecontour(J,m,800);
+% menampilkan citra hasil pengolahan
 
 % Filling holes
 N = imfill(seg,"holes");
+%     figure, imshow(N);
+
 % Opening
 seg = bwareaopen(N,1000);
+%     figure, imshow(N);
 
 %melakukan ekstraksi ciri warna RGB
 R = I(:,:,1); %red
@@ -42,25 +46,21 @@ G(~seg) = 0;
 B(~seg) = 0;
 RGB = cat(3,R,G,B);
 
-bw = seg;
-[tinggi, lebar] = size(bw);
-hasil = 0;
-for p = 1 : tinggi
-    for q = 1 : lebar
-        if bw(p, q) == 1
-            hasil = hasil + 1;
-        end
-    end
-end
-area_bw = hasil;
-diameter_bw = sqrt(4 * area_bw / pi);
-res = 2.582;
-area = area_bw/(res^2)/100;
-diameterr = diameter_bw/res/10;
 
+% Tentukan faktor skala piksel ke cm
+scale_factor = 0.038;
 
-disp(['Luas objek: ', num2str(area), ' cm2']);
-disp(['Diameter objek: ', num2str(diameterr), ' cm']);
+% Ekstrak fitur objek dari hasil segmentasi
+stats = regionprops(seg,'EquivDiameter');
+
+% Dapatkan ukuran diameter objek yang setara dengan luas objek
+diameter = stats.EquivDiameter;
+
+% Konversi diameter ke cm
+diameter_cm = diameter * scale_factor;
+
+% Tampilkan ukuran diameter objek dengan satuan cm
+disp(['Diameter objek: ', num2str(diameter_cm), ' cm']);
 
 figure, imshow(RGB)
 figure,
