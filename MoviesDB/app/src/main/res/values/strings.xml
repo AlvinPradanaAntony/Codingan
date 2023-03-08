@@ -1,0 +1,108 @@
+<resources>
+    <string name="app_name">MoviesDB</string>
+    <string name="titleMV">Judul</string>
+    <string name="descMV">Deskripsi</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="judul">Judul</string>
+    <string name="release_date">Release Date</string>
+    <string name="_8_1">8.1</string>
+
+    <string-array name="data_name">
+        <item>Ambulance</item>
+        <item>AVATAR 2</item>
+        <item>Black Panther 2</item>
+        <item>Black Adam</item>
+        <item>Creed III</item>
+        <item>Detective Knight</item>
+        <item>Doctor Strange 2</item>
+        <item>The Pilot</item>
+        <item>Spiderman: No Way Home</item>
+        <item>Sonic the Hedgehog 2</item>
+        <item>The Adam Project</item>
+        <item>The Batman</item>
+        <item>Turning Red</item>
+        <item>Top Gun: Maverick</item>
+        <item>Uncharted</item>
+    </string-array>
+    <string-array name="data_description">
+        <item>Film Ambulance mengisahkan William Sharp (Yahya Abdul-Mateen II), veteran perang, yang membutuhkan uang sebesar US$231 ribu untuk biaya operasi istrinya. Kesulitan finansial yang dihadapinya membuat Will memutuskan menjadi perampok. William lalu menghubungi Danny (Jake Gyllenhaal), saudara angkatnya yang merupakan seorang penjahat. Danny mengajaknya terlibat dalam perampokan bernilai US$32 juta di sebuah bank besar di Los Angeles. Dengan berat hati, William menerima ajakan tersebut. Saat melakukan aksi perampokan, Willian dan Danny tak sengaja menembak petugas Los Angeles Police Department (LAPD). Mereka juga mulai dikepung oleh aparat kepolisian.</item>
+        <item>Film ini berlatar beberapa tahun setelah bangsa Navi berhasil mengusir bangsa langit alias umat manusia dari Pandora. Kini, Jake Sully dan Neytiri (Zoe Saldana) telah resmi menjadi pasangan dan memimpin Omaticaya alias klan hutan. Mereka juga dikaruniai tiga anak, yakni Neteyam (Jamie Flatters), Loak (Britain Dalton) dan Tuk (Trinity JoLi Bliss). Jake dan Neytiri juga mengadopsi Kiri (Sigourney Weaver), anak drGrace sang ilmuwan yang berpihak kepada bangsa Navi di film pertama.</item>
+        <item>Black Panther: Wakanda Forever" adalah film superhero Amerika Serikat yang dijadwalkan rilis pada tanggal 8 November 2022. Film ini diproduksi oleh Marvel Studios dan didistribusikan oleh Walt Disney Studios Motion Pictures.\nFilm ini merupakan sekuel dari film "Black Panther" tahun 2018 yang sangat sukses secara komersial dan kritis. Film ini akan diarahkan oleh Ryan Coogler, yang juga mengarahkan film pertama. Film ini juga akan menjadi penghormatan kepada aktor Chadwick Boseman, yang memerankan karakter utama T\\nCerita film "Black Panther: Wakanda Forever" masih dirahasiakan, tetapi diketahui bahwa para pemeran dari film pertama akan kembali berperan dalam sekuel ini, seperti Lupita Nyong'o, Danai Gurira, Letitia Wright, Winston Duke, dan Martin Freeman. Beberapa tambahan pemeran baru juga dilaporkan, termasuk Michaela Coel dan Tenoch Huerta.\nFilm ini diharapkan akan mengulang kesuksesan film pertamanya dan mengeksplorasi lebih dalam mengenai kerajaan fiksi Wakanda yang kaya dan maju secara teknologi, serta menghadirkan aksi superhero yang spektakuler.</item>
+        <item>Hampir 5.000 tahun setelah dia dianugerahi kekuatan maha kuasa para dewa Mesir—dan dipenjara dengan cepat—Black Adam dibebaskan dari makam duniawinya, siap untuk melepaskan bentuk keadilannya yang unik di dunia modern.</item>
+        <item>After dominating the boxing world, Adonis Creed has been thriving in both his career and family life. When a childhood friend and former boxing prodigy, Damien Anderson, resurfaces after serving a long sentence in prison, he is eager to prove that he deserves his shot in the ring. The face-off between former friends is more than just a fight. To settle the score, Adonis must put his future on the line to battle Damien - a fighter who has nothing to lose.</item>
+        <item>Detective James Knights last-minute assignment to the Independence Day shift turns into a race to stop an unbalanced ambulance EMT from imperiling the citys festivities. The misguided vigilante, playing cop with a stolen gun and uniform, has a bank vault full of reasons to put on his own fireworks show... one that will strike dangerously close to Knights home.</item>
+        <item>Doctor Strange bekerja sama dengan seorang gadis remaja misterius dari mimpinya yang dapat melakukan perjalanan melintasi banyak alam semesta, untuk melawan berbagai ancaman, termasuk versi dirinya di alam semesta lain, yang mengancam untuk memusnahkan jutaan orang di berbagai alam semesta. Mereka mencari bantuan dari Wanda the Scarlet Witch, Wong, dan lainnya.</item>
+        <item>Desember 1941, Front Barat Laut. Kolom tank Jerman bergerak menuju Moskow. Selama misi untuk menghentikan gerak maju musuh, IL-2 Nikolai Komlev ditembak jatuh. Komlev berhasil mendaratkan pesawatnya di pembukaan hutan terpencil. Dia masih hidup, tapi jauh dari wilayah persahabatan. Di depannya adalah cobaan tanpa henti dari ketahanan fisik dan mental yang parah. Setelah berjuang melawan kelaparan dan cuaca dingin yang ekstrem, menghindari kawanan serigala dan detasemen tentara Nazi, Komlev yang terluka akhirnya berhasil kembali ke tempat aman. Tapi di sana dia menghadapi tantangan lain, yang paling mengubah hidup mereka semua.</item>
+        <item>Peter Parker menghadapi masalah besar. Hal ini terjadi setelah identitasnya sebagai Spiderman terungkap. Dengan kepergian Tony Stark, Peter Parker pun harus meminta bantuan Doctor Strange agar semua orang bisa melupakan identitasnya sebagai manusia laba-laba.</item>
+        <item>Alur cerita film Sonic the Hedgehog 2 bermula ketika Sonic menetap di Green Hills. Ia memutuskan menetap di sana agar bisa merasakan lebih banyak kebebasan. Ditambah lagi, Tom dan Maddie setuju untuk meninggalakannya di rumah ketika mereka pergi untuk berlibur. Namun sayangnya, tidak lama setelah mereka pergi Dr. Robotnik sang musuh bubuyutan si landak biru itu kembali ke bumi. Kali ini Dr. Robotnik datang dengan pasukan baru, Knuckles. Tujuan mereka datang kembali adalah untuk mencari Master Emerald yang memiliki kekuatan super. Kekuatan super itu bisa membangun dan menghancurkan peradaban di bumi. Atas hal ini, Sonic pun mencari strategi agar bisa menggagalkan rencara Dr. Robotnik. Strategi yang dilakukan oleh Sonic ialah bekerjasama dengan sahabatnya, Tails. Kemudian bersama dengan Tails, Sonic memulai perjalanan untuk menemukan Master Emerald. Semua itu dilakukan dengan cepat, sebelum Master Emerald jatuh ke tangan yang salah.</item>
+        <item>Mengisahkan tentang perjalanan waktu. Adam Reed adalah seorang pilot tempur tahun 2050. Saat melakukan perjalanan waktu untuk menyelamatkan istrinya di tahun 2018, Adam justru terdampar di tahun 2022. Demi menyelamatkan masa depan, akhirnya Adam Reed bekerjasama dengan dirinya di tahun 2022 yang masih berusia 12 tahun. Film ini menceritakan petualangan Adam dengan dirinya sendiri di tahun 2022. Kunci dari misi Adam adalah di tahun 2018, namun dirinya justru terjebak di tahun 2022. Akankah Adam berhasil pergi ke tahun 2018 Dan menyelamatkan istrinya?</item>
+        <item>Ketika seorang pembunuh berantai sadis mulai membunuh tokoh-tokoh politik penting di Gotham, Batman terpaksa menyelidiki korupsi tersembunyi di kota itu dan mempertanyakan keterlibatan keluarganya.</item>
+        <item>Turning Red bercerita tentang kisah Mei Lee, anak remaja perempuan 13 tahun keturunan Tiongkok-Kanada yang tinggal di Toronto. Ia seorang anak gadis yang penurut terhadap segala peraturan kaku yang dan serba menuntut dari keluarganya.</item>
+        <item>Setelah lebih dari tiga puluh tahun mengabdi sebagai salah satu penerbang top Angkatan Laut, dan menghindari kenaikan pangkat yang akan menjatuhkannya, Pete "Maverick" Mitchell mendapati dirinya melatih satu detasemen lulusan TOP GUN untuk misi khusus yang tidak ada kehidupan. pilot pernah melihat.</item>
+        <item>Menceritakan tentang aksi perburuan harta karun terbesar yang tidak pernah ditemukan. Nathan Drake merupakan seorang bartender yang pintar. Nathan mengaku bahwa dirinya adalah keturunan dari penjelajah kenamaan asal Inggris bernama Sir Francis Drake.</item>
+    </string-array>
+    <string-array name="data_date">
+        <item>16 Maret 2022</item>
+        <item>16 Des 2022</item>
+        <item>09 Nov 2022</item>
+        <item>19 Okt 2022</item>
+        <item>01 Mar 2023</item>
+        <item>20 Jan 2023</item>
+        <item>04 Mei 2022</item>
+        <item>02 Des 2021</item>
+        <item>31 Agust 2022</item>
+        <item>06 Apr 2022</item>
+        <item>11 Mar 2022</item>
+        <item>02 Mar 2022</item>
+        <item>10 Mar 2022</item>
+        <item>24 Mei 2022</item>
+        <item>18 Feb 2022</item>
+    </string-array>
+    <integer-array name="data_photo">
+        <item>@drawable/mv_ambulance</item>
+        <item>@drawable/avatar2</item>
+        <item>@drawable/blackpanther2</item>
+        <item>@drawable/blackadam</item>
+        <item>@drawable/cree3</item>
+        <item>@drawable/detective</item>
+        <item>@drawable/doctor</item>
+        <item>@drawable/pilot</item>
+        <item>@drawable/spiderman</item>
+        <item>@drawable/sonic</item>
+        <item>@drawable/adam</item>
+        <item>@drawable/batman</item>
+        <item>@drawable/red</item>
+        <item>@drawable/top2</item>
+        <item>@drawable/un</item>
+    </integer-array>
+    <integer-array name="data_photoSampul">
+        <item>@drawable/sampul_mv_ambulance</item>
+        <item>@drawable/sampul_avatar2</item>
+        <item>@drawable/sampul_blackpanther2</item>
+        <item>@drawable/sampul_blackadam</item>
+        <item>@drawable/sampul_cree3</item>
+        <item>@drawable/sampul_detective</item>
+        <item>@drawable/sampul_doctor</item>
+        <item>@drawable/sampul_pilot</item>
+        <item>@drawable/sampul_spiderman</item>
+        <item>@drawable/sampul_sonic</item>
+        <item>@drawable/sampul_adam</item>
+        <item>@drawable/sampul_batman</item>
+        <item>@drawable/sampul_red</item>
+        <item>@drawable/sampul_top</item>
+        <item>@drawable/sampul_un</item>
+    </integer-array>
+    <string name="dammyText">Androidx is a major upgrade to previously used support libraries, providing backward compatibility across Android versions. In this tutorial, we will use latest androidx jetpack along with material design libraries for captioned UI view.
+App bars can be customised to accommodate image, toolbar and can react to different scrolling effects like elements sliding through in and out of view. This is made possible by using Coordinator Layout as parent container, in junction with App bar and CollapsingBar layouts.
+        Androidx is a major upgrade to previously used support libraries, providing backward compatibility across Android versions. In this tutorial, we will use latest androidx jetpack along with material design libraries for captioned UI view.
+App bars can be customised to accommodate image, toolbar and can react to different scrolling effects like elements sliding through in and out of view. This is made possible by using Coordinator Layout as parent container, in junction with App bar and CollapsingBar layouts.
+        Androidx is a major upgrade to previously used support libraries, providing backward compatibility across Android versions. In this tutorial, we will use latest androidx jetpack along with material design libraries for captioned UI view.
+App bars can be customised to accommodate image, toolbar and can react to different scrolling effects like elements sliding through in and out of view. This is made possible by using Coordinator Layout as parent container, in junction with App bar and CollapsingBar layouts.
+</string>
+    <string name="dtl_judul">Judul</string>
+    <string name="rating">8.1</string>
+    <string name="tanggal_rilis">Tanggal Rilis</string>
+    <string name="genre_action">Genre : Action</string>
+    <string name="overview">Overview</string>
+    <string name="dtl_deskripsi">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</string>
+</resources>

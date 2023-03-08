@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".About">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+
+       <FrameLayout
+           android:layout_width="match_parent"
+           android:layout_height="571dp">
+
+           <View
+               android:layout_width="match_parent"
+               android:layout_height="225dp"
+               android:background="@color/colorPrimary" />
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="26dp"
+               android:layout_marginTop="38dp"
+               android:layout_marginEnd="26dp"
+               android:elevation="1dp"
+               android:text="My Profile"
+               android:textAppearance="@style/TextAppearance.AppCompat.Title"
+               android:textColor="@color/white"
+               android:textSize="28sp"
+               android:textStyle="bold" />
+
+           <View
+               android:layout_width="340dp"
+               android:layout_height="360dp"
+               android:layout_gravity="center"
+               android:layout_marginTop="80dp"
+               android:background="@drawable/custom_rounded2"
+               android:elevation="5dp" />
+
+           <de.hdodenhof.circleimageview.CircleImageView
+               android:id="@+id/img_item_photo"
+               android:layout_width="125dp"
+               android:layout_height="125dp"
+               android:layout_gravity="center_horizontal"
+               android:layout_marginTop="115dp"
+               android:elevation="10dp"
+               android:src="@drawable/user_photo" />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:elevation="10dp"
+               android:gravity="center"
+               android:text="Alvin Pradana Antony"
+               android:textAppearance="@style/TextAppearance.AppCompat.Title"
+               android:textStyle="bold" />
+
+           <TextView
+               android:layout_width="340dp"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:layout_marginTop="65dp"
+               android:elevation="11dp"
+               android:paddingStart="22dp"
+               android:paddingEnd="22dp"
+               android:text="Email"
+               android:textAppearance="@style/TextAppearance.AppCompat.Small"
+               android:textSize="16sp" />
+
+           <TextView
+               android:layout_width="340dp"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:layout_marginTop="98dp"
+               android:elevation="11dp"
+               android:paddingStart="22dp"
+               android:paddingTop="14dp"
+               android:paddingEnd="22dp"
+               android:paddingBottom="18dp"
+               android:text="alvinpradanaantony@gmail.com"
+               android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+               android:textSize="16sp" />
+
+           <TextView
+               android:layout_width="340dp"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:layout_marginTop="135dp"
+               android:elevation="11dp"
+               android:paddingStart="22dp"
+               android:paddingEnd="22dp"
+               android:text="Study Group"
+               android:textAppearance="@style/TextAppearance.AppCompat.Small"
+               android:textSize="16sp" />
+
+           <TextView
+               android:layout_width="340dp"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:layout_marginTop="168dp"
+               android:elevation="11dp"
+               android:paddingStart="22dp"
+               android:paddingTop="14dp"
+               android:paddingEnd="22dp"
+               android:paddingBottom="18dp"
+               android:text="MD-22"
+               android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+               android:textSize="16sp" />
+       </FrameLayout>
+   </LinearLayout>
+</ScrollView>
