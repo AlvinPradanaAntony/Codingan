@@ -1,13 +1,16 @@
 package com.devcode.simplegithubapp
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.devcode.simplegithubapp.databinding.ItemRowBinding
 
-class RecyclerViewAdapter(private val listUsers: ArrayList<ListUsersResponseItem>) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+class ListUsersAdapter(private val listUsers: ArrayList<UsersResponsesItem>) : RecyclerView.Adapter<ListUsersAdapter.ViewHolder>() {
+    private lateinit var onItemClickCallback: OnItemClickCallback
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
 
     class ViewHolder(var binding: ItemRowBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -20,11 +23,15 @@ class RecyclerViewAdapter(private val listUsers: ArrayList<ListUsersResponseItem
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.tvName.text = listUsers[position].login
-        holder.binding.tvUsername.text = listUsers[position].url
+        holder.binding.tvUsername.text = listUsers[position].htmlUrl
         Glide.with(holder.itemView.context)
-            .load(listUsers[position].avatarUrl) // URL Gambar
+            .load(listUsers[position].avatarUrl)
+            .error(R.drawable.placeholder)
             .into(holder.binding.profileImage)
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listUsers[holder.adapterPosition]) }
     }
 
-
+    interface OnItemClickCallback {
+        fun onItemClicked(data: UsersResponsesItem)
+    }
 }
