@@ -10,7 +10,7 @@ data class GithubResponses(
 	val incompleteResults: Boolean? = null,
 
 	@field:SerializedName("items")
-	val items: List<UsersResponsesItem?>? = null
+	val items: ArrayList<UsersResponsesItem>? = null
 )
 
 data class UsersResponsesItem(
