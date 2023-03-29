@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -14,7 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "API_KEY", '"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"')
+        buildConfigField("String", "API_KEY", '"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"')
     }
     buildFeatures {
         viewBinding true

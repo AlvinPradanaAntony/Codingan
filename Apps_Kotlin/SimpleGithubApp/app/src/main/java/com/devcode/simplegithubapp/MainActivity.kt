@@ -37,12 +37,9 @@ class MainActivity : AppCompatActivity() {
         binding.searchUsers.queryHint = "Search User"
         binding.searchUsers.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
-/*                Toast.makeText(this@MainActivity, query, Toast.LENGTH_SHORT).show()
-                binding.searchUsers.clearFocus()*/
                 searchUser(query)
                 return true
             }
-
             override fun onQueryTextChange(newText: String?): Boolean {
                 return false
             }
@@ -122,7 +119,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showSelectedData(data: UsersResponsesItem) {
-        Toast.makeText(this, "Kamu memilih akun " + data.login, Toast.LENGTH_SHORT).show()
+        val intent = Intent(this@MainActivity, DetailActivity::class.java)
+        intent.putExtra(DetailActivity.EXTRA_STATE, data.login)
+        startActivity(intent)
     }
 
     private fun showLoading(isLoading: Boolean) {

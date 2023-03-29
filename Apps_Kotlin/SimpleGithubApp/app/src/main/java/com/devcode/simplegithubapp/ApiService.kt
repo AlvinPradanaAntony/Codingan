@@ -3,55 +3,34 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface ApiService {
+    companion object {
+        private const val API_TOKEN = BuildConfig.API_KEY
+    }
     @GET("users")
-    @Headers("Authorization: ${BuildConfig.API_KEY}")
+    @Headers("Authorization: $API_TOKEN")
     fun getUsers(): Call<ArrayList<UsersResponsesItem>>
 
     @GET("search/users")
-    @Headers("Authorization: ${BuildConfig.API_KEY}")
+    @Headers("Authorization: $API_TOKEN")
     fun getListUsers(
         @Query("q") username: String
     ): Call<GithubResponses>
 
-    /*    @GET("users/{username}")
-    @Headers("Authorization: token ${BuildConfig.API_KEY}")
-    fun getUser(
-        @Path("username") username: String
-    ): Call<ResponseUserDetail>
+    @GET("users/{username}")
+    @Headers("Authorization: $API_TOKEN")
+    fun getDetailUser(
+        @Path("username") username: String?
+    ): Call<DetailUsersResponses>
 
     @GET("users/{username}/followers")
-    @Headers("Authorization: token ${BuildConfig.API_KEY}")
+    @Headers("Authorization: $API_TOKEN")
     fun getUserFollowers(
         @Path("username") username: String
-    ): Call<List<ResponseUser>>
+    ): Call<ArrayList<UsersResponsesItem>>
 
     @GET("users/{username}/following")
-    @Headers("Authorization: token ${BuildConfig.API_KEY}")
+    @Headers("Authorization: $API_TOKEN")
     fun getUserFollowing(
         @Path("username") username: String
-    ): Call<List<ResponseUser>>*/
-
-
-   /* @GET("search/users")
-    fun getSearchUser(
-        @Query("q") query: String
-    ): Call<GithubResponse>
-
-    @GET("users/{username}")
-    @Headers("Authorization: token ${BuildConfig.API_KEY}")
-    fun getUserDetail(
-        @Path("username") username: String
-    ): Call<GithubResponse>
-
-    @GET("users/{username}/followers")
-    @Headers("Authorization: token ${BuildConfig.API_KEY}")
-    fun getFollowers(
-        @Path("username") username: String
-    ): Call<ArrayList<GithubResponse>>
-
-    @GET("users/{username}/following")
-    @Headers("Authorization: token${BuildConfig.API_KEY}")
-    fun getFollowing(
-        @Path("username") username: String
-    ): Call<ArrayList<GithubResponse>>*/
+    ): Call<ArrayList<UsersResponsesItem>>
 }

@@ -49,6 +49,9 @@ data class DetailUsersResponses(
 	@field:SerializedName("company")
 	val company: String? = null,
 
+	@field:SerializedName("public_repos")
+	val public_repos: Int? = null,
+
 	@field:SerializedName("avatar_url")
 	val avatarUrl: String? = null,
 
