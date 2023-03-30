@@ -1,5 +1,6 @@
 package com.devcode.simplegithubapp
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -29,6 +30,13 @@ class ListUsersAdapter(private val listUsers: ArrayList<UsersResponsesItem>) : R
             .error(R.drawable.placeholder)
             .into(holder.binding.profileImage)
         holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listUsers[holder.adapterPosition]) }
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun addData(items: ArrayList<UsersResponsesItem>) {
+        listUsers.clear()
+        listUsers.addAll(items)
+        notifyDataSetChanged()
     }
 
     interface OnItemClickCallback {
