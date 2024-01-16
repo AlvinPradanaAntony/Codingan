@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <script>
+      if (localStorage.getItem("email") ) {
+        window.location.href = "index.html";
+      } 
+    </script>
+    <form id="login-form" onsubmit="return login()">
+      <h1>LOGIN</h1>
+      <input type="email" placeholder="Email" name="email" required />
+      <input type="password" placeholder="Password" name="password" required />
+      <input type="submit" value="Sign In" />
+    </form>
+    <script>
+      function login() {
+        var email = document.forms["login-form"]["email"].value;
+        var password = document.forms["login-form"]["password"].value;
+
+        if (email == "admin@mail.com"){
+          if (password == "admin"){
+            localStorage.setItem("email", email);
+            localStorage.setItem("username", "Admin");
+            window.location.href = "index.html";
+            return false;
+          }
+          else{
+            alert("Password Salah");
+            return false;
+          }
+        } else{
+          alert("Email Salah");
+          return false;
+        }
+        return false;
+      }
+    </script>
+  </body>
+</html>

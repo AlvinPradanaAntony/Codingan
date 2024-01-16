@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Akun: <Small id="username"></Small></p>
+  <a href="login.html" id="btn_masuk">
+    <button>Masuk</button>
+  </a>
+  <button onclick="logout()" id="btn_keluar">Logout</button>
+  <script>
+    let username = document.getElementById("username");
+    let btn_masuk = document.getElementById("btn_masuk");
+    let btn_keluar = document.getElementById("btn_keluar");
+    if (localStorage.getItem("email") == null) {
+      username.textContent = "Tamu";
+      btn_masuk.style.display = "block";
+      btn_keluar.style.display = "none";
+    } else {
+      username.textContent = localStorage.getItem("username");
+      btn_masuk.style.display = "none";
+      btn_keluar.style.display = "block";
+    }
+    console.log(localStorage.getItem("email"));
+    console.log(localStorage.getItem("username"));
+    function logout() {
+      localStorage.clear();
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
