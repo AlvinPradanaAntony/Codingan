@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "627930700846",
+    "project_id": "autentifikasi-e167d",
+    "storage_bucket": "autentifikasi-e167d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627930700846:android:e11217691d2f3857e253bf",
+        "android_client_info": {
+          "package_name": "com.example.autentifikasi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "627930700846-j24bv9bspomqd6jqvgjhhh9stbgehr62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJBBBHdOp9JQmsA3KeDNkQqFsQJCItmOk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "627930700846-j24bv9bspomqd6jqvgjhhh9stbgehr62.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
