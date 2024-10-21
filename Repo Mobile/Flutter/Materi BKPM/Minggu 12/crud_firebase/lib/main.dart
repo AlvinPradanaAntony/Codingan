@@ -7,7 +7,14 @@ import 'package:crud_firebase/addUser.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+    await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyBiUeM_pevYEsHHKraEu_ZxyFKs_3TtFYk",
+      appId: "1:979329903057:android:12f398ed6c9e0604c5d8f0",
+      messagingSenderId: "979329903057",
+      projectId: "flutter-mobile-3726c",
+    ),
+  );
   runApp(const MyApp());
 }
 
@@ -120,7 +127,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       leading: CircleAvatar(
                   radius: 30,
                   backgroundImage: NetworkImage(
-                      "https://source.unsplash.com/random/200x200?sig=${index}"),
+                      "https://ui-avatars.com/api/?name=${documentSnapshot['name']}&background=random&rounded=true&font-size=0.35&bold=true"),
                 ),
                       subtitle: Text(documentSnapshot['number'].toString()),
                       trailing: SizedBox(

@@ -29,8 +29,7 @@ class _GetDataDetailScreenState extends State<GetDataDetailScreen> {
   Future<void> getJsonData(BuildContext context, url) async {
     setState(() {});
 
-    var response = await http
-        .get(Uri.parse(uri.toString()), headers: {"Accept": "aplication/json"});
+    var response = await http.get(Uri.parse(url.toString()), headers: {"Accept": "aplication/json"});
     print(response.body);
     setState(() {
       var convertDataToJson = jsonDecode(response.body);

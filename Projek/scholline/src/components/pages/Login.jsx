@@ -105,7 +105,7 @@ function App() {
 
                             <div className="login1">
                               <button type="submit" className="btn btn-primary customBtnSignIn" disabled={loading}>
-                                {loading ? <span className="font2 btnSignin">Wait...</span> : <span className="font2 btnSignin">Sign In</span>}
+                                {loading ? <span className="btnSignin"><span className="button--loading"></span></span> : <span className="font2 btnSignin">Sign In</span>}
                               </button>
                             </div>
                             <Link to="/register">

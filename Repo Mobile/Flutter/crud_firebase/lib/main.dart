@@ -7,7 +7,14 @@ import 'package:crud_firebase/addUser.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyBiUeM_pevYEsHHKraEu_ZxyFKs_3TtFYk",
+      appId: "1:979329903057:android:12f398ed6c9e0604c5d8f0",
+      messagingSenderId: "979329903057",
+      projectId: "flutter-mobile-3726c",
+    ),
+  );
   runApp(const MyApp());
 }
 

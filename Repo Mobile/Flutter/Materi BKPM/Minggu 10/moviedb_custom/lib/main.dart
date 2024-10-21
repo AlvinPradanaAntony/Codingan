@@ -175,6 +175,7 @@ class _HomePageState extends State<HomePage> {
                                 separatorBuilder: (context, index) =>
                                     const VerticalDivider(
                                   width: 12,
+                                  color: Colors.transparent,
                                 ),
                                 itemBuilder:
                                     (BuildContext context, int itemIndex) {
@@ -241,6 +242,7 @@ class _HomePageState extends State<HomePage> {
                                 separatorBuilder: (context, index) =>
                                     const VerticalDivider(
                                   width: 12,
+                                  color: Colors.transparent,
                                 ),
                                 itemBuilder:
                                     (BuildContext context, int itemIndex) {
