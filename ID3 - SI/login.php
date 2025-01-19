@@ -18,12 +18,12 @@
 				form.user.focus();
 				return (false);
 			} 
-			if (form.user.value == ""){
+			if (form.passInput.value == ""){
 				alert("Masukkan Username!");
-				form.user.focus();
+				form.passInput.focus();
 				return (false);
 			}     
-			if (form.passInput.value == ""){
+			if (form.pass.value == ""){
 				alert("Masukkan Password!");
 				form.passInput.focus();
 				return (false);
