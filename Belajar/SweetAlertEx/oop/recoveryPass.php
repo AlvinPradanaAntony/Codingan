@@ -31,22 +31,18 @@ require ('function.php');
 	// 	statusEmpty();
 	// }
 	?>
-	<div class="info-data" data-infodata="<?php if(isset($_SESSION['info'])){ echo $_SESSION['info']; } unset($_SESSION['info']); ?>"></div>
+	<div class="info-data" data-infodata="<?php if(isset($_SESSION['info']) && $_SESSION['info'] !== 'passwordResetLinkReady'){ echo $_SESSION['info']; } unset($_SESSION['info']); ?>"></div>
+
 	<div class="d-flex justify-content-center align-items-center h-100">
 		<div class="border d-block p-4" style="width: 280px; height: 300px;">
 			<form action="function.php" method="POST">
 				<div class="mb-3">
 					<label for="inputEmail" class="form-label"><b>Email</b></label>
-					<input type="email" class="form-control" id="inputEmail" name="txt_email" placeholder="Masukan Email Anda !">
+					<input type="email" class="form-control" id="inputEmail" name="txt_email" placeholder="Masukan Email Anda !" required>
 				</div>
-				<div class="mb-3">
-					<label for="inputPassword" class="form-label"><b>Password</b></label>
-					<input type="password" class="form-control" id="inputPassword" name="txt_pass" placeholder="Masukan Password !">
-					<p><a href="recoveryPass.php">Lupa kata sandi ?</p>
-				</div>
-				<button type="submit" class="btn btn-success" name="login">Login</button>
+				<button type="submit" class="btn btn-success" name="request_password_reset">Kirim Link Reset</button>
 			</form>
-			<p><a href="register.php">Register</p>
+			<p><a href="login.php">Kembali ke Login</p>
 		</div>
 	</div>
 
@@ -65,5 +61,26 @@ require ('function.php');
 		});
 	</script>
 </body>
-
+<?php
+	// Tampilkan SweetAlert dengan link reset jika tersedia di session
+	if (isset($_SESSION['show_reset_link_alert']) && $_SESSION['show_reset_link_alert'] === true && isset($_SESSION['reset_link_debug'])) {
+		$resetLink = $_SESSION['reset_link_debug'];
+		echo "
+		<script>
+			Swal.fire({
+				title: 'Link Reset Kata Sandi',
+				html: 'Untuk tujuan demonstrasi, berikut adalah tautan reset Anda:<br><a href=\"{$resetLink}\"><small>{$resetLink}</small></a><br>Di implementasi sebenarnya, tautan ini akan dikirim melalui email.',
+				icon: 'info',
+				confirmButtonText: 'OK'
+			});
+		</script>";
+		// Bersihkan session setelah menampilkan alert
+		unset($_SESSION['show_reset_link_alert']);
+		unset($_SESSION['reset_link_debug']);
+		// Pastikan info session juga dihapus jika hanya digunakan untuk reset link
+		if(isset($_SESSION['info']) && $_SESSION['info'] === 'passwordResetLinkReady') {
+			unset($_SESSION['info']);
+		}
+	}
+	?>
 </html>

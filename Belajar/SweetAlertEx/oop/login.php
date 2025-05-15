@@ -1,5 +1,9 @@
 <?php
 require ('function.php');
+if (isset($_SESSION['id'])) {
+	header('Location: home.php');
+	exit();
+}
 ?>
 <html>
 <head>
@@ -15,7 +19,7 @@ require ('function.php');
 		unset($_SESSION['msg']);
 	}
 
-W
+
 	// if (isset($_SESSION['statusSignUp'])) {
 	// 	statusSignUp();
 	// }

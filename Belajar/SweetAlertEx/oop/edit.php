@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // header('Location: home.php');
 
         // Sweetalert2
-		$_SESSION['info'] = 'statusSignUp';
+		$_SESSION['info'] = 'statusEdit';
 		header('Location: home.php');
     } else {
         // Alert
