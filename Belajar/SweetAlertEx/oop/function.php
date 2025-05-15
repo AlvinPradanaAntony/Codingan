@@ -63,25 +63,25 @@ if (isset($_POST['register'])) {
 	$email = $_POST['txt_email'];
 	$pass = $_POST['txt_pass'];
 	$name = $_POST['txt_nama'];
-	if (!$obj->ValidasiEmail($email)) {
-		if ($obj->insertData($email, $pass, $name)) {
-			// Alert
-			// $_SESSION['statusSignUp'] = "Daftar Berhasil";
-			// header('Location: login.php');
 
+	// Check if email already exists
+	$checkEmail = $obj->ValidasiEmail($email);
+
+	// If email doesn't exist (ValidasiEmail returns false or rowCount = 0)
+	if ($checkEmail && $checkEmail->rowCount() == 0) {
+		if ($obj->insertData($email, $pass, $name)) {
 			// Sweetalert2
 			$_SESSION['info'] = 'statusSignUp';
 			header('Location: login.php');
+			exit(); // Tambahkan exit untuk menghentikan eksekusi script
 		} else {
-			// Alert
-			// echo "Pendaftaran Gagal";
-			// header('Location: register.php');
-
 			// Sweetalert2
 			$_SESSION['info'] = 'error';
 			header('Location: register.php');
+			exit(); // Tambahkan exit untuk menghentikan eksekusi script
 		}
 	}
+	// Jika email sudah ada, ValidasiEmail sudah melakukan redirect
 }
 
 // Permintaan Pemulihan Kata Sandi

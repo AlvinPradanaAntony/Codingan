@@ -81,7 +81,6 @@ class crud extends koneksi
             echo $e->getMessage();
         }
     }
-
     public function ValidasiEmail($data)
     {
         try {
@@ -89,13 +88,20 @@ class crud extends koneksi
             $result = $this->koneksi->prepare($sql);
             $result->bindParam(":user_email", $data);
             $result->execute();
+
             if ($result->rowCount() > 0) {
+                // Email sudah digunakan
                 $_SESSION['info'] = 'EmailHasBeenTaken';
                 header('Location: register.php');
+                exit(); // Menghentikan eksekusi script setelah redirect
             }
-            return $result;
+
+            return $result; // Return result untuk diperiksa
         } catch (PDOException $e) {
-            echo $e->getMessage();
+            // Tangani error dengan lebih baik
+            $_SESSION['info'] = 'error';
+            header('Location: register.php');
+            exit();
         }
     }
 
