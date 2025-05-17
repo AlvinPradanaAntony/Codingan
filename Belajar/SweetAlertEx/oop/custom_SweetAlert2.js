@@ -72,6 +72,24 @@ if (notifikasi == "statusLogin") {
     title: "Akses Ditolak",
     text: "Tidak ada token reset kata sandi yang diberikan.",
   });
+} else if (notifikasi == "passwordResetSuccess") {
+  Swal.fire({
+    icon: "success",
+    title: "Sukses",
+    text: "Kata sandi Anda telah berhasil diubah. Silakan masuk dengan kata sandi baru Anda.",
+  });
+} else if (notifikasi == "passwordResetFailed") {
+  Swal.fire({
+    icon: "error",
+    title: "Gagal",
+    text: "Gagal mengubah kata sandi. Silakan coba lagi.",
+  });
+} else if (notifikasi == "passwordMismatch") {
+  Swal.fire({
+    icon: "error",
+    title: "Gagal",
+    text: "Kata sandi tidak cocok. Silakan coba lagi.",
+  });
 }
 
 $(".delete-data").on("click", function (e) {
